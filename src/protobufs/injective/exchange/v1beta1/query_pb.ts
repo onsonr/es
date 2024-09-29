@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { AggregateAccountVolumeRecord, BinaryOptionsMarket, CampaignRewardPool, DenomDecimals, Deposit, DerivativeMarket, ExpiryFuturesMarketInfo, FeeDiscountSchedule, FeeDiscountTierInfo, FeeDiscountTierTTL, Level, MarketVolume, MidPriceAndTOB, Params, PerpetualMarketFunding, PerpetualMarketInfo, Position, SpotMarket, SubaccountOrderbookMetadata, SubaccountOrderData, TradeRecord, TradeRecords, TradingRewardCampaignInfo, VolumeRecord } from "./exchange_pb.js";
+import { ActiveGrant, AggregateAccountVolumeRecord, BinaryOptionsMarket, CampaignRewardPool, DenomDecimals, Deposit, DerivativeMarket, EffectiveGrant, ExpiryFuturesMarketInfo, FeeDiscountSchedule, FeeDiscountTierInfo, FeeDiscountTierTTL, GrantAuthorization, Level, MarketVolume, MidPriceAndTOB, Params, PerpetualMarketFunding, PerpetualMarketInfo, Position, SpotMarket, SubaccountOrderbookMetadata, SubaccountOrderData, TradeRecord, TradeRecords, TradingRewardCampaignInfo, VolumeRecord } from "./exchange_pb.js";
 import { Balance, DerivativePosition, GenesisState } from "./genesis_pb.js";
 import { MetadataStatistics } from "../../oracle/v1beta1/oracle_pb.js";
 
@@ -1829,6 +1829,11 @@ export class TrimmedSpotLimitOrder extends Message<TrimmedSpotLimitOrder> {
    */
   orderHash = "";
 
+  /**
+   * @generated from field: string cid = 6;
+   */
+  cid = "";
+
   constructor(data?: PartialMessage<TrimmedSpotLimitOrder>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1842,6 +1847,7 @@ export class TrimmedSpotLimitOrder extends Message<TrimmedSpotLimitOrder> {
     { no: 3, name: "fillable", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "isBuy", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 5, name: "order_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "cid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TrimmedSpotLimitOrder {
@@ -2545,6 +2551,11 @@ export class TrimmedDerivativeLimitOrder extends Message<TrimmedDerivativeLimitO
    */
   orderHash = "";
 
+  /**
+   * @generated from field: string cid = 7;
+   */
+  cid = "";
+
   constructor(data?: PartialMessage<TrimmedDerivativeLimitOrder>) {
     super();
     proto3.util.initPartial(data, this);
@@ -2559,6 +2570,7 @@ export class TrimmedDerivativeLimitOrder extends Message<TrimmedDerivativeLimitO
     { no: 4, name: "fillable", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "isBuy", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 6, name: "order_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "cid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TrimmedDerivativeLimitOrder {
@@ -5544,6 +5556,11 @@ export class TrimmedDerivativeConditionalOrder extends Message<TrimmedDerivative
    */
   orderHash = "";
 
+  /**
+   * @generated from field: string cid = 8;
+   */
+  cid = "";
+
   constructor(data?: PartialMessage<TrimmedDerivativeConditionalOrder>) {
     super();
     proto3.util.initPartial(data, this);
@@ -5559,6 +5576,7 @@ export class TrimmedDerivativeConditionalOrder extends Message<TrimmedDerivative
     { no: 5, name: "isBuy", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 6, name: "isLimit", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 7, name: "order_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "cid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): TrimmedDerivativeConditionalOrder {
@@ -5689,6 +5707,246 @@ export class QueryMarketAtomicExecutionFeeMultiplierResponse extends Message<Que
 
   static equals(a: QueryMarketAtomicExecutionFeeMultiplierResponse | PlainMessage<QueryMarketAtomicExecutionFeeMultiplierResponse> | undefined, b: QueryMarketAtomicExecutionFeeMultiplierResponse | PlainMessage<QueryMarketAtomicExecutionFeeMultiplierResponse> | undefined): boolean {
     return proto3.util.equals(QueryMarketAtomicExecutionFeeMultiplierResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.QueryActiveStakeGrantRequest
+ */
+export class QueryActiveStakeGrantRequest extends Message<QueryActiveStakeGrantRequest> {
+  /**
+   * @generated from field: string grantee = 1;
+   */
+  grantee = "";
+
+  constructor(data?: PartialMessage<QueryActiveStakeGrantRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.QueryActiveStakeGrantRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grantee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryActiveStakeGrantRequest {
+    return new QueryActiveStakeGrantRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryActiveStakeGrantRequest {
+    return new QueryActiveStakeGrantRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryActiveStakeGrantRequest {
+    return new QueryActiveStakeGrantRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryActiveStakeGrantRequest | PlainMessage<QueryActiveStakeGrantRequest> | undefined, b: QueryActiveStakeGrantRequest | PlainMessage<QueryActiveStakeGrantRequest> | undefined): boolean {
+    return proto3.util.equals(QueryActiveStakeGrantRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.QueryActiveStakeGrantResponse
+ */
+export class QueryActiveStakeGrantResponse extends Message<QueryActiveStakeGrantResponse> {
+  /**
+   * @generated from field: injective.exchange.v1beta1.ActiveGrant grant = 1;
+   */
+  grant?: ActiveGrant;
+
+  /**
+   * @generated from field: injective.exchange.v1beta1.EffectiveGrant effective_grant = 2;
+   */
+  effectiveGrant?: EffectiveGrant;
+
+  constructor(data?: PartialMessage<QueryActiveStakeGrantResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.QueryActiveStakeGrantResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grant", kind: "message", T: ActiveGrant },
+    { no: 2, name: "effective_grant", kind: "message", T: EffectiveGrant },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryActiveStakeGrantResponse {
+    return new QueryActiveStakeGrantResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryActiveStakeGrantResponse {
+    return new QueryActiveStakeGrantResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryActiveStakeGrantResponse {
+    return new QueryActiveStakeGrantResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryActiveStakeGrantResponse | PlainMessage<QueryActiveStakeGrantResponse> | undefined, b: QueryActiveStakeGrantResponse | PlainMessage<QueryActiveStakeGrantResponse> | undefined): boolean {
+    return proto3.util.equals(QueryActiveStakeGrantResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.QueryGrantAuthorizationRequest
+ */
+export class QueryGrantAuthorizationRequest extends Message<QueryGrantAuthorizationRequest> {
+  /**
+   * @generated from field: string granter = 1;
+   */
+  granter = "";
+
+  /**
+   * @generated from field: string grantee = 2;
+   */
+  grantee = "";
+
+  constructor(data?: PartialMessage<QueryGrantAuthorizationRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.QueryGrantAuthorizationRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "granter", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "grantee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryGrantAuthorizationRequest {
+    return new QueryGrantAuthorizationRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryGrantAuthorizationRequest {
+    return new QueryGrantAuthorizationRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryGrantAuthorizationRequest {
+    return new QueryGrantAuthorizationRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryGrantAuthorizationRequest | PlainMessage<QueryGrantAuthorizationRequest> | undefined, b: QueryGrantAuthorizationRequest | PlainMessage<QueryGrantAuthorizationRequest> | undefined): boolean {
+    return proto3.util.equals(QueryGrantAuthorizationRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.QueryGrantAuthorizationResponse
+ */
+export class QueryGrantAuthorizationResponse extends Message<QueryGrantAuthorizationResponse> {
+  /**
+   * @generated from field: string amount = 1;
+   */
+  amount = "";
+
+  constructor(data?: PartialMessage<QueryGrantAuthorizationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.QueryGrantAuthorizationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "amount", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryGrantAuthorizationResponse {
+    return new QueryGrantAuthorizationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryGrantAuthorizationResponse {
+    return new QueryGrantAuthorizationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryGrantAuthorizationResponse {
+    return new QueryGrantAuthorizationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryGrantAuthorizationResponse | PlainMessage<QueryGrantAuthorizationResponse> | undefined, b: QueryGrantAuthorizationResponse | PlainMessage<QueryGrantAuthorizationResponse> | undefined): boolean {
+    return proto3.util.equals(QueryGrantAuthorizationResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.QueryGrantAuthorizationsRequest
+ */
+export class QueryGrantAuthorizationsRequest extends Message<QueryGrantAuthorizationsRequest> {
+  /**
+   * @generated from field: string granter = 1;
+   */
+  granter = "";
+
+  constructor(data?: PartialMessage<QueryGrantAuthorizationsRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.QueryGrantAuthorizationsRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "granter", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryGrantAuthorizationsRequest {
+    return new QueryGrantAuthorizationsRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryGrantAuthorizationsRequest {
+    return new QueryGrantAuthorizationsRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryGrantAuthorizationsRequest {
+    return new QueryGrantAuthorizationsRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryGrantAuthorizationsRequest | PlainMessage<QueryGrantAuthorizationsRequest> | undefined, b: QueryGrantAuthorizationsRequest | PlainMessage<QueryGrantAuthorizationsRequest> | undefined): boolean {
+    return proto3.util.equals(QueryGrantAuthorizationsRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.QueryGrantAuthorizationsResponse
+ */
+export class QueryGrantAuthorizationsResponse extends Message<QueryGrantAuthorizationsResponse> {
+  /**
+   * @generated from field: string total_grant_amount = 1;
+   */
+  totalGrantAmount = "";
+
+  /**
+   * @generated from field: repeated injective.exchange.v1beta1.GrantAuthorization grants = 2;
+   */
+  grants: GrantAuthorization[] = [];
+
+  constructor(data?: PartialMessage<QueryGrantAuthorizationsResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.QueryGrantAuthorizationsResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "total_grant_amount", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "grants", kind: "message", T: GrantAuthorization, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryGrantAuthorizationsResponse {
+    return new QueryGrantAuthorizationsResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryGrantAuthorizationsResponse {
+    return new QueryGrantAuthorizationsResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryGrantAuthorizationsResponse {
+    return new QueryGrantAuthorizationsResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryGrantAuthorizationsResponse | PlainMessage<QueryGrantAuthorizationsResponse> | undefined, b: QueryGrantAuthorizationsResponse | PlainMessage<QueryGrantAuthorizationsResponse> | undefined): boolean {
+    return proto3.util.equals(QueryGrantAuthorizationsResponse, a, b);
   }
 }
 

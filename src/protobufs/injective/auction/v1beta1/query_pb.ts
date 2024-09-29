@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { Params } from "./auction_pb.js";
+import { LastAuctionResult, Params } from "./auction_pb.js";
 import { Coin } from "../../../cosmos/base/v1beta1/coin_pb.js";
 import { GenesisState } from "./genesis_pb.js";
 
@@ -262,6 +262,74 @@ export class QueryModuleStateResponse extends Message<QueryModuleStateResponse> 
 
   static equals(a: QueryModuleStateResponse | PlainMessage<QueryModuleStateResponse> | undefined, b: QueryModuleStateResponse | PlainMessage<QueryModuleStateResponse> | undefined): boolean {
     return proto3.util.equals(QueryModuleStateResponse, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.auction.v1beta1.QueryLastAuctionResultRequest
+ */
+export class QueryLastAuctionResultRequest extends Message<QueryLastAuctionResultRequest> {
+  constructor(data?: PartialMessage<QueryLastAuctionResultRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.auction.v1beta1.QueryLastAuctionResultRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryLastAuctionResultRequest {
+    return new QueryLastAuctionResultRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryLastAuctionResultRequest {
+    return new QueryLastAuctionResultRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryLastAuctionResultRequest {
+    return new QueryLastAuctionResultRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryLastAuctionResultRequest | PlainMessage<QueryLastAuctionResultRequest> | undefined, b: QueryLastAuctionResultRequest | PlainMessage<QueryLastAuctionResultRequest> | undefined): boolean {
+    return proto3.util.equals(QueryLastAuctionResultRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.auction.v1beta1.QueryLastAuctionResultResponse
+ */
+export class QueryLastAuctionResultResponse extends Message<QueryLastAuctionResultResponse> {
+  /**
+   * @generated from field: injective.auction.v1beta1.LastAuctionResult last_auction_result = 1;
+   */
+  lastAuctionResult?: LastAuctionResult;
+
+  constructor(data?: PartialMessage<QueryLastAuctionResultResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.auction.v1beta1.QueryLastAuctionResultResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "last_auction_result", kind: "message", T: LastAuctionResult },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryLastAuctionResultResponse {
+    return new QueryLastAuctionResultResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryLastAuctionResultResponse {
+    return new QueryLastAuctionResultResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryLastAuctionResultResponse {
+    return new QueryLastAuctionResultResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryLastAuctionResultResponse | PlainMessage<QueryLastAuctionResultResponse> | undefined, b: QueryLastAuctionResultResponse | PlainMessage<QueryLastAuctionResultResponse> | undefined): boolean {
+    return proto3.util.equals(QueryLastAuctionResultResponse, a, b);
   }
 }
 

@@ -97,6 +97,24 @@ export class SpotMarketParamUpdateProposal extends Message<SpotMarketParamUpdate
    */
   status = MarketStatus.Unspecified;
 
+  /**
+   * @generated from field: string ticker = 10;
+   */
+  ticker = "";
+
+  /**
+   * min_notional defines the minimum notional (in quote asset) required for
+   * orders in the market
+   *
+   * @generated from field: string min_notional = 11;
+   */
+  minNotional = "";
+
+  /**
+   * @generated from field: injective.exchange.v1beta1.AdminInfo admin_info = 12;
+   */
+  adminInfo?: AdminInfo;
+
   constructor(data?: PartialMessage<SpotMarketParamUpdateProposal>) {
     super();
     proto3.util.initPartial(data, this);
@@ -114,6 +132,9 @@ export class SpotMarketParamUpdateProposal extends Message<SpotMarketParamUpdate
     { no: 7, name: "min_price_tick_size", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "min_quantity_tick_size", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "status", kind: "enum", T: proto3.getEnumType(MarketStatus) },
+    { no: 10, name: "ticker", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "min_notional", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 12, name: "admin_info", kind: "message", T: AdminInfo },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpotMarketParamUpdateProposal {
@@ -358,6 +379,18 @@ export class SpotMarketLaunchProposal extends Message<SpotMarketLaunchProposal> 
    */
   takerFeeRate = "";
 
+  /**
+   * min_notional defines the minimum notional for orders in the market
+   *
+   * @generated from field: string min_notional = 10;
+   */
+  minNotional = "";
+
+  /**
+   * @generated from field: injective.exchange.v1beta1.AdminInfo admin_info = 11;
+   */
+  adminInfo?: AdminInfo;
+
   constructor(data?: PartialMessage<SpotMarketLaunchProposal>) {
     super();
     proto3.util.initPartial(data, this);
@@ -375,6 +408,8 @@ export class SpotMarketLaunchProposal extends Message<SpotMarketLaunchProposal> 
     { no: 7, name: "min_quantity_tick_size", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "maker_fee_rate", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 9, name: "taker_fee_rate", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: "min_notional", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 11, name: "admin_info", kind: "message", T: AdminInfo },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SpotMarketLaunchProposal {
@@ -501,6 +536,19 @@ export class PerpetualMarketLaunchProposal extends Message<PerpetualMarketLaunch
    */
   minQuantityTickSize = "";
 
+  /**
+   * min_notional defines the minimum notional (in quote asset) required for
+   * orders in the market
+   *
+   * @generated from field: string min_notional = 15;
+   */
+  minNotional = "";
+
+  /**
+   * @generated from field: injective.exchange.v1beta1.AdminInfo admin_info = 16;
+   */
+  adminInfo?: AdminInfo;
+
   constructor(data?: PartialMessage<PerpetualMarketLaunchProposal>) {
     super();
     proto3.util.initPartial(data, this);
@@ -523,6 +571,8 @@ export class PerpetualMarketLaunchProposal extends Message<PerpetualMarketLaunch
     { no: 12, name: "taker_fee_rate", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "min_price_tick_size", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 14, name: "min_quantity_tick_size", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 15, name: "min_notional", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "admin_info", kind: "message", T: AdminInfo },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PerpetualMarketLaunchProposal {
@@ -649,6 +699,19 @@ export class BinaryOptionsMarketLaunchProposal extends Message<BinaryOptionsMark
    */
   minQuantityTickSize = "";
 
+  /**
+   * min_notional defines the minimum notional (in quote asset) required for
+   * orders in the market
+   *
+   * @generated from field: string min_notional = 16;
+   */
+  minNotional = "";
+
+  /**
+   * @generated from field: uint32 admin_permissions = 17;
+   */
+  adminPermissions = 0;
+
   constructor(data?: PartialMessage<BinaryOptionsMarketLaunchProposal>) {
     super();
     proto3.util.initPartial(data, this);
@@ -672,6 +735,8 @@ export class BinaryOptionsMarketLaunchProposal extends Message<BinaryOptionsMark
     { no: 13, name: "taker_fee_rate", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 14, name: "min_price_tick_size", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 15, name: "min_quantity_tick_size", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "min_notional", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "admin_permissions", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BinaryOptionsMarketLaunchProposal {
@@ -805,6 +870,19 @@ export class ExpiryFuturesMarketLaunchProposal extends Message<ExpiryFuturesMark
    */
   minQuantityTickSize = "";
 
+  /**
+   * min_notional defines the minimum notional (in quote asset) required for
+   * orders in the market
+   *
+   * @generated from field: string min_notional = 16;
+   */
+  minNotional = "";
+
+  /**
+   * @generated from field: injective.exchange.v1beta1.AdminInfo admin_info = 17;
+   */
+  adminInfo?: AdminInfo;
+
   constructor(data?: PartialMessage<ExpiryFuturesMarketLaunchProposal>) {
     super();
     proto3.util.initPartial(data, this);
@@ -828,6 +906,8 @@ export class ExpiryFuturesMarketLaunchProposal extends Message<ExpiryFuturesMark
     { no: 13, name: "taker_fee_rate", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 14, name: "min_price_tick_size", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 15, name: "min_quantity_tick_size", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "min_notional", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "admin_info", kind: "message", T: AdminInfo },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ExpiryFuturesMarketLaunchProposal {
@@ -947,6 +1027,24 @@ export class DerivativeMarketParamUpdateProposal extends Message<DerivativeMarke
    */
   oracleParams?: OracleParams;
 
+  /**
+   * @generated from field: string ticker = 15;
+   */
+  ticker = "";
+
+  /**
+   * min_notional defines the minimum notional (in quote asset) required for
+   * orders in the market
+   *
+   * @generated from field: string min_notional = 16;
+   */
+  minNotional = "";
+
+  /**
+   * @generated from field: injective.exchange.v1beta1.AdminInfo admin_info = 17;
+   */
+  adminInfo?: AdminInfo;
+
   constructor(data?: PartialMessage<DerivativeMarketParamUpdateProposal>) {
     super();
     proto3.util.initPartial(data, this);
@@ -969,6 +1067,9 @@ export class DerivativeMarketParamUpdateProposal extends Message<DerivativeMarke
     { no: 12, name: "HourlyFundingRateCap", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "status", kind: "enum", T: proto3.getEnumType(MarketStatus) },
     { no: 14, name: "oracle_params", kind: "message", T: OracleParams },
+    { no: 15, name: "ticker", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "min_notional", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 17, name: "admin_info", kind: "message", T: AdminInfo },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DerivativeMarketParamUpdateProposal {
@@ -985,6 +1086,49 @@ export class DerivativeMarketParamUpdateProposal extends Message<DerivativeMarke
 
   static equals(a: DerivativeMarketParamUpdateProposal | PlainMessage<DerivativeMarketParamUpdateProposal> | undefined, b: DerivativeMarketParamUpdateProposal | PlainMessage<DerivativeMarketParamUpdateProposal> | undefined): boolean {
     return proto3.util.equals(DerivativeMarketParamUpdateProposal, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.AdminInfo
+ */
+export class AdminInfo extends Message<AdminInfo> {
+  /**
+   * @generated from field: string admin = 1;
+   */
+  admin = "";
+
+  /**
+   * @generated from field: uint32 admin_permissions = 2;
+   */
+  adminPermissions = 0;
+
+  constructor(data?: PartialMessage<AdminInfo>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.AdminInfo";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "admin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "admin_permissions", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AdminInfo {
+    return new AdminInfo().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AdminInfo {
+    return new AdminInfo().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AdminInfo {
+    return new AdminInfo().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AdminInfo | PlainMessage<AdminInfo> | undefined, b: AdminInfo | PlainMessage<AdminInfo> | undefined): boolean {
+    return proto3.util.equals(AdminInfo, a, b);
   }
 }
 
@@ -1189,6 +1333,19 @@ export class BinaryOptionsMarketParamUpdateProposal extends Message<BinaryOption
    */
   oracleParams?: ProviderOracleParams;
 
+  /**
+   * @generated from field: string ticker = 15;
+   */
+  ticker = "";
+
+  /**
+   * min_notional defines the minimum notional (in quote asset) required for
+   * orders in the market
+   *
+   * @generated from field: string min_notional = 16;
+   */
+  minNotional = "";
+
   constructor(data?: PartialMessage<BinaryOptionsMarketParamUpdateProposal>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1211,6 +1368,8 @@ export class BinaryOptionsMarketParamUpdateProposal extends Message<BinaryOption
     { no: 12, name: "admin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 13, name: "status", kind: "enum", T: proto3.getEnumType(MarketStatus) },
     { no: 14, name: "oracle_params", kind: "message", T: ProviderOracleParams },
+    { no: 15, name: "ticker", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 16, name: "min_notional", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): BinaryOptionsMarketParamUpdateProposal {

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MsgRelayBandRates, MsgRelayBandRatesResponse, MsgRelayCoinbaseMessages, MsgRelayCoinbaseMessagesResponse, MsgRelayPriceFeedPrice, MsgRelayPriceFeedPriceResponse, MsgRelayProviderPrices, MsgRelayProviderPricesResponse, MsgRelayPythPrices, MsgRelayPythPricesResponse, MsgRequestBandIBCRates, MsgRequestBandIBCRatesResponse, MsgUpdateParams, MsgUpdateParamsResponse } from "./tx_pb.js";
+import { MsgRelayBandRates, MsgRelayBandRatesResponse, MsgRelayCoinbaseMessages, MsgRelayCoinbaseMessagesResponse, MsgRelayPriceFeedPrice, MsgRelayPriceFeedPriceResponse, MsgRelayProviderPrices, MsgRelayProviderPricesResponse, MsgRelayPythPrices, MsgRelayPythPricesResponse, MsgRelayStorkPrices, MsgRelayStorkPricesResponse, MsgRequestBandIBCRates, MsgRequestBandIBCRatesResponse, MsgUpdateParams, MsgUpdateParamsResponse } from "./tx_pb.js";
 
 const TYPE_NAME = "injective.oracle.v1beta1.Msg";
 
@@ -68,6 +68,19 @@ export const MsgRelayCoinbaseMessagesService = {
   method: "RelayCoinbaseMessages",
   Request: MsgRelayCoinbaseMessages,
   Response: MsgRelayCoinbaseMessagesResponse,
+} as const;
+
+/**
+ * RelayStorkMessage defines a method for relaying price message from
+ * Stork API
+ *
+ * @generated from rpc injective.oracle.v1beta1.Msg.RelayStorkMessage
+ */
+export const MsgRelayStorkMessageService = {
+  typeName: TYPE_NAME,
+  method: "RelayStorkMessage",
+  Request: MsgRelayStorkPrices,
+  Response: MsgRelayStorkPricesResponse,
 } as const;
 
 /**

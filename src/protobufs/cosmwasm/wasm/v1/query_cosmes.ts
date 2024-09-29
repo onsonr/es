@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { QueryAllContractStateRequest, QueryAllContractStateResponse, QueryBuildAddressRequest, QueryBuildAddressResponse, QueryCodeRequest, QueryCodeResponse, QueryCodesRequest, QueryCodesResponse, QueryContractHistoryRequest, QueryContractHistoryResponse, QueryContractInfoRequest, QueryContractInfoResponse, QueryContractsByCodeRequest, QueryContractsByCodeResponse, QueryContractsByCreatorRequest, QueryContractsByCreatorResponse, QueryParamsRequest, QueryParamsResponse, QueryPinnedCodesRequest, QueryPinnedCodesResponse, QueryRawContractStateRequest, QueryRawContractStateResponse, QuerySmartContractStateRequest, QuerySmartContractStateResponse } from "./query_pb.js";
+import { QueryAllContractStateRequest, QueryAllContractStateResponse, QueryBuildAddressRequest, QueryBuildAddressResponse, QueryCodeInfoRequest, QueryCodeInfoResponse, QueryCodeRequest, QueryCodeResponse, QueryCodesRequest, QueryCodesResponse, QueryContractHistoryRequest, QueryContractHistoryResponse, QueryContractInfoRequest, QueryContractInfoResponse, QueryContractsByCodeRequest, QueryContractsByCodeResponse, QueryContractsByCreatorRequest, QueryContractsByCreatorResponse, QueryParamsRequest, QueryParamsResponse, QueryPinnedCodesRequest, QueryPinnedCodesResponse, QueryRawContractStateRequest, QueryRawContractStateResponse, QuerySmartContractStateRequest, QuerySmartContractStateResponse } from "./query_pb.js";
 
 const TYPE_NAME = "cosmwasm.wasm.v1.Query";
 
@@ -80,7 +80,7 @@ export const QuerySmartContractStateService = {
 } as const;
 
 /**
- * Code gets the binary code and metadata for a singe wasm code
+ * Code gets the binary code and metadata for a single wasm code
  *
  * @generated from rpc cosmwasm.wasm.v1.Query.Code
  */
@@ -101,6 +101,18 @@ export const QueryCodesService = {
   method: "Codes",
   Request: QueryCodesRequest,
   Response: QueryCodesResponse,
+} as const;
+
+/**
+ * CodeInfo gets the metadata for a single wasm code
+ *
+ * @generated from rpc cosmwasm.wasm.v1.Query.CodeInfo
+ */
+export const QueryCodeInfoService = {
+  typeName: TYPE_NAME,
+  method: "CodeInfo",
+  Request: QueryCodeInfoRequest,
+  Response: QueryCodeInfoResponse,
 } as const;
 
 /**

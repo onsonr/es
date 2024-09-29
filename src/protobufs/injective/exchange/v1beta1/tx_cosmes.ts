@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MsgAdminUpdateBinaryOptionsMarket, MsgAdminUpdateBinaryOptionsMarketResponse, MsgBatchCancelBinaryOptionsOrders, MsgBatchCancelBinaryOptionsOrdersResponse, MsgBatchCancelDerivativeOrders, MsgBatchCancelDerivativeOrdersResponse, MsgBatchCancelSpotOrders, MsgBatchCancelSpotOrdersResponse, MsgBatchCreateDerivativeLimitOrders, MsgBatchCreateDerivativeLimitOrdersResponse, MsgBatchCreateSpotLimitOrders, MsgBatchCreateSpotLimitOrdersResponse, MsgBatchUpdateOrders, MsgBatchUpdateOrdersResponse, MsgCancelBinaryOptionsOrder, MsgCancelBinaryOptionsOrderResponse, MsgCancelDerivativeOrder, MsgCancelDerivativeOrderResponse, MsgCancelSpotOrder, MsgCancelSpotOrderResponse, MsgCreateBinaryOptionsLimitOrder, MsgCreateBinaryOptionsLimitOrderResponse, MsgCreateBinaryOptionsMarketOrder, MsgCreateBinaryOptionsMarketOrderResponse, MsgCreateDerivativeLimitOrder, MsgCreateDerivativeLimitOrderResponse, MsgCreateDerivativeMarketOrder, MsgCreateDerivativeMarketOrderResponse, MsgCreateSpotLimitOrder, MsgCreateSpotLimitOrderResponse, MsgCreateSpotMarketOrder, MsgCreateSpotMarketOrderResponse, MsgDeposit, MsgDepositResponse, MsgEmergencySettleMarket, MsgEmergencySettleMarketResponse, MsgExternalTransfer, MsgExternalTransferResponse, MsgIncreasePositionMargin, MsgIncreasePositionMarginResponse, MsgInstantBinaryOptionsMarketLaunch, MsgInstantBinaryOptionsMarketLaunchResponse, MsgInstantExpiryFuturesMarketLaunch, MsgInstantExpiryFuturesMarketLaunchResponse, MsgInstantPerpetualMarketLaunch, MsgInstantPerpetualMarketLaunchResponse, MsgInstantSpotMarketLaunch, MsgInstantSpotMarketLaunchResponse, MsgLiquidatePosition, MsgLiquidatePositionResponse, MsgPrivilegedExecuteContract, MsgPrivilegedExecuteContractResponse, MsgReclaimLockedFunds, MsgReclaimLockedFundsResponse, MsgRewardsOptOut, MsgRewardsOptOutResponse, MsgSubaccountTransfer, MsgSubaccountTransferResponse, MsgUpdateParams, MsgUpdateParamsResponse, MsgWithdraw, MsgWithdrawResponse } from "./tx_pb.js";
+import { MsgActivateStakeGrant, MsgActivateStakeGrantResponse, MsgAdminUpdateBinaryOptionsMarket, MsgAdminUpdateBinaryOptionsMarketResponse, MsgAuthorizeStakeGrants, MsgAuthorizeStakeGrantsResponse, MsgBatchCancelBinaryOptionsOrders, MsgBatchCancelBinaryOptionsOrdersResponse, MsgBatchCancelDerivativeOrders, MsgBatchCancelDerivativeOrdersResponse, MsgBatchCancelSpotOrders, MsgBatchCancelSpotOrdersResponse, MsgBatchCreateDerivativeLimitOrders, MsgBatchCreateDerivativeLimitOrdersResponse, MsgBatchCreateSpotLimitOrders, MsgBatchCreateSpotLimitOrdersResponse, MsgBatchUpdateOrders, MsgBatchUpdateOrdersResponse, MsgCancelBinaryOptionsOrder, MsgCancelBinaryOptionsOrderResponse, MsgCancelDerivativeOrder, MsgCancelDerivativeOrderResponse, MsgCancelSpotOrder, MsgCancelSpotOrderResponse, MsgCreateBinaryOptionsLimitOrder, MsgCreateBinaryOptionsLimitOrderResponse, MsgCreateBinaryOptionsMarketOrder, MsgCreateBinaryOptionsMarketOrderResponse, MsgCreateDerivativeLimitOrder, MsgCreateDerivativeLimitOrderResponse, MsgCreateDerivativeMarketOrder, MsgCreateDerivativeMarketOrderResponse, MsgCreateSpotLimitOrder, MsgCreateSpotLimitOrderResponse, MsgCreateSpotMarketOrder, MsgCreateSpotMarketOrderResponse, MsgDecreasePositionMargin, MsgDecreasePositionMarginResponse, MsgDeposit, MsgDepositResponse, MsgEmergencySettleMarket, MsgEmergencySettleMarketResponse, MsgExternalTransfer, MsgExternalTransferResponse, MsgIncreasePositionMargin, MsgIncreasePositionMarginResponse, MsgInstantBinaryOptionsMarketLaunch, MsgInstantBinaryOptionsMarketLaunchResponse, MsgInstantExpiryFuturesMarketLaunch, MsgInstantExpiryFuturesMarketLaunchResponse, MsgInstantPerpetualMarketLaunch, MsgInstantPerpetualMarketLaunchResponse, MsgInstantSpotMarketLaunch, MsgInstantSpotMarketLaunchResponse, MsgLiquidatePosition, MsgLiquidatePositionResponse, MsgPrivilegedExecuteContract, MsgPrivilegedExecuteContractResponse, MsgRewardsOptOut, MsgRewardsOptOutResponse, MsgSubaccountTransfer, MsgSubaccountTransferResponse, MsgUpdateDerivativeMarket, MsgUpdateDerivativeMarketResponse, MsgUpdateParams, MsgUpdateParamsResponse, MsgUpdateSpotMarket, MsgUpdateSpotMarketResponse, MsgWithdraw, MsgWithdrawResponse } from "./tx_pb.js";
 
 const TYPE_NAME = "injective.exchange.v1beta1.Msg";
 
@@ -351,6 +351,18 @@ export const MsgIncreasePositionMarginService = {
 } as const;
 
 /**
+ * DecreasePositionMargin defines a method for decreasing margin of a position
+ *
+ * @generated from rpc injective.exchange.v1beta1.Msg.DecreasePositionMargin
+ */
+export const MsgDecreasePositionMarginService = {
+  typeName: TYPE_NAME,
+  method: "DecreasePositionMargin",
+  Request: MsgDecreasePositionMargin,
+  Response: MsgDecreasePositionMarginResponse,
+} as const;
+
+/**
  * RewardsOptOut defines a method for opting out of rewards
  *
  * @generated from rpc injective.exchange.v1beta1.Msg.RewardsOptOut
@@ -376,16 +388,6 @@ export const MsgAdminUpdateBinaryOptionsMarketService = {
 } as const;
 
 /**
- * @generated from rpc injective.exchange.v1beta1.Msg.ReclaimLockedFunds
- */
-export const MsgReclaimLockedFundsService = {
-  typeName: TYPE_NAME,
-  method: "ReclaimLockedFunds",
-  Request: MsgReclaimLockedFunds,
-  Response: MsgReclaimLockedFundsResponse,
-} as const;
-
-/**
  * @generated from rpc injective.exchange.v1beta1.Msg.UpdateParams
  */
 export const MsgUpdateParamsService = {
@@ -393,5 +395,50 @@ export const MsgUpdateParamsService = {
   method: "UpdateParams",
   Request: MsgUpdateParams,
   Response: MsgUpdateParamsResponse,
+} as const;
+
+/**
+ * UpdateSpotMarket modifies certain spot market fields (admin only)
+ *
+ * @generated from rpc injective.exchange.v1beta1.Msg.UpdateSpotMarket
+ */
+export const MsgUpdateSpotMarketService = {
+  typeName: TYPE_NAME,
+  method: "UpdateSpotMarket",
+  Request: MsgUpdateSpotMarket,
+  Response: MsgUpdateSpotMarketResponse,
+} as const;
+
+/**
+ * UpdateDerivativeMarket modifies certain derivative market fields (admin
+ * only)
+ *
+ * @generated from rpc injective.exchange.v1beta1.Msg.UpdateDerivativeMarket
+ */
+export const MsgUpdateDerivativeMarketService = {
+  typeName: TYPE_NAME,
+  method: "UpdateDerivativeMarket",
+  Request: MsgUpdateDerivativeMarket,
+  Response: MsgUpdateDerivativeMarketResponse,
+} as const;
+
+/**
+ * @generated from rpc injective.exchange.v1beta1.Msg.AuthorizeStakeGrants
+ */
+export const MsgAuthorizeStakeGrantsService = {
+  typeName: TYPE_NAME,
+  method: "AuthorizeStakeGrants",
+  Request: MsgAuthorizeStakeGrants,
+  Response: MsgAuthorizeStakeGrantsResponse,
+} as const;
+
+/**
+ * @generated from rpc injective.exchange.v1beta1.Msg.ActivateStakeGrant
+ */
+export const MsgActivateStakeGrantService = {
+  typeName: TYPE_NAME,
+  method: "ActivateStakeGrant",
+  Request: MsgActivateStakeGrant,
+  Response: MsgActivateStakeGrantResponse,
 } as const;
 

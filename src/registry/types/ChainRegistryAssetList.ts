@@ -15,14 +15,33 @@ export interface ChainRegistryAssetList {
 }
 export interface Asset {
   /**
+   * [OPTIONAL] Whether the asset has been deprecated for use. For readability, it is best to omit this property unless TRUE.
+   */
+  deprecated?: boolean;
+  /**
    * [OPTIONAL] A short description of the asset
    */
   description?: string;
+  /**
+   * [OPTIONAL] A long description of the asset
+   */
+  extended_description?: string;
   denom_units: DenomUnit[];
   /**
    * [OPTIONAL] The potential options for type of asset. By default, assumes sdk.coin
    */
-  type_asset?: "sdk.coin" | "cw20" | "erc20" | "ics20" | "snip20" | "snip25";
+  type_asset?:
+    | "sdk.coin"
+    | "cw20"
+    | "erc20"
+    | "ics20"
+    | "snip20"
+    | "snip25"
+    | "bitcoin-like"
+    | "evm-base"
+    | "svm-base"
+    | "substrate"
+    | "unknown";
   /**
    * [OPTIONAL] The address of the asset. Only required for type_asset : cw20, snip20
    */
@@ -46,7 +65,7 @@ export interface Asset {
   /**
    * The origin of the asset, starting with the index, and capturing all transitions in form and location.
    */
-  traces?: (IbcTransition | IbcCw20Transition | NonIbcTransition)[];
+  traces?: (IbcTransition | IbcCw20Transition | IbcBridgeTransition | NonIbcTransition)[];
   /**
    * [OPTIONAL] IBC Channel between src and dst between chain
    */
@@ -69,6 +88,10 @@ export interface Asset {
       svg?: string;
       theme?: {
         primary_color_hex?: string;
+        background_color_hex?: string;
+        circle?: boolean;
+        dark_mode?: boolean;
+        monochrome?: boolean;
       };
     },
     ...{
@@ -77,6 +100,10 @@ export interface Asset {
       svg?: string;
       theme?: {
         primary_color_hex?: string;
+        background_color_hex?: string;
+        circle?: boolean;
+        dark_mode?: boolean;
+        monochrome?: boolean;
       };
     }[]
   ];
@@ -85,6 +112,11 @@ export interface Asset {
    */
   coingecko_id?: string;
   keywords?: string[];
+  socials?: {
+    website?: string;
+    twitter?: string;
+    [k: string]: unknown | undefined;
+  };
 }
 export interface DenomUnit {
   denom: string;
@@ -153,8 +185,47 @@ export interface IbcCw20Transition {
     path: string;
   };
 }
+export interface IbcBridgeTransition {
+  type: "ibc-bridge";
+  counterparty: {
+    /**
+     * The name of the counterparty chain. (must match exactly the chain name used in the Chain Registry)
+     */
+    chain_name: string;
+    /**
+     * The base unit of the asset on its source platform. E.g., when describing ATOM from Cosmos Hub, specify 'uatom', NOT 'atom' nor 'ATOM'; base units are unique per platform.
+     */
+    base_denom: string;
+    /**
+     * The port used to transfer IBC assets; often 'transfer', but sometimes varies, e.g., for outgoing cw20 transfers.
+     */
+    port?: string;
+    /**
+     * The counterparty IBC transfer channel(, e.g., 'channel-1').
+     */
+    channel_id: string;
+  };
+  chain: {
+    /**
+     * The port used to transfer IBC assets; often 'transfer', but sometimes varies, e.g., for outgoing cw20 transfers.
+     */
+    port?: string;
+    /**
+     * The chain's IBC transfer channel(, e.g., 'channel-1').
+     */
+    channel_id: string;
+    /**
+     * The port/channel/denom input string that generates the 'ibc/...' denom.
+     */
+    path: string;
+  };
+  /**
+   * The entity offering the service. E.g., 'Gravity Bridge' [Network] or 'Tether' [Company].
+   */
+  provider: string;
+}
 export interface NonIbcTransition {
-  type: "bridge" | "liquid-stake" | "synthetic" | "wrapped" | "additional-mintage" | "test-mintage";
+  type: "bridge" | "liquid-stake" | "synthetic" | "wrapped" | "additional-mintage" | "test-mintage" | "legacy-mintage";
   counterparty: {
     /**
      * The chain or platform from which the asset originates. E.g., 'cosmoshub', 'ethereum', 'forex', or 'nasdaq'

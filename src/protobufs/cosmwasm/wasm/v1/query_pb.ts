@@ -204,7 +204,7 @@ export class QueryContractHistoryResponse extends Message<QueryContractHistoryRe
  */
 export class QueryContractsByCodeRequest extends Message<QueryContractsByCodeRequest> {
   /**
-   * grpc-gateway_out does not support Go style CodID
+   * grpc-gateway_out does not support Go style CodeID
    *
    * @generated from field: uint64 code_id = 1;
    */
@@ -583,7 +583,7 @@ export class QuerySmartContractStateResponse extends Message<QuerySmartContractS
  */
 export class QueryCodeRequest extends Message<QueryCodeRequest> {
   /**
-   * grpc-gateway_out does not support Go style CodID
+   * grpc-gateway_out does not support Go style CodeID
    *
    * @generated from field: uint64 code_id = 1;
    */
@@ -614,6 +614,104 @@ export class QueryCodeRequest extends Message<QueryCodeRequest> {
 
   static equals(a: QueryCodeRequest | PlainMessage<QueryCodeRequest> | undefined, b: QueryCodeRequest | PlainMessage<QueryCodeRequest> | undefined): boolean {
     return proto3.util.equals(QueryCodeRequest, a, b);
+  }
+}
+
+/**
+ * QueryCodeInfoRequest is the request type for the Query/CodeInfo RPC method
+ *
+ * @generated from message cosmwasm.wasm.v1.QueryCodeInfoRequest
+ */
+export class QueryCodeInfoRequest extends Message<QueryCodeInfoRequest> {
+  /**
+   * grpc-gateway_out does not support Go style CodeID
+   *
+   * @generated from field: uint64 code_id = 1;
+   */
+  codeId = protoInt64.zero;
+
+  constructor(data?: PartialMessage<QueryCodeInfoRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "cosmwasm.wasm.v1.QueryCodeInfoRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "code_id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryCodeInfoRequest {
+    return new QueryCodeInfoRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryCodeInfoRequest {
+    return new QueryCodeInfoRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryCodeInfoRequest {
+    return new QueryCodeInfoRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryCodeInfoRequest | PlainMessage<QueryCodeInfoRequest> | undefined, b: QueryCodeInfoRequest | PlainMessage<QueryCodeInfoRequest> | undefined): boolean {
+    return proto3.util.equals(QueryCodeInfoRequest, a, b);
+  }
+}
+
+/**
+ * QueryCodeInfoResponse is the response type for the Query/CodeInfo RPC method
+ *
+ * @generated from message cosmwasm.wasm.v1.QueryCodeInfoResponse
+ */
+export class QueryCodeInfoResponse extends Message<QueryCodeInfoResponse> {
+  /**
+   * @generated from field: uint64 code_id = 1;
+   */
+  codeId = protoInt64.zero;
+
+  /**
+   * @generated from field: string creator = 2;
+   */
+  creator = "";
+
+  /**
+   * @generated from field: bytes checksum = 3;
+   */
+  checksum = new Uint8Array(0);
+
+  /**
+   * @generated from field: cosmwasm.wasm.v1.AccessConfig instantiate_permission = 4;
+   */
+  instantiatePermission?: AccessConfig;
+
+  constructor(data?: PartialMessage<QueryCodeInfoResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "cosmwasm.wasm.v1.QueryCodeInfoResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "code_id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 2, name: "creator", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "checksum", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 4, name: "instantiate_permission", kind: "message", T: AccessConfig },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryCodeInfoResponse {
+    return new QueryCodeInfoResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryCodeInfoResponse {
+    return new QueryCodeInfoResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryCodeInfoResponse {
+    return new QueryCodeInfoResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryCodeInfoResponse | PlainMessage<QueryCodeInfoResponse> | undefined, b: QueryCodeInfoResponse | PlainMessage<QueryCodeInfoResponse> | undefined): boolean {
+    return proto3.util.equals(QueryCodeInfoResponse, a, b);
   }
 }
 

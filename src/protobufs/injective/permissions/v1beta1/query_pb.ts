@@ -6,7 +6,8 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import { Params } from "./params_pb.js";
-import { Namespace, Voucher } from "./permissions_pb.js";
+import { Namespace } from "./permissions_pb.js";
+import { Coin } from "../../../cosmos/base/v1beta1/coin_pb.js";
 
 /**
  * QueryParamsRequest is the request type for the Query/Params RPC method.
@@ -450,9 +451,9 @@ export class QueryVouchersForAddressRequest extends Message<QueryVouchersForAddr
  */
 export class QueryVouchersForAddressResponse extends Message<QueryVouchersForAddressResponse> {
   /**
-   * @generated from field: map<string, injective.permissions.v1beta1.Voucher> vouchers = 1;
+   * @generated from field: repeated cosmos.base.v1beta1.Coin vouchers = 1;
    */
-  vouchers: { [key: string]: Voucher } = {};
+  vouchers: Coin[] = [];
 
   constructor(data?: PartialMessage<QueryVouchersForAddressResponse>) {
     super();
@@ -462,7 +463,7 @@ export class QueryVouchersForAddressResponse extends Message<QueryVouchersForAdd
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "injective.permissions.v1beta1.QueryVouchersForAddressResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "vouchers", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: Voucher} },
+    { no: 1, name: "vouchers", kind: "message", T: Coin, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryVouchersForAddressResponse {

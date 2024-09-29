@@ -89,47 +89,6 @@ export class MerklePrefix extends Message<MerklePrefix> {
 }
 
 /**
- * MerklePath is the path used to verify commitment proofs, which can be an
- * arbitrary structured object (defined by a commitment type).
- * MerklePath is represented from root-to-leaf
- *
- * @generated from message ibc.core.commitment.v1.MerklePath
- */
-export class MerklePath extends Message<MerklePath> {
-  /**
-   * @generated from field: repeated string key_path = 1;
-   */
-  keyPath: string[] = [];
-
-  constructor(data?: PartialMessage<MerklePath>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "ibc.core.commitment.v1.MerklePath";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "key_path", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MerklePath {
-    return new MerklePath().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MerklePath {
-    return new MerklePath().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MerklePath {
-    return new MerklePath().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: MerklePath | PlainMessage<MerklePath> | undefined, b: MerklePath | PlainMessage<MerklePath> | undefined): boolean {
-    return proto3.util.equals(MerklePath, a, b);
-  }
-}
-
-/**
  * MerkleProof is a wrapper type over a chain of CommitmentProofs.
  * It demonstrates membership or non-membership for an element or set of
  * elements, verifiable in conjunction with a known commitment root. Proofs

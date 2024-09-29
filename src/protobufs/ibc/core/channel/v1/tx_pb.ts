@@ -1742,7 +1742,7 @@ export class MsgChannelUpgradeTimeout extends Message<MsgChannelUpgradeTimeout> 
 }
 
 /**
- * MsgChannelUpgradeTimeoutRepsonse defines the MsgChannelUpgradeTimeout response type
+ * MsgChannelUpgradeTimeoutResponse defines the MsgChannelUpgradeTimeout response type
  *
  * @generated from message ibc.core.channel.v1.MsgChannelUpgradeTimeoutResponse
  */

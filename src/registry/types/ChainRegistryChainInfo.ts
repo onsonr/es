@@ -6,12 +6,53 @@
  */
 
 /**
- * Cosmos Chain.json is a metadata file that contains information about a cosmos sdk based chain.
+ * Chain.json is a metadata file that contains information about a blockchain.
  */
-export interface ChainRegistryChainInfo {
+export type ChainRegistryChainInfo = ChainRegistryChainInfo1 & ChainRegistryChainInfo2;
+export type ChainRegistryChainInfo1 = {
+  [k: string]: unknown | undefined;
+};
+/**
+ * Simple version string (e.g., 'v1.0.0').
+ */
+export type Version = string;
+/**
+ * URL of the code repository.
+ */
+export type Repo = string;
+/**
+ * Detailed version identifier (e.g., 'v1.0.0-a1s2f43g').
+ */
+export type Tag = string;
+
+export interface ChainRegistryChainInfo2 {
   $schema?: string;
   chain_name: string;
-  chain_id: string;
+  /**
+   * The 'type' of chain as the corresponding CAIP-2 Namespace value. E.G., 'cosmos' or 'eip155'. Namespaces cna be found here: https://github.com/ChainAgnostic/namespaces/tree/main.
+   */
+  chain_type:
+    | "cosmos"
+    | "eip155"
+    | "bip122"
+    | "polkadot"
+    | "solana"
+    | "algorand"
+    | "arweave"
+    | "ergo"
+    | "fil"
+    | "hedera"
+    | "monero"
+    | "reef"
+    | "stacks"
+    | "starknet"
+    | "stellar"
+    | "tezos"
+    | "vechain"
+    | "waves"
+    | "xrpl"
+    | "unknown";
+  chain_id?: string;
   pre_fork_chain_name?: string;
   pretty_name?: string;
   website?: string;
@@ -21,7 +62,7 @@ export interface ChainRegistryChainInfo {
   /**
    * The default prefix for the human-readable part of addresses that identifies the coin type. Must be registered with SLIP-0173. E.g., 'cosmos'
    */
-  bech32_prefix: string;
+  bech32_prefix?: string;
   /**
    * Used to override the bech32_prefix for specific uses.
    */
@@ -53,7 +94,7 @@ export interface ChainRegistryChainInfo {
   };
   daemon_name?: string;
   node_home?: string;
-  key_algos?: ("secp256k1" | "ethsecp256k1" | "ed25519" | "sr25519")[];
+  key_algos?: ("secp256k1" | "ethsecp256k1" | "ed25519" | "sr25519" | "bn254")[];
   slip44?: number;
   alternative_slip44s?: number[];
   fees?: {
@@ -76,30 +117,24 @@ export interface ChainRegistryChainInfo {
     git_repo?: string;
     recommended_version?: string;
     compatible_versions?: string[];
-    binaries?: {
-      "linux/amd64"?: string;
-      "linux/arm64"?: string;
-      "darwin/amd64"?: string;
-      "darwin/arm64"?: string;
-      "windows/amd64"?: string;
-      "windows/arm64"?: string;
-    };
+    language?: Language;
+    binaries?: Binaries;
     cosmos_sdk_version?: string;
-    consensus?: {
-      type: "tendermint" | "cometbft";
-      version?: string;
-    };
+    sdk?: Sdk;
+    consensus?: Consensus;
     cosmwasm_version?: string;
     cosmwasm_enabled?: boolean;
     /**
      * Relative path to the cosmwasm directory. ex. $HOME/.juno/data/wasm
      */
     cosmwasm_path?: string;
+    cosmwasm?: Cosmwasm;
     ibc_go_version?: string;
     /**
      * List of IBC apps (usually corresponding to a ICS standard) which have been enabled on the network.
      */
     ics_enabled?: ("ics20-1" | "ics27-1" | "mauth")[];
+    ibc?: Ibc;
     genesis?: {
       name?: string;
       genesis_url: string;
@@ -123,49 +158,48 @@ export interface ChainRegistryChainInfo {
        */
       proposal?: number;
       /**
+       * [Optional] Name of the previous version
+       */
+      previous_version_name?: string;
+      /**
        * [Optional] Name of the following version
        */
       next_version_name?: string;
       recommended_version?: string;
       compatible_versions?: string[];
+      language?: Language;
       cosmos_sdk_version?: string;
-      consensus?: {
-        type: "tendermint" | "cometbft";
-        version?: string;
-      };
+      sdk?: Sdk;
+      consensus?: Consensus;
       cosmwasm_version?: string;
       cosmwasm_enabled?: boolean;
       /**
        * Relative path to the cosmwasm directory. ex. $HOME/.juno/data/wasm
        */
       cosmwasm_path?: string;
+      cosmwasm?: Cosmwasm;
       ibc_go_version?: string;
       /**
        * List of IBC apps (usually corresponding to a ICS standard) which have been enabled on the network.
        */
       ics_enabled?: ("ics20-1" | "ics27-1" | "mauth")[];
-      binaries?: {
-        "linux/amd64"?: string;
-        "linux/arm64"?: string;
-        "darwin/amd64"?: string;
-        "darwin/arm64"?: string;
-        "windows/amd64"?: string;
-        "windows/arm64"?: string;
-      };
+      ibc?: Ibc;
+      binaries?: Binaries;
     }[];
   };
-  images?: {
-    image_sync?: Pointer;
-    png?: string;
-    svg?: string;
-    theme?: {
-      primary_color_hex?: string;
-    };
-  }[];
+  images?: (
+    | {
+        [k: string]: unknown | undefined;
+      }
+    | {
+        [k: string]: unknown | undefined;
+      }
+  )[];
   logo_URIs?: {
     png?: string;
     svg?: string;
   };
+  description?: string;
   peers?: {
     seeds?: Peer[];
     persistent_peers?: Peer[];
@@ -196,18 +230,51 @@ export interface FeeToken {
 export interface StakingToken {
   denom: string;
 }
-/**
- * The (primary) key used to identify an object within the Chain Registry.
- */
-export interface Pointer {
+export interface Language {
+  type: "go" | "rust" | "solidity" | "other";
+  version?: Version;
+  repo?: Repo;
+  tag?: Tag;
+}
+export interface Binaries {
+  "linux/amd64"?: string;
+  "linux/arm64"?: string;
+  "darwin/amd64"?: string;
+  "darwin/arm64"?: string;
+  "windows/amd64"?: string;
+  "windows/arm64"?: string;
+}
+export interface Sdk {
+  type: "cosmos" | "penumbra" | "other";
+  version?: Version;
+  repo?: Repo;
+  tag?: Tag;
+}
+export interface Consensus {
+  type: "tendermint" | "cometbft" | "sei-tendermint";
+  version?: Version;
+  repo?: Repo;
+  tag?: Tag;
+}
+export interface Cosmwasm {
+  version?: Version;
+  repo?: Repo;
+  tag?: Tag;
+  enabled?: boolean;
   /**
-   * The chain name or platform from which the object resides. E.g., 'cosmoshub', 'ethereum', 'forex', or 'nasdaq'
+   * Relative path to the cosmwasm directory. ex. $HOME/.juno/data/wasm
    */
-  chain_name: string;
+  path?: string;
+}
+export interface Ibc {
+  type: "go" | "rust" | "other";
+  version?: Version;
+  repo?: Repo;
+  tag?: Tag;
   /**
-   * The base denom of the asset from which the object originates. E.g., when describing ATOM from Cosmos Hub, specify 'uatom', NOT 'atom' nor 'ATOM'; base units are unique per platform.
+   * List of IBC apps (usually corresponding to a ICS standard) which have been enabled on the network.
    */
-  base_denom?: string;
+  ics_enabled?: ("ics20-1" | "ics27-1" | "mauth")[];
 }
 export interface Peer {
   id: string;
@@ -224,4 +291,7 @@ export interface Explorer {
   url?: string;
   tx_page?: string;
   account_page?: string;
+  validator_page?: string;
+  proposal_page?: string;
+  block_page?: string;
 }

@@ -70,6 +70,11 @@ export enum OracleType {
    * @generated from enum value: Provider = 11;
    */
   Provider = 11,
+
+  /**
+   * @generated from enum value: Stork = 12;
+   */
+  Stork = 12,
 }
 // Retrieve enum metadata with: proto3.getEnumType(OracleType)
 proto3.util.setEnumType(OracleType, "injective.oracle.v1beta1.OracleType", [
@@ -85,6 +90,7 @@ proto3.util.setEnumType(OracleType, "injective.oracle.v1beta1.OracleType", [
   { no: 9, name: "Pyth" },
   { no: 10, name: "BandIBC" },
   { no: 11, name: "Provider" },
+  { no: 12, name: "Stork" },
 ]);
 
 /**
@@ -615,6 +621,69 @@ export class CoinbasePriceState extends Message<CoinbasePriceState> {
 
   static equals(a: CoinbasePriceState | PlainMessage<CoinbasePriceState> | undefined, b: CoinbasePriceState | PlainMessage<CoinbasePriceState> | undefined): boolean {
     return proto3.util.equals(CoinbasePriceState, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.oracle.v1beta1.StorkPriceState
+ */
+export class StorkPriceState extends Message<StorkPriceState> {
+  /**
+   * timestamp of the when the price was signed by stork
+   *
+   * @generated from field: uint64 timestamp = 1;
+   */
+  timestamp = protoInt64.zero;
+
+  /**
+   * the symbol of the price, e.g. BTC
+   *
+   * @generated from field: string symbol = 2;
+   */
+  symbol = "";
+
+  /**
+   * the value of the price scaled by 1e18
+   *
+   * @generated from field: string value = 3;
+   */
+  value = "";
+
+  /**
+   * the price state
+   *
+   * @generated from field: injective.oracle.v1beta1.PriceState price_state = 5;
+   */
+  priceState?: PriceState;
+
+  constructor(data?: PartialMessage<StorkPriceState>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.StorkPriceState";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "timestamp", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 2, name: "symbol", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "price_state", kind: "message", T: PriceState },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): StorkPriceState {
+    return new StorkPriceState().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): StorkPriceState {
+    return new StorkPriceState().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): StorkPriceState {
+    return new StorkPriceState().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: StorkPriceState | PlainMessage<StorkPriceState> | undefined, b: StorkPriceState | PlainMessage<StorkPriceState> | undefined): boolean {
+    return proto3.util.equals(StorkPriceState, a, b);
   }
 }
 
@@ -1289,6 +1358,104 @@ export class PriceAttestation extends Message<PriceAttestation> {
 
   static equals(a: PriceAttestation | PlainMessage<PriceAttestation> | undefined, b: PriceAttestation | PlainMessage<PriceAttestation> | undefined): boolean {
     return proto3.util.equals(PriceAttestation, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.oracle.v1beta1.AssetPair
+ */
+export class AssetPair extends Message<AssetPair> {
+  /**
+   * @generated from field: string asset_id = 1;
+   */
+  assetId = "";
+
+  /**
+   * @generated from field: repeated injective.oracle.v1beta1.SignedPriceOfAssetPair signed_prices = 2;
+   */
+  signedPrices: SignedPriceOfAssetPair[] = [];
+
+  constructor(data?: PartialMessage<AssetPair>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.AssetPair";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "asset_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "signed_prices", kind: "message", T: SignedPriceOfAssetPair, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AssetPair {
+    return new AssetPair().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AssetPair {
+    return new AssetPair().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AssetPair {
+    return new AssetPair().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AssetPair | PlainMessage<AssetPair> | undefined, b: AssetPair | PlainMessage<AssetPair> | undefined): boolean {
+    return proto3.util.equals(AssetPair, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.oracle.v1beta1.SignedPriceOfAssetPair
+ */
+export class SignedPriceOfAssetPair extends Message<SignedPriceOfAssetPair> {
+  /**
+   * @generated from field: string publisher_key = 1;
+   */
+  publisherKey = "";
+
+  /**
+   * @generated from field: uint64 timestamp = 2;
+   */
+  timestamp = protoInt64.zero;
+
+  /**
+   * @generated from field: string price = 3;
+   */
+  price = "";
+
+  /**
+   * @generated from field: bytes signature = 4;
+   */
+  signature = new Uint8Array(0);
+
+  constructor(data?: PartialMessage<SignedPriceOfAssetPair>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.SignedPriceOfAssetPair";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "publisher_key", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "timestamp", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 3, name: "price", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "signature", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): SignedPriceOfAssetPair {
+    return new SignedPriceOfAssetPair().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): SignedPriceOfAssetPair {
+    return new SignedPriceOfAssetPair().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): SignedPriceOfAssetPair {
+    return new SignedPriceOfAssetPair().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: SignedPriceOfAssetPair | PlainMessage<SignedPriceOfAssetPair> | undefined, b: SignedPriceOfAssetPair | PlainMessage<SignedPriceOfAssetPair> | undefined): boolean {
+    return proto3.util.equals(SignedPriceOfAssetPair, a, b);
   }
 }
 

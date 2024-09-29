@@ -490,3 +490,101 @@ export class EnableBandIBCProposal extends Message<EnableBandIBCProposal> {
   }
 }
 
+/**
+ * @generated from message injective.oracle.v1beta1.GrantStorkPublisherPrivilegeProposal
+ */
+export class GrantStorkPublisherPrivilegeProposal extends Message<GrantStorkPublisherPrivilegeProposal> {
+  /**
+   * @generated from field: string title = 1;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string description = 2;
+   */
+  description = "";
+
+  /**
+   * @generated from field: repeated string stork_publishers = 3;
+   */
+  storkPublishers: string[] = [];
+
+  constructor(data?: PartialMessage<GrantStorkPublisherPrivilegeProposal>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.GrantStorkPublisherPrivilegeProposal";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "stork_publishers", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GrantStorkPublisherPrivilegeProposal {
+    return new GrantStorkPublisherPrivilegeProposal().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GrantStorkPublisherPrivilegeProposal {
+    return new GrantStorkPublisherPrivilegeProposal().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GrantStorkPublisherPrivilegeProposal {
+    return new GrantStorkPublisherPrivilegeProposal().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GrantStorkPublisherPrivilegeProposal | PlainMessage<GrantStorkPublisherPrivilegeProposal> | undefined, b: GrantStorkPublisherPrivilegeProposal | PlainMessage<GrantStorkPublisherPrivilegeProposal> | undefined): boolean {
+    return proto3.util.equals(GrantStorkPublisherPrivilegeProposal, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.oracle.v1beta1.RevokeStorkPublisherPrivilegeProposal
+ */
+export class RevokeStorkPublisherPrivilegeProposal extends Message<RevokeStorkPublisherPrivilegeProposal> {
+  /**
+   * @generated from field: string title = 1;
+   */
+  title = "";
+
+  /**
+   * @generated from field: string description = 2;
+   */
+  description = "";
+
+  /**
+   * @generated from field: repeated string stork_publishers = 3;
+   */
+  storkPublishers: string[] = [];
+
+  constructor(data?: PartialMessage<RevokeStorkPublisherPrivilegeProposal>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.RevokeStorkPublisherPrivilegeProposal";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "title", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "stork_publishers", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RevokeStorkPublisherPrivilegeProposal {
+    return new RevokeStorkPublisherPrivilegeProposal().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RevokeStorkPublisherPrivilegeProposal {
+    return new RevokeStorkPublisherPrivilegeProposal().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RevokeStorkPublisherPrivilegeProposal {
+    return new RevokeStorkPublisherPrivilegeProposal().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: RevokeStorkPublisherPrivilegeProposal | PlainMessage<RevokeStorkPublisherPrivilegeProposal> | undefined, b: RevokeStorkPublisherPrivilegeProposal | PlainMessage<RevokeStorkPublisherPrivilegeProposal> | undefined): boolean {
+    return proto3.util.equals(RevokeStorkPublisherPrivilegeProposal, a, b);
+  }
+}
+

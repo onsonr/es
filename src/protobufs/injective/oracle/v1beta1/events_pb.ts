@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { PythPriceState } from "./oracle_pb.js";
+import { PythPriceState, StorkPriceState } from "./oracle_pb.js";
 
 /**
  * @generated from message injective.oracle.v1beta1.SetChainlinkPriceEvent
@@ -467,6 +467,43 @@ export class SetCoinbasePriceEvent extends Message<SetCoinbasePriceEvent> {
 
   static equals(a: SetCoinbasePriceEvent | PlainMessage<SetCoinbasePriceEvent> | undefined, b: SetCoinbasePriceEvent | PlainMessage<SetCoinbasePriceEvent> | undefined): boolean {
     return proto3.util.equals(SetCoinbasePriceEvent, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.oracle.v1beta1.EventSetStorkPrices
+ */
+export class EventSetStorkPrices extends Message<EventSetStorkPrices> {
+  /**
+   * @generated from field: repeated injective.oracle.v1beta1.StorkPriceState prices = 1;
+   */
+  prices: StorkPriceState[] = [];
+
+  constructor(data?: PartialMessage<EventSetStorkPrices>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.EventSetStorkPrices";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "prices", kind: "message", T: StorkPriceState, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EventSetStorkPrices {
+    return new EventSetStorkPrices().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EventSetStorkPrices {
+    return new EventSetStorkPrices().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EventSetStorkPrices {
+    return new EventSetStorkPrices().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EventSetStorkPrices | PlainMessage<EventSetStorkPrices> | undefined, b: EventSetStorkPrices | PlainMessage<EventSetStorkPrices> | undefined): boolean {
+    return proto3.util.equals(EventSetStorkPrices, a, b);
   }
 }
 

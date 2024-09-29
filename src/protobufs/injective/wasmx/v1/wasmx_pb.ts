@@ -5,6 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
+import { AccessConfig } from "../../../cosmwasm/wasm/v1/types_pb.js";
 import { FundingMode } from "./proposal_pb.js";
 
 /**
@@ -43,6 +44,11 @@ export class Params extends Message<Params> {
    */
   minGasPrice = protoInt64.zero;
 
+  /**
+   * @generated from field: cosmwasm.wasm.v1.AccessConfig register_contract_access = 5;
+   */
+  registerContractAccess?: AccessConfig;
+
   constructor(data?: PartialMessage<Params>) {
     super();
     proto3.util.initPartial(data, this);
@@ -55,6 +61,7 @@ export class Params extends Message<Params> {
     { no: 2, name: "max_begin_block_total_gas", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 3, name: "max_contract_gas_limit", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 4, name: "min_gas_price", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 5, name: "register_contract_access", kind: "message", T: AccessConfig },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Params {

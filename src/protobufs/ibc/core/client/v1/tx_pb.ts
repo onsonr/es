@@ -72,6 +72,11 @@ export class MsgCreateClient extends Message<MsgCreateClient> {
  * @generated from message ibc.core.client.v1.MsgCreateClientResponse
  */
 export class MsgCreateClientResponse extends Message<MsgCreateClientResponse> {
+  /**
+   * @generated from field: string client_id = 1;
+   */
+  clientId = "";
+
   constructor(data?: PartialMessage<MsgCreateClientResponse>) {
     super();
     proto3.util.initPartial(data, this);
@@ -80,6 +85,7 @@ export class MsgCreateClientResponse extends Message<MsgCreateClientResponse> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "ibc.core.client.v1.MsgCreateClientResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgCreateClientResponse {

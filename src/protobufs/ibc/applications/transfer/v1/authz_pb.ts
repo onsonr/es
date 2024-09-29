@@ -6,6 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import { Coin } from "../../../../cosmos/base/v1beta1/coin_pb.js";
+import { Hop } from "./transfer_pb.js";
 
 /**
  * Allocation defines the spend limit for a particular port and channel
@@ -42,12 +43,19 @@ export class Allocation extends Message<Allocation> {
   allowList: string[] = [];
 
   /**
-   * allow list of packet data keys, an empty list prohibits all packet data keys;
-   * a list only with "*" permits any packet data key
+   * allow list of memo strings, an empty list prohibits all memo strings;
+   * a list only with "*" permits any memo string
    *
    * @generated from field: repeated string allowed_packet_data = 5;
    */
   allowedPacketData: string[] = [];
+
+  /**
+   * Forwarding options that are allowed.
+   *
+   * @generated from field: repeated ibc.applications.transfer.v1.AllowedForwarding allowed_forwarding = 6;
+   */
+  allowedForwarding: AllowedForwarding[] = [];
 
   constructor(data?: PartialMessage<Allocation>) {
     super();
@@ -62,6 +70,7 @@ export class Allocation extends Message<Allocation> {
     { no: 3, name: "spend_limit", kind: "message", T: Coin, repeated: true },
     { no: 4, name: "allow_list", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
     { no: 5, name: "allowed_packet_data", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "allowed_forwarding", kind: "message", T: AllowedForwarding, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Allocation {
@@ -78,6 +87,48 @@ export class Allocation extends Message<Allocation> {
 
   static equals(a: Allocation | PlainMessage<Allocation> | undefined, b: Allocation | PlainMessage<Allocation> | undefined): boolean {
     return proto3.util.equals(Allocation, a, b);
+  }
+}
+
+/**
+ * AllowedForwarding defines which options are allowed for forwarding.
+ *
+ * @generated from message ibc.applications.transfer.v1.AllowedForwarding
+ */
+export class AllowedForwarding extends Message<AllowedForwarding> {
+  /**
+   * a list of allowed source port ID/channel ID pairs through which the packet is allowed to be forwarded until final
+   * destination
+   *
+   * @generated from field: repeated ibc.applications.transfer.v1.Hop hops = 1;
+   */
+  hops: Hop[] = [];
+
+  constructor(data?: PartialMessage<AllowedForwarding>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "ibc.applications.transfer.v1.AllowedForwarding";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "hops", kind: "message", T: Hop, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): AllowedForwarding {
+    return new AllowedForwarding().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): AllowedForwarding {
+    return new AllowedForwarding().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): AllowedForwarding {
+    return new AllowedForwarding().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: AllowedForwarding | PlainMessage<AllowedForwarding> | undefined, b: AllowedForwarding | PlainMessage<AllowedForwarding> | undefined): boolean {
+    return proto3.util.equals(AllowedForwarding, a, b);
   }
 }
 

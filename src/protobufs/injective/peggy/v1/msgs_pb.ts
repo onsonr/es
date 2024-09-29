@@ -1163,3 +1163,171 @@ export class MsgUpdateParamsResponse extends Message<MsgUpdateParamsResponse> {
   }
 }
 
+/**
+ * MsgBlacklistEthereumAddresses defines the message used to add Ethereum
+ * addresses to peggy blacklist.
+ *
+ * @generated from message injective.peggy.v1.MsgBlacklistEthereumAddresses
+ */
+export class MsgBlacklistEthereumAddresses extends Message<MsgBlacklistEthereumAddresses> {
+  /**
+   * signer address
+   *
+   * @generated from field: string signer = 1;
+   */
+  signer = "";
+
+  /**
+   * Ethereum addresses to include in the blacklist
+   *
+   * @generated from field: repeated string blacklist_addresses = 2;
+   */
+  blacklistAddresses: string[] = [];
+
+  constructor(data?: PartialMessage<MsgBlacklistEthereumAddresses>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.peggy.v1.MsgBlacklistEthereumAddresses";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "signer", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "blacklist_addresses", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgBlacklistEthereumAddresses {
+    return new MsgBlacklistEthereumAddresses().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgBlacklistEthereumAddresses {
+    return new MsgBlacklistEthereumAddresses().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgBlacklistEthereumAddresses {
+    return new MsgBlacklistEthereumAddresses().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MsgBlacklistEthereumAddresses | PlainMessage<MsgBlacklistEthereumAddresses> | undefined, b: MsgBlacklistEthereumAddresses | PlainMessage<MsgBlacklistEthereumAddresses> | undefined): boolean {
+    return proto3.util.equals(MsgBlacklistEthereumAddresses, a, b);
+  }
+}
+
+/**
+ * MsgBlacklistEthereumAddressesResponse defines the
+ * MsgBlacklistEthereumAddresses response type.
+ *
+ * @generated from message injective.peggy.v1.MsgBlacklistEthereumAddressesResponse
+ */
+export class MsgBlacklistEthereumAddressesResponse extends Message<MsgBlacklistEthereumAddressesResponse> {
+  constructor(data?: PartialMessage<MsgBlacklistEthereumAddressesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.peggy.v1.MsgBlacklistEthereumAddressesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgBlacklistEthereumAddressesResponse {
+    return new MsgBlacklistEthereumAddressesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgBlacklistEthereumAddressesResponse {
+    return new MsgBlacklistEthereumAddressesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgBlacklistEthereumAddressesResponse {
+    return new MsgBlacklistEthereumAddressesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MsgBlacklistEthereumAddressesResponse | PlainMessage<MsgBlacklistEthereumAddressesResponse> | undefined, b: MsgBlacklistEthereumAddressesResponse | PlainMessage<MsgBlacklistEthereumAddressesResponse> | undefined): boolean {
+    return proto3.util.equals(MsgBlacklistEthereumAddressesResponse, a, b);
+  }
+}
+
+/**
+ * MsgRevokeEthereumBlacklist defines the message used to remove Ethereum
+ * addresses from peggy blacklist.
+ *
+ * @generated from message injective.peggy.v1.MsgRevokeEthereumBlacklist
+ */
+export class MsgRevokeEthereumBlacklist extends Message<MsgRevokeEthereumBlacklist> {
+  /**
+   * signer address
+   *
+   * @generated from field: string signer = 1;
+   */
+  signer = "";
+
+  /**
+   * Ethereum addresses to include in the blacklist
+   *
+   * @generated from field: repeated string blacklist_addresses = 2;
+   */
+  blacklistAddresses: string[] = [];
+
+  constructor(data?: PartialMessage<MsgRevokeEthereumBlacklist>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.peggy.v1.MsgRevokeEthereumBlacklist";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "signer", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "blacklist_addresses", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgRevokeEthereumBlacklist {
+    return new MsgRevokeEthereumBlacklist().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgRevokeEthereumBlacklist {
+    return new MsgRevokeEthereumBlacklist().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgRevokeEthereumBlacklist {
+    return new MsgRevokeEthereumBlacklist().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MsgRevokeEthereumBlacklist | PlainMessage<MsgRevokeEthereumBlacklist> | undefined, b: MsgRevokeEthereumBlacklist | PlainMessage<MsgRevokeEthereumBlacklist> | undefined): boolean {
+    return proto3.util.equals(MsgRevokeEthereumBlacklist, a, b);
+  }
+}
+
+/**
+ * MsgRevokeEthereumBlacklistResponse defines the MsgRevokeEthereumBlacklist
+ * response type.
+ *
+ * @generated from message injective.peggy.v1.MsgRevokeEthereumBlacklistResponse
+ */
+export class MsgRevokeEthereumBlacklistResponse extends Message<MsgRevokeEthereumBlacklistResponse> {
+  constructor(data?: PartialMessage<MsgRevokeEthereumBlacklistResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.peggy.v1.MsgRevokeEthereumBlacklistResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgRevokeEthereumBlacklistResponse {
+    return new MsgRevokeEthereumBlacklistResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgRevokeEthereumBlacklistResponse {
+    return new MsgRevokeEthereumBlacklistResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgRevokeEthereumBlacklistResponse {
+    return new MsgRevokeEthereumBlacklistResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MsgRevokeEthereumBlacklistResponse | PlainMessage<MsgRevokeEthereumBlacklistResponse> | undefined, b: MsgRevokeEthereumBlacklistResponse | PlainMessage<MsgRevokeEthereumBlacklistResponse> | undefined): boolean {
+    return proto3.util.equals(MsgRevokeEthereumBlacklistResponse, a, b);
+  }
+}
+

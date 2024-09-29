@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { QueryBandIBCPriceStatesRequest, QueryBandIBCPriceStatesResponse, QueryBandPriceStatesRequest, QueryBandPriceStatesResponse, QueryBandRelayersRequest, QueryBandRelayersResponse, QueryCoinbasePriceStatesRequest, QueryCoinbasePriceStatesResponse, QueryHistoricalPriceRecordsRequest, QueryHistoricalPriceRecordsResponse, QueryModuleStateRequest, QueryModuleStateResponse, QueryOraclePriceRequest, QueryOraclePriceResponse, QueryOracleProviderPricesRequest, QueryOracleProviderPricesResponse, QueryOracleProvidersInfoRequest, QueryOracleProvidersInfoResponse, QueryOracleVolatilityRequest, QueryOracleVolatilityResponse, QueryParamsRequest, QueryParamsResponse, QueryPriceFeedPriceStatesRequest, QueryPriceFeedPriceStatesResponse, QueryProviderPriceStateRequest, QueryProviderPriceStateResponse, QueryPythPriceRequest, QueryPythPriceResponse, QueryPythPriceStatesRequest, QueryPythPriceStatesResponse } from "./query_pb.js";
+import { QueryBandIBCPriceStatesRequest, QueryBandIBCPriceStatesResponse, QueryBandPriceStatesRequest, QueryBandPriceStatesResponse, QueryBandRelayersRequest, QueryBandRelayersResponse, QueryCoinbasePriceStatesRequest, QueryCoinbasePriceStatesResponse, QueryHistoricalPriceRecordsRequest, QueryHistoricalPriceRecordsResponse, QueryModuleStateRequest, QueryModuleStateResponse, QueryOraclePriceRequest, QueryOraclePriceResponse, QueryOracleProviderPricesRequest, QueryOracleProviderPricesResponse, QueryOracleProvidersInfoRequest, QueryOracleProvidersInfoResponse, QueryOracleVolatilityRequest, QueryOracleVolatilityResponse, QueryParamsRequest, QueryParamsResponse, QueryPriceFeedPriceStatesRequest, QueryPriceFeedPriceStatesResponse, QueryProviderPriceStateRequest, QueryProviderPriceStateResponse, QueryPythPriceRequest, QueryPythPriceResponse, QueryPythPriceStatesRequest, QueryPythPriceStatesResponse, QueryStorkPriceStatesRequest, QueryStorkPriceStatesResponse, QueryStorkPublishersRequest, QueryStorkPublishersResponse } from "./query_pb.js";
 
 const TYPE_NAME = "injective.oracle.v1beta1.Query";
 
@@ -89,6 +89,30 @@ export const QueryPythPriceStatesService = {
   method: "PythPriceStates",
   Request: QueryPythPriceStatesRequest,
   Response: QueryPythPriceStatesResponse,
+} as const;
+
+/**
+ * Retrieves the state for all stork price feeds
+ *
+ * @generated from rpc injective.oracle.v1beta1.Query.StorkPriceStates
+ */
+export const QueryStorkPriceStatesService = {
+  typeName: TYPE_NAME,
+  method: "StorkPriceStates",
+  Request: QueryStorkPriceStatesRequest,
+  Response: QueryStorkPriceStatesResponse,
+} as const;
+
+/**
+ * Retrieves all stork publishers
+ *
+ * @generated from rpc injective.oracle.v1beta1.Query.StorkPublishers
+ */
+export const QueryStorkPublishersService = {
+  typeName: TYPE_NAME,
+  method: "StorkPublishers",
+  Request: QueryStorkPublishersRequest,
+  Response: QueryStorkPublishersResponse,
 } as const;
 
 /**

@@ -7,7 +7,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Any, Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { ConsensusStateWithHeight, Height, IdentifiedClientState, Params } from "./client_pb.js";
 import { PageRequest, PageResponse } from "../../../../cosmos/base/query/v1beta1/pagination_pb.js";
-import { MerklePath } from "../../commitment/v1/commitment_pb.js";
+import { MerklePath } from "../../commitment/v2/commitment_pb.js";
 
 /**
  * QueryClientStateRequest is the request type for the Query/ClientState RPC
@@ -866,13 +866,6 @@ export class QueryVerifyMembershipRequest extends Message<QueryVerifyMembershipR
   proofHeight?: Height;
 
   /**
-   * the commitment key path.
-   *
-   * @generated from field: ibc.core.commitment.v1.MerklePath merkle_path = 4;
-   */
-  merklePath?: MerklePath;
-
-  /**
    * the value which is proven.
    *
    * @generated from field: bytes value = 5;
@@ -893,6 +886,13 @@ export class QueryVerifyMembershipRequest extends Message<QueryVerifyMembershipR
    */
   blockDelay = protoInt64.zero;
 
+  /**
+   * the commitment key path.
+   *
+   * @generated from field: ibc.core.commitment.v2.MerklePath merkle_path = 8;
+   */
+  merklePath?: MerklePath;
+
   constructor(data?: PartialMessage<QueryVerifyMembershipRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -904,10 +904,10 @@ export class QueryVerifyMembershipRequest extends Message<QueryVerifyMembershipR
     { no: 1, name: "client_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "proof", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
     { no: 3, name: "proof_height", kind: "message", T: Height },
-    { no: 4, name: "merkle_path", kind: "message", T: MerklePath },
     { no: 5, name: "value", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
     { no: 6, name: "time_delay", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 7, name: "block_delay", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 8, name: "merkle_path", kind: "message", T: MerklePath },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryVerifyMembershipRequest {

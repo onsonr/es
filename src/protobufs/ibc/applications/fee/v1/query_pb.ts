@@ -159,7 +159,7 @@ export class QueryIncentivizedPacketRequest extends Message<QueryIncentivizedPac
 }
 
 /**
- * QueryIncentivizedPacketsResponse defines the response type for the IncentivizedPacket rpc
+ * QueryIncentivizedPacketResponse defines the response type for the IncentivizedPacket rpc
  *
  * @generated from message ibc.applications.fee.v1.QueryIncentivizedPacketResponse
  */
@@ -262,7 +262,8 @@ export class QueryIncentivizedPacketsForChannelRequest extends Message<QueryInce
 }
 
 /**
- * QueryIncentivizedPacketsResponse defines the response type for the incentivized packets RPC
+ * QueryIncentivizedPacketsForChannelResponse defines the response type for querying for all incentivized packets
+ * for a specific channel
  *
  * @generated from message ibc.applications.fee.v1.QueryIncentivizedPacketsForChannelResponse
  */

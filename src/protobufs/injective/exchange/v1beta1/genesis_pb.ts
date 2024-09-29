@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { AggregateSubaccountVolumeRecord, BinaryOptionsMarket, CampaignRewardPool, DenomDecimals, Deposit, DerivativeLimitOrder, DerivativeMarket, DerivativeMarketOrder, DerivativeMarketSettlementInfo, ExpiryFuturesMarketInfo, FeeDiscountSchedule, FeeDiscountTierTTL, MarketFeeMultiplier, MarketVolume, Params, PerpetualMarketFunding, PerpetualMarketInfo, Position, SpotLimitOrder, SpotMarket, SubaccountTradeNonce, TradeRecords, TradingRewardCampaignInfo } from "./exchange_pb.js";
+import { ActiveGrant, AggregateSubaccountVolumeRecord, BinaryOptionsMarket, CampaignRewardPool, DenomDecimals, Deposit, DerivativeLimitOrder, DerivativeMarket, DerivativeMarketOrder, DerivativeMarketSettlementInfo, ExpiryFuturesMarketInfo, FeeDiscountSchedule, FeeDiscountTierTTL, GrantAuthorization, MarketFeeMultiplier, MarketVolume, Params, PerpetualMarketFunding, PerpetualMarketInfo, Position, SpotLimitOrder, SpotMarket, SubaccountTradeNonce, TradeRecords, TradingRewardCampaignInfo } from "./exchange_pb.js";
 
 /**
  * GenesisState defines the exchange module's genesis state.
@@ -254,6 +254,16 @@ export class GenesisState extends Message<GenesisState> {
    */
   marketVolumes: MarketVolume[] = [];
 
+  /**
+   * @generated from field: repeated injective.exchange.v1beta1.FullGrantAuthorizations grant_authorizations = 35;
+   */
+  grantAuthorizations: FullGrantAuthorizations[] = [];
+
+  /**
+   * @generated from field: repeated injective.exchange.v1beta1.FullActiveGrant active_grants = 36;
+   */
+  activeGrants: FullActiveGrant[] = [];
+
   constructor(data?: PartialMessage<GenesisState>) {
     super();
     proto3.util.initPartial(data, this);
@@ -296,6 +306,8 @@ export class GenesisState extends Message<GenesisState> {
     { no: 32, name: "orderbook_sequences", kind: "message", T: OrderbookSequence, repeated: true },
     { no: 33, name: "subaccount_volumes", kind: "message", T: AggregateSubaccountVolumeRecord, repeated: true },
     { no: 34, name: "market_volumes", kind: "message", T: MarketVolume, repeated: true },
+    { no: 35, name: "grant_authorizations", kind: "message", T: FullGrantAuthorizations, repeated: true },
+    { no: 36, name: "active_grants", kind: "message", T: FullActiveGrant, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenesisState {
@@ -962,6 +974,104 @@ export class PerpetualMarketFundingState extends Message<PerpetualMarketFundingS
 
   static equals(a: PerpetualMarketFundingState | PlainMessage<PerpetualMarketFundingState> | undefined, b: PerpetualMarketFundingState | PlainMessage<PerpetualMarketFundingState> | undefined): boolean {
     return proto3.util.equals(PerpetualMarketFundingState, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.FullGrantAuthorizations
+ */
+export class FullGrantAuthorizations extends Message<FullGrantAuthorizations> {
+  /**
+   * @generated from field: string granter = 1;
+   */
+  granter = "";
+
+  /**
+   * @generated from field: string total_grant_amount = 2;
+   */
+  totalGrantAmount = "";
+
+  /**
+   * @generated from field: int64 last_delegations_checked_time = 3;
+   */
+  lastDelegationsCheckedTime = protoInt64.zero;
+
+  /**
+   * @generated from field: repeated injective.exchange.v1beta1.GrantAuthorization grants = 4;
+   */
+  grants: GrantAuthorization[] = [];
+
+  constructor(data?: PartialMessage<FullGrantAuthorizations>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.FullGrantAuthorizations";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "granter", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "total_grant_amount", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "last_delegations_checked_time", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: "grants", kind: "message", T: GrantAuthorization, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FullGrantAuthorizations {
+    return new FullGrantAuthorizations().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FullGrantAuthorizations {
+    return new FullGrantAuthorizations().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FullGrantAuthorizations {
+    return new FullGrantAuthorizations().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: FullGrantAuthorizations | PlainMessage<FullGrantAuthorizations> | undefined, b: FullGrantAuthorizations | PlainMessage<FullGrantAuthorizations> | undefined): boolean {
+    return proto3.util.equals(FullGrantAuthorizations, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.FullActiveGrant
+ */
+export class FullActiveGrant extends Message<FullActiveGrant> {
+  /**
+   * @generated from field: string grantee = 1;
+   */
+  grantee = "";
+
+  /**
+   * @generated from field: injective.exchange.v1beta1.ActiveGrant active_grant = 2;
+   */
+  activeGrant?: ActiveGrant;
+
+  constructor(data?: PartialMessage<FullActiveGrant>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.FullActiveGrant";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grantee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "active_grant", kind: "message", T: ActiveGrant },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): FullActiveGrant {
+    return new FullActiveGrant().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): FullActiveGrant {
+    return new FullActiveGrant().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): FullActiveGrant {
+    return new FullActiveGrant().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: FullActiveGrant | PlainMessage<FullActiveGrant> | undefined, b: FullActiveGrant | PlainMessage<FullActiveGrant> | undefined): boolean {
+    return proto3.util.equals(FullActiveGrant, a, b);
   }
 }
 

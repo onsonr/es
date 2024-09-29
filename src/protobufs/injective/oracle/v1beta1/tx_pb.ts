@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { Params, PriceAttestation } from "./oracle_pb.js";
+import { AssetPair, Params, PriceAttestation } from "./oracle_pb.js";
 
 /**
  * MsgRelayProviderPrice defines a SDK message for setting a price through the
@@ -359,6 +359,83 @@ export class MsgRelayCoinbaseMessagesResponse extends Message<MsgRelayCoinbaseMe
 
   static equals(a: MsgRelayCoinbaseMessagesResponse | PlainMessage<MsgRelayCoinbaseMessagesResponse> | undefined, b: MsgRelayCoinbaseMessagesResponse | PlainMessage<MsgRelayCoinbaseMessagesResponse> | undefined): boolean {
     return proto3.util.equals(MsgRelayCoinbaseMessagesResponse, a, b);
+  }
+}
+
+/**
+ * MsgRelayStorkPrices defines a SDK message for relaying price message
+ * from Stork API.
+ *
+ * @generated from message injective.oracle.v1beta1.MsgRelayStorkPrices
+ */
+export class MsgRelayStorkPrices extends Message<MsgRelayStorkPrices> {
+  /**
+   * @generated from field: string sender = 1;
+   */
+  sender = "";
+
+  /**
+   * @generated from field: repeated injective.oracle.v1beta1.AssetPair asset_pairs = 2;
+   */
+  assetPairs: AssetPair[] = [];
+
+  constructor(data?: PartialMessage<MsgRelayStorkPrices>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.MsgRelayStorkPrices";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "sender", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "asset_pairs", kind: "message", T: AssetPair, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgRelayStorkPrices {
+    return new MsgRelayStorkPrices().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgRelayStorkPrices {
+    return new MsgRelayStorkPrices().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgRelayStorkPrices {
+    return new MsgRelayStorkPrices().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MsgRelayStorkPrices | PlainMessage<MsgRelayStorkPrices> | undefined, b: MsgRelayStorkPrices | PlainMessage<MsgRelayStorkPrices> | undefined): boolean {
+    return proto3.util.equals(MsgRelayStorkPrices, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.oracle.v1beta1.MsgRelayStorkPricesResponse
+ */
+export class MsgRelayStorkPricesResponse extends Message<MsgRelayStorkPricesResponse> {
+  constructor(data?: PartialMessage<MsgRelayStorkPricesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.MsgRelayStorkPricesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgRelayStorkPricesResponse {
+    return new MsgRelayStorkPricesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgRelayStorkPricesResponse {
+    return new MsgRelayStorkPricesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgRelayStorkPricesResponse {
+    return new MsgRelayStorkPricesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MsgRelayStorkPricesResponse | PlainMessage<MsgRelayStorkPricesResponse> | undefined, b: MsgRelayStorkPricesResponse | PlainMessage<MsgRelayStorkPricesResponse> | undefined): boolean {
+    return proto3.util.equals(MsgRelayStorkPricesResponse, a, b);
   }
 }
 

@@ -83,6 +83,11 @@ export class GenesisDenom extends Message<GenesisDenom> {
    */
   symbol = "";
 
+  /**
+   * @generated from field: uint32 decimals = 5;
+   */
+  decimals = 0;
+
   constructor(data?: PartialMessage<GenesisDenom>) {
     super();
     proto3.util.initPartial(data, this);
@@ -95,6 +100,7 @@ export class GenesisDenom extends Message<GenesisDenom> {
     { no: 2, name: "authority_metadata", kind: "message", T: DenomAuthorityMetadata },
     { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "symbol", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "decimals", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenesisDenom {

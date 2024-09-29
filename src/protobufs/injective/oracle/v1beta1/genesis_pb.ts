@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { BandIBCParams, BandOracleRequest, BandPriceState, ChainlinkPriceState, CoinbasePriceState, Params, PriceFeedState, PriceRecords, ProviderState, PythPriceState } from "./oracle_pb.js";
+import { BandIBCParams, BandOracleRequest, BandPriceState, ChainlinkPriceState, CoinbasePriceState, Params, PriceFeedState, PriceRecords, ProviderState, PythPriceState, StorkPriceState } from "./oracle_pb.js";
 
 /**
  * GenesisState defines the oracle module's genesis state.
@@ -90,6 +90,16 @@ export class GenesisState extends Message<GenesisState> {
    */
   pythPriceStates: PythPriceState[] = [];
 
+  /**
+   * @generated from field: repeated injective.oracle.v1beta1.StorkPriceState stork_price_states = 16;
+   */
+  storkPriceStates: StorkPriceState[] = [];
+
+  /**
+   * @generated from field: repeated string stork_publishers = 17;
+   */
+  storkPublishers: string[] = [];
+
   constructor(data?: PartialMessage<GenesisState>) {
     super();
     proto3.util.initPartial(data, this);
@@ -113,6 +123,8 @@ export class GenesisState extends Message<GenesisState> {
     { no: 13, name: "historical_price_records", kind: "message", T: PriceRecords, repeated: true },
     { no: 14, name: "provider_states", kind: "message", T: ProviderState, repeated: true },
     { no: 15, name: "pyth_price_states", kind: "message", T: PythPriceState, repeated: true },
+    { no: 16, name: "stork_price_states", kind: "message", T: StorkPriceState, repeated: true },
+    { no: 17, name: "stork_publishers", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenesisState {

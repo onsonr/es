@@ -6,7 +6,7 @@
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
 import { Params } from "./params_pb.js";
-import { Namespace, Roles } from "./permissions_pb.js";
+import { AddressRoles, Namespace, Role } from "./permissions_pb.js";
 
 /**
  * @generated from message injective.permissions.v1beta1.MsgUpdateParams
@@ -505,16 +505,16 @@ export class MsgUpdateNamespaceRoles extends Message<MsgUpdateNamespaceRoles> {
   /**
    * new role definitions or updated permissions for existing roles
    *
-   * @generated from field: map<string, uint32> role_permissions = 3;
+   * @generated from field: repeated injective.permissions.v1beta1.Role role_permissions = 3;
    */
-  rolePermissions: { [key: string]: number } = {};
+  rolePermissions: Role[] = [];
 
   /**
    * new addresses to add or new roles for existing addresses to
    *
-   * @generated from field: map<string, injective.permissions.v1beta1.Roles> address_roles = 4;
+   * @generated from field: repeated injective.permissions.v1beta1.AddressRoles address_roles = 4;
    */
-  addressRoles: { [key: string]: Roles } = {};
+  addressRoles: AddressRoles[] = [];
 
   constructor(data?: PartialMessage<MsgUpdateNamespaceRoles>) {
     super();
@@ -526,8 +526,8 @@ export class MsgUpdateNamespaceRoles extends Message<MsgUpdateNamespaceRoles> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "sender", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "namespace_denom", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "role_permissions", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 13 /* ScalarType.UINT32 */} },
-    { no: 4, name: "address_roles", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: Roles} },
+    { no: 3, name: "role_permissions", kind: "message", T: Role, repeated: true },
+    { no: 4, name: "address_roles", kind: "message", T: AddressRoles, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgUpdateNamespaceRoles {
@@ -595,11 +595,11 @@ export class MsgRevokeNamespaceRoles extends Message<MsgRevokeNamespaceRoles> {
   namespaceDenom = "";
 
   /**
-   * map of {"address" => array of roles to revoke from this address}
+   * {"address" => array of roles to revoke from this address}
    *
-   * @generated from field: map<string, injective.permissions.v1beta1.Roles> address_roles_to_revoke = 3;
+   * @generated from field: repeated injective.permissions.v1beta1.AddressRoles address_roles_to_revoke = 3;
    */
-  addressRolesToRevoke: { [key: string]: Roles } = {};
+  addressRolesToRevoke: AddressRoles[] = [];
 
   constructor(data?: PartialMessage<MsgRevokeNamespaceRoles>) {
     super();
@@ -611,7 +611,7 @@ export class MsgRevokeNamespaceRoles extends Message<MsgRevokeNamespaceRoles> {
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "sender", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "namespace_denom", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "address_roles_to_revoke", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: Roles} },
+    { no: 3, name: "address_roles_to_revoke", kind: "message", T: AddressRoles, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgRevokeNamespaceRoles {
@@ -672,11 +672,9 @@ export class MsgClaimVoucher extends Message<MsgClaimVoucher> {
   sender = "";
 
   /**
-   * address of the original voucher sender (typically a module address,
-   *
-   * @generated from field: string originator = 2;
+   * @generated from field: string denom = 2;
    */
-  originator = "";
+  denom = "";
 
   constructor(data?: PartialMessage<MsgClaimVoucher>) {
     super();
@@ -687,7 +685,7 @@ export class MsgClaimVoucher extends Message<MsgClaimVoucher> {
   static readonly typeName = "injective.permissions.v1beta1.MsgClaimVoucher";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "sender", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "originator", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "denom", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgClaimVoucher {

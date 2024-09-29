@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { BandPriceState, CoinbasePriceState, MetadataStatistics, OracleInfo, OracleType, Params, PriceFeedState, PriceRecord, PriceRecords, PriceState, ProviderInfo, ProviderState, PythPriceState } from "./oracle_pb.js";
+import { BandPriceState, CoinbasePriceState, MetadataStatistics, OracleInfo, OracleType, Params, PriceFeedState, PriceRecord, PriceRecords, PriceState, ProviderInfo, ProviderState, PythPriceState, StorkPriceState } from "./oracle_pb.js";
 import { GenesisState } from "./genesis_pb.js";
 
 /**
@@ -601,6 +601,154 @@ export class QueryPythPriceStatesResponse extends Message<QueryPythPriceStatesRe
 }
 
 /**
+ * QueryStorkPriceStatesRequest is the request type for the
+ * Query/StorkPriceStates RPC method.
+ *
+ * @generated from message injective.oracle.v1beta1.QueryStorkPriceStatesRequest
+ */
+export class QueryStorkPriceStatesRequest extends Message<QueryStorkPriceStatesRequest> {
+  constructor(data?: PartialMessage<QueryStorkPriceStatesRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.QueryStorkPriceStatesRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryStorkPriceStatesRequest {
+    return new QueryStorkPriceStatesRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryStorkPriceStatesRequest {
+    return new QueryStorkPriceStatesRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryStorkPriceStatesRequest {
+    return new QueryStorkPriceStatesRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryStorkPriceStatesRequest | PlainMessage<QueryStorkPriceStatesRequest> | undefined, b: QueryStorkPriceStatesRequest | PlainMessage<QueryStorkPriceStatesRequest> | undefined): boolean {
+    return proto3.util.equals(QueryStorkPriceStatesRequest, a, b);
+  }
+}
+
+/**
+ * QueryStorkPriceStatesResponse is the response type for the
+ * Query/StorkPriceStates RPC method.
+ *
+ * @generated from message injective.oracle.v1beta1.QueryStorkPriceStatesResponse
+ */
+export class QueryStorkPriceStatesResponse extends Message<QueryStorkPriceStatesResponse> {
+  /**
+   * @generated from field: repeated injective.oracle.v1beta1.StorkPriceState price_states = 1;
+   */
+  priceStates: StorkPriceState[] = [];
+
+  constructor(data?: PartialMessage<QueryStorkPriceStatesResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.QueryStorkPriceStatesResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "price_states", kind: "message", T: StorkPriceState, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryStorkPriceStatesResponse {
+    return new QueryStorkPriceStatesResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryStorkPriceStatesResponse {
+    return new QueryStorkPriceStatesResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryStorkPriceStatesResponse {
+    return new QueryStorkPriceStatesResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryStorkPriceStatesResponse | PlainMessage<QueryStorkPriceStatesResponse> | undefined, b: QueryStorkPriceStatesResponse | PlainMessage<QueryStorkPriceStatesResponse> | undefined): boolean {
+    return proto3.util.equals(QueryStorkPriceStatesResponse, a, b);
+  }
+}
+
+/**
+ * QueryStorkPublishersRequest is the request type for the
+ * Query/StorkPublishers RPC method.
+ *
+ * @generated from message injective.oracle.v1beta1.QueryStorkPublishersRequest
+ */
+export class QueryStorkPublishersRequest extends Message<QueryStorkPublishersRequest> {
+  constructor(data?: PartialMessage<QueryStorkPublishersRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.QueryStorkPublishersRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryStorkPublishersRequest {
+    return new QueryStorkPublishersRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryStorkPublishersRequest {
+    return new QueryStorkPublishersRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryStorkPublishersRequest {
+    return new QueryStorkPublishersRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryStorkPublishersRequest | PlainMessage<QueryStorkPublishersRequest> | undefined, b: QueryStorkPublishersRequest | PlainMessage<QueryStorkPublishersRequest> | undefined): boolean {
+    return proto3.util.equals(QueryStorkPublishersRequest, a, b);
+  }
+}
+
+/**
+ * QueryStorkPublishersResponse is the response type for the
+ * Query/StorkPublishers RPC method.
+ *
+ * @generated from message injective.oracle.v1beta1.QueryStorkPublishersResponse
+ */
+export class QueryStorkPublishersResponse extends Message<QueryStorkPublishersResponse> {
+  /**
+   * @generated from field: repeated string publishers = 1;
+   */
+  publishers: string[] = [];
+
+  constructor(data?: PartialMessage<QueryStorkPublishersResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.QueryStorkPublishersResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "publishers", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryStorkPublishersResponse {
+    return new QueryStorkPublishersResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryStorkPublishersResponse {
+    return new QueryStorkPublishersResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryStorkPublishersResponse {
+    return new QueryStorkPublishersResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryStorkPublishersResponse | PlainMessage<QueryStorkPublishersResponse> | undefined, b: QueryStorkPublishersResponse | PlainMessage<QueryStorkPublishersResponse> | undefined): boolean {
+    return proto3.util.equals(QueryStorkPublishersResponse, a, b);
+  }
+}
+
+/**
  * QueryProviderPriceStateRequest is the request type for the
  * Query/ProviderPriceState RPC method.
  *
@@ -1146,6 +1294,53 @@ export class QueryOracleProviderPricesResponse extends Message<QueryOracleProvid
 }
 
 /**
+ * ScalingOptions defines optional configuration to avoid precision loss. The
+ * oracle result will be returned as base_price * 10^base_decimals / quote_price
+ * * 10^quote_decimals
+ *
+ * @generated from message injective.oracle.v1beta1.ScalingOptions
+ */
+export class ScalingOptions extends Message<ScalingOptions> {
+  /**
+   * @generated from field: uint32 base_decimals = 1;
+   */
+  baseDecimals = 0;
+
+  /**
+   * @generated from field: uint32 quote_decimals = 2;
+   */
+  quoteDecimals = 0;
+
+  constructor(data?: PartialMessage<ScalingOptions>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.oracle.v1beta1.ScalingOptions";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "base_decimals", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+    { no: 2, name: "quote_decimals", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): ScalingOptions {
+    return new ScalingOptions().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): ScalingOptions {
+    return new ScalingOptions().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): ScalingOptions {
+    return new ScalingOptions().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: ScalingOptions | PlainMessage<ScalingOptions> | undefined, b: ScalingOptions | PlainMessage<ScalingOptions> | undefined): boolean {
+    return proto3.util.equals(ScalingOptions, a, b);
+  }
+}
+
+/**
  * QueryOraclePriceRequest is the request type for the Query/OraclePrice RPC
  * method.
  *
@@ -1167,6 +1362,11 @@ export class QueryOraclePriceRequest extends Message<QueryOraclePriceRequest> {
    */
   quote = "";
 
+  /**
+   * @generated from field: injective.oracle.v1beta1.ScalingOptions scaling_options = 4;
+   */
+  scalingOptions?: ScalingOptions;
+
   constructor(data?: PartialMessage<QueryOraclePriceRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1178,6 +1378,7 @@ export class QueryOraclePriceRequest extends Message<QueryOraclePriceRequest> {
     { no: 1, name: "oracle_type", kind: "enum", T: proto3.getEnumType(OracleType) },
     { no: 2, name: "base", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "quote", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "scaling_options", kind: "message", T: ScalingOptions },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryOraclePriceRequest {

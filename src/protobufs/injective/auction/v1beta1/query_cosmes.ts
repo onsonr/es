@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { QueryAuctionParamsRequest, QueryAuctionParamsResponse, QueryCurrentAuctionBasketRequest, QueryCurrentAuctionBasketResponse, QueryModuleStateRequest, QueryModuleStateResponse } from "./query_pb.js";
+import { QueryAuctionParamsRequest, QueryAuctionParamsResponse, QueryCurrentAuctionBasketRequest, QueryCurrentAuctionBasketResponse, QueryLastAuctionResultRequest, QueryLastAuctionResultResponse, QueryModuleStateRequest, QueryModuleStateResponse } from "./query_pb.js";
 
 const TYPE_NAME = "injective.auction.v1beta1.Query";
 
@@ -41,5 +41,15 @@ export const QueryAuctionModuleStateService = {
   method: "AuctionModuleState",
   Request: QueryModuleStateRequest,
   Response: QueryModuleStateResponse,
+} as const;
+
+/**
+ * @generated from rpc injective.auction.v1beta1.Query.LastAuctionResult
+ */
+export const QueryLastAuctionResultService = {
+  typeName: TYPE_NAME,
+  method: "LastAuctionResult",
+  Request: QueryLastAuctionResultRequest,
+  Response: QueryLastAuctionResultResponse,
 } as const;
 

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MsgCancelSendToEth, MsgCancelSendToEthResponse, MsgConfirmBatch, MsgConfirmBatchResponse, MsgDepositClaim, MsgDepositClaimResponse, MsgERC20DeployedClaim, MsgERC20DeployedClaimResponse, MsgRequestBatch, MsgRequestBatchResponse, MsgSendToEth, MsgSendToEthResponse, MsgSetOrchestratorAddresses, MsgSetOrchestratorAddressesResponse, MsgSubmitBadSignatureEvidence, MsgSubmitBadSignatureEvidenceResponse, MsgUpdateParams, MsgUpdateParamsResponse, MsgValsetConfirm, MsgValsetConfirmResponse, MsgValsetUpdatedClaim, MsgValsetUpdatedClaimResponse, MsgWithdrawClaim, MsgWithdrawClaimResponse } from "./msgs_pb.js";
+import { MsgBlacklistEthereumAddresses, MsgBlacklistEthereumAddressesResponse, MsgCancelSendToEth, MsgCancelSendToEthResponse, MsgConfirmBatch, MsgConfirmBatchResponse, MsgDepositClaim, MsgDepositClaimResponse, MsgERC20DeployedClaim, MsgERC20DeployedClaimResponse, MsgRequestBatch, MsgRequestBatchResponse, MsgRevokeEthereumBlacklist, MsgRevokeEthereumBlacklistResponse, MsgSendToEth, MsgSendToEthResponse, MsgSetOrchestratorAddresses, MsgSetOrchestratorAddressesResponse, MsgSubmitBadSignatureEvidence, MsgSubmitBadSignatureEvidenceResponse, MsgUpdateParams, MsgUpdateParamsResponse, MsgValsetConfirm, MsgValsetConfirmResponse, MsgValsetUpdatedClaim, MsgValsetUpdatedClaimResponse, MsgWithdrawClaim, MsgWithdrawClaimResponse } from "./msgs_pb.js";
 
 const TYPE_NAME = "injective.peggy.v1.Msg";
 
@@ -125,5 +125,30 @@ export const MsgUpdateParamsService = {
   method: "UpdateParams",
   Request: MsgUpdateParams,
   Response: MsgUpdateParamsResponse,
+} as const;
+
+/**
+ * BlacklistEthereumAddresses adds Ethereum addresses to the peggy blacklist.
+ *
+ * @generated from rpc injective.peggy.v1.Msg.BlacklistEthereumAddresses
+ */
+export const MsgBlacklistEthereumAddressesService = {
+  typeName: TYPE_NAME,
+  method: "BlacklistEthereumAddresses",
+  Request: MsgBlacklistEthereumAddresses,
+  Response: MsgBlacklistEthereumAddressesResponse,
+} as const;
+
+/**
+ * RevokeEthereumBlacklist removes Ethereum addresses from the peggy
+ * blacklist.
+ *
+ * @generated from rpc injective.peggy.v1.Msg.RevokeEthereumBlacklist
+ */
+export const MsgRevokeEthereumBlacklistService = {
+  typeName: TYPE_NAME,
+  method: "RevokeEthereumBlacklist",
+  Request: MsgRevokeEthereumBlacklist,
+  Response: MsgRevokeEthereumBlacklistResponse,
 } as const;
 

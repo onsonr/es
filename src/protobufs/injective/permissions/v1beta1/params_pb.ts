@@ -4,7 +4,7 @@
 // @ts-nocheck
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3 } from "@bufbuild/protobuf";
+import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 
 /**
  * Params defines the parameters for the permissions module.
@@ -12,6 +12,11 @@ import { Message, proto3 } from "@bufbuild/protobuf";
  * @generated from message injective.permissions.v1beta1.Params
  */
 export class Params extends Message<Params> {
+  /**
+   * @generated from field: uint64 wasm_hook_query_max_gas = 1;
+   */
+  wasmHookQueryMaxGas = protoInt64.zero;
+
   constructor(data?: PartialMessage<Params>) {
     super();
     proto3.util.initPartial(data, this);
@@ -20,6 +25,7 @@ export class Params extends Message<Params> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "injective.permissions.v1beta1.Params";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "wasm_hook_query_max_gas", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Params {

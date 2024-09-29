@@ -47,6 +47,10 @@ const REPOS = [
     paths: ["proto"],
   },
   {
+    repo: "onsonr/sonr#master",
+    paths: ["proto"],
+  },
+  {
     repo: "CosmWasm/wasmd#main",
     paths: ["proto"],
   },

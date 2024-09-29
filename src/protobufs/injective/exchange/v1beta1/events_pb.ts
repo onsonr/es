@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { AccountRewards, BinaryOptionsMarket, CampaignRewardPool, DepositUpdate, DerivativeLimitOrder, DerivativeMarket, DerivativeMarketOrder, DerivativeOrder, DerivativeTradeLog, ExecutionType, ExpiryFuturesMarketInfo, FeeDiscountSchedule, Level, MarketFeeMultiplier, PerpetualMarketFunding, PerpetualMarketInfo, SpotLimitOrder, SpotMarket, SubaccountPosition, TradeLog, TradingRewardCampaignInfo } from "./exchange_pb.js";
+import { AccountRewards, BinaryOptionsMarket, CampaignRewardPool, DepositUpdate, DerivativeLimitOrder, DerivativeMarket, DerivativeMarketOrder, DerivativeOrder, DerivativeTradeLog, ExecutionType, ExpiryFuturesMarketInfo, FeeDiscountSchedule, GrantAuthorization, Level, MarketFeeMultiplier, PerpetualMarketFunding, PerpetualMarketInfo, SpotLimitOrder, SpotMarket, SubaccountPosition, TradeLog, TradingRewardCampaignInfo } from "./exchange_pb.js";
 import { Coin } from "../../../cosmos/base/v1beta1/coin_pb.js";
 
 /**
@@ -1284,6 +1284,11 @@ export class EventConditionalDerivativeOrderTrigger extends Message<EventConditi
    */
   placedOrderHash = new Uint8Array(0);
 
+  /**
+   * @generated from field: string triggered_order_cid = 5;
+   */
+  triggeredOrderCid = "";
+
   constructor(data?: PartialMessage<EventConditionalDerivativeOrderTrigger>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1296,6 +1301,7 @@ export class EventConditionalDerivativeOrderTrigger extends Message<EventConditi
     { no: 2, name: "isLimitTrigger", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 3, name: "triggered_order_hash", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
     { no: 4, name: "placed_order_hash", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 5, name: "triggered_order_cid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EventConditionalDerivativeOrderTrigger {
@@ -1334,6 +1340,11 @@ export class EventOrderFail extends Message<EventOrderFail> {
    */
   flags: number[] = [];
 
+  /**
+   * @generated from field: repeated string cids = 4;
+   */
+  cids: string[] = [];
+
   constructor(data?: PartialMessage<EventOrderFail>) {
     super();
     proto3.util.initPartial(data, this);
@@ -1345,6 +1356,7 @@ export class EventOrderFail extends Message<EventOrderFail> {
     { no: 1, name: "account", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
     { no: 2, name: "hashes", kind: "scalar", T: 12 /* ScalarType.BYTES */, repeated: true },
     { no: 3, name: "flags", kind: "scalar", T: 13 /* ScalarType.UINT32 */, repeated: true },
+    { no: 4, name: "cids", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EventOrderFail {
@@ -1533,6 +1545,202 @@ export class Orderbook extends Message<Orderbook> {
 
   static equals(a: Orderbook | PlainMessage<Orderbook> | undefined, b: Orderbook | PlainMessage<Orderbook> | undefined): boolean {
     return proto3.util.equals(Orderbook, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.EventGrantAuthorizations
+ */
+export class EventGrantAuthorizations extends Message<EventGrantAuthorizations> {
+  /**
+   * @generated from field: string granter = 1;
+   */
+  granter = "";
+
+  /**
+   * @generated from field: repeated injective.exchange.v1beta1.GrantAuthorization grants = 2;
+   */
+  grants: GrantAuthorization[] = [];
+
+  constructor(data?: PartialMessage<EventGrantAuthorizations>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.EventGrantAuthorizations";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "granter", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "grants", kind: "message", T: GrantAuthorization, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EventGrantAuthorizations {
+    return new EventGrantAuthorizations().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EventGrantAuthorizations {
+    return new EventGrantAuthorizations().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EventGrantAuthorizations {
+    return new EventGrantAuthorizations().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EventGrantAuthorizations | PlainMessage<EventGrantAuthorizations> | undefined, b: EventGrantAuthorizations | PlainMessage<EventGrantAuthorizations> | undefined): boolean {
+    return proto3.util.equals(EventGrantAuthorizations, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.EventGrantActivation
+ */
+export class EventGrantActivation extends Message<EventGrantActivation> {
+  /**
+   * @generated from field: string grantee = 1;
+   */
+  grantee = "";
+
+  /**
+   * @generated from field: string granter = 2;
+   */
+  granter = "";
+
+  /**
+   * @generated from field: string amount = 3;
+   */
+  amount = "";
+
+  constructor(data?: PartialMessage<EventGrantActivation>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.EventGrantActivation";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grantee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "granter", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "amount", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EventGrantActivation {
+    return new EventGrantActivation().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EventGrantActivation {
+    return new EventGrantActivation().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EventGrantActivation {
+    return new EventGrantActivation().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EventGrantActivation | PlainMessage<EventGrantActivation> | undefined, b: EventGrantActivation | PlainMessage<EventGrantActivation> | undefined): boolean {
+    return proto3.util.equals(EventGrantActivation, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.EventInvalidGrant
+ */
+export class EventInvalidGrant extends Message<EventInvalidGrant> {
+  /**
+   * @generated from field: string grantee = 1;
+   */
+  grantee = "";
+
+  /**
+   * @generated from field: string granter = 2;
+   */
+  granter = "";
+
+  constructor(data?: PartialMessage<EventInvalidGrant>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.EventInvalidGrant";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "grantee", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "granter", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EventInvalidGrant {
+    return new EventInvalidGrant().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EventInvalidGrant {
+    return new EventInvalidGrant().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EventInvalidGrant {
+    return new EventInvalidGrant().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EventInvalidGrant | PlainMessage<EventInvalidGrant> | undefined, b: EventInvalidGrant | PlainMessage<EventInvalidGrant> | undefined): boolean {
+    return proto3.util.equals(EventInvalidGrant, a, b);
+  }
+}
+
+/**
+ * @generated from message injective.exchange.v1beta1.EventOrderCancelFail
+ */
+export class EventOrderCancelFail extends Message<EventOrderCancelFail> {
+  /**
+   * @generated from field: string market_id = 1;
+   */
+  marketId = "";
+
+  /**
+   * @generated from field: string subaccount_id = 2;
+   */
+  subaccountId = "";
+
+  /**
+   * @generated from field: string order_hash = 3;
+   */
+  orderHash = "";
+
+  /**
+   * @generated from field: string cid = 4;
+   */
+  cid = "";
+
+  /**
+   * @generated from field: string description = 5;
+   */
+  description = "";
+
+  constructor(data?: PartialMessage<EventOrderCancelFail>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.exchange.v1beta1.EventOrderCancelFail";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "market_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "subaccount_id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "order_hash", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "cid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): EventOrderCancelFail {
+    return new EventOrderCancelFail().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): EventOrderCancelFail {
+    return new EventOrderCancelFail().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): EventOrderCancelFail {
+    return new EventOrderCancelFail().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: EventOrderCancelFail | PlainMessage<EventOrderCancelFail> | undefined, b: EventOrderCancelFail | PlainMessage<EventOrderCancelFail> | undefined): boolean {
+    return proto3.util.equals(EventOrderCancelFail, a, b);
   }
 }
 

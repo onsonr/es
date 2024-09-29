@@ -540,6 +540,7 @@ export class ProofSpec extends Message<ProofSpec> {
 
   /**
    * max_depth (if > 0) is the maximum number of InnerOps allowed (mainly for fixed-depth tries)
+   * the max_depth is interpreted as 128 if set to 0
    *
    * @generated from field: int32 max_depth = 3;
    */
@@ -627,6 +628,8 @@ export class InnerSpec extends Message<InnerSpec> {
   minPrefixLength = 0;
 
   /**
+   * the max prefix length must be less than the minimum prefix length + child size
+   *
    * @generated from field: int32 max_prefix_length = 4;
    */
   maxPrefixLength = 0;

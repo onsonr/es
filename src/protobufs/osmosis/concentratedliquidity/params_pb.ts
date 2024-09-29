@@ -38,15 +38,17 @@ export class Params extends Message<Params> {
   balancerSharesRewardDiscount = "";
 
   /**
-   * authorized_quote_denoms is a list of quote denoms that can be used as
-   * token1 when creating a pool. We limit the quote assets to a small set for
-   * the purposes of having convenient price increments stemming from tick to
-   * price conversion. These increments are in a human readable magnitude only
-   * for token1 as a quote. For limit orders in the future, this will be a
-   * desirable property in terms of UX as to allow users to set limit orders at
-   * prices in terms of token1 (quote asset) that are easy to reason about.
+   * DEPRECATED: authorized_quote_denoms is a list of quote denoms that can be
+   * used as token1 when creating a pool. We limit the quote assets to a small
+   * set for the purposes of having convenient price increments stemming from
+   * tick to price conversion. These increments are in a human readable
+   * magnitude only for token1 as a quote. For limit orders in the future, this
+   * will be a desirable property in terms of UX as to allow users to set limit
+   * orders at prices in terms of token1 (quote asset) that are easy to reason
+   * about.
    *
-   * @generated from field: repeated string authorized_quote_denoms = 4;
+   * @generated from field: repeated string authorized_quote_denoms = 4 [deprecated = true];
+   * @deprecated
    */
   authorizedQuoteDenoms: string[] = [];
 

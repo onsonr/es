@@ -98,6 +98,61 @@ export class Bid extends Message<Bid> {
 }
 
 /**
+ * @generated from message injective.auction.v1beta1.LastAuctionResult
+ */
+export class LastAuctionResult extends Message<LastAuctionResult> {
+  /**
+   * winner describes the address of the winner
+   *
+   * @generated from field: string winner = 1;
+   */
+  winner = "";
+
+  /**
+   * amount describes the amount the winner get from the auction
+   *
+   * @generated from field: string amount = 2;
+   */
+  amount = "";
+
+  /**
+   * round defines the round number of auction
+   *
+   * @generated from field: uint64 round = 3;
+   */
+  round = protoInt64.zero;
+
+  constructor(data?: PartialMessage<LastAuctionResult>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "injective.auction.v1beta1.LastAuctionResult";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "winner", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "amount", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "round", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): LastAuctionResult {
+    return new LastAuctionResult().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): LastAuctionResult {
+    return new LastAuctionResult().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): LastAuctionResult {
+    return new LastAuctionResult().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: LastAuctionResult | PlainMessage<LastAuctionResult> | undefined, b: LastAuctionResult | PlainMessage<LastAuctionResult> | undefined): boolean {
+    return proto3.util.equals(LastAuctionResult, a, b);
+  }
+}
+
+/**
  * @generated from message injective.auction.v1beta1.EventBid
  */
 export class EventBid extends Message<EventBid> {

@@ -116,6 +116,11 @@ export class Params extends Message<Params> {
    */
   valsetReward?: Coin;
 
+  /**
+   * @generated from field: repeated string admins = 22;
+   */
+  admins: string[] = [];
+
   constructor(data?: PartialMessage<Params>) {
     super();
     proto3.util.initPartial(data, this);
@@ -145,6 +150,7 @@ export class Params extends Message<Params> {
     { no: 19, name: "claim_slashing_enabled", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
     { no: 20, name: "bridge_contract_start_height", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 21, name: "valset_reward", kind: "message", T: Coin },
+    { no: 22, name: "admins", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Params {

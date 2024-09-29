@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { Bid, Params } from "./auction_pb.js";
+import { Bid, LastAuctionResult, Params } from "./auction_pb.js";
 
 /**
  * GenesisState defines the auction module's genesis state.
@@ -41,6 +41,13 @@ export class GenesisState extends Message<GenesisState> {
    */
   auctionEndingTimestamp = protoInt64.zero;
 
+  /**
+   * last auction result
+   *
+   * @generated from field: injective.auction.v1beta1.LastAuctionResult last_auction_result = 5;
+   */
+  lastAuctionResult?: LastAuctionResult;
+
   constructor(data?: PartialMessage<GenesisState>) {
     super();
     proto3.util.initPartial(data, this);
@@ -53,6 +60,7 @@ export class GenesisState extends Message<GenesisState> {
     { no: 2, name: "auction_round", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 3, name: "highest_bid", kind: "message", T: Bid },
     { no: 4, name: "auction_ending_timestamp", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "last_auction_result", kind: "message", T: LastAuctionResult },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GenesisState {

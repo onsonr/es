@@ -248,7 +248,7 @@ export class MsgInstantiateContractResponse extends Message<MsgInstantiateContra
 
 /**
  * MsgInstantiateContract2 create a new smart contract instance for the given
- * code id with a predicable address.
+ * code id with a predictable address.
  *
  * @generated from message cosmwasm.wasm.v1.MsgInstantiateContract2
  */

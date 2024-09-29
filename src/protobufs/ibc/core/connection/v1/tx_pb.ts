@@ -127,7 +127,10 @@ export class MsgConnectionOpenTry extends Message<MsgConnectionOpenTry> {
   previousConnectionId = "";
 
   /**
-   * @generated from field: google.protobuf.Any client_state = 3;
+   * Deprecated: this field is unused.
+   *
+   * @generated from field: google.protobuf.Any client_state = 3 [deprecated = true];
+   * @deprecated
    */
   clientState?: Any;
 
@@ -160,21 +163,26 @@ export class MsgConnectionOpenTry extends Message<MsgConnectionOpenTry> {
   proofInit = new Uint8Array(0);
 
   /**
-   * proof of client state included in message
+   * Deprecated: this field is unused.
    *
-   * @generated from field: bytes proof_client = 9;
+   * @generated from field: bytes proof_client = 9 [deprecated = true];
+   * @deprecated
    */
   proofClient = new Uint8Array(0);
 
   /**
-   * proof of client consensus state
+   * Deprecated: this field is unused.
    *
-   * @generated from field: bytes proof_consensus = 10;
+   * @generated from field: bytes proof_consensus = 10 [deprecated = true];
+   * @deprecated
    */
   proofConsensus = new Uint8Array(0);
 
   /**
-   * @generated from field: ibc.core.client.v1.Height consensus_height = 11;
+   * Deprecated: this field is unused.
+   *
+   * @generated from field: ibc.core.client.v1.Height consensus_height = 11 [deprecated = true];
+   * @deprecated
    */
   consensusHeight?: Height;
 
@@ -184,9 +192,10 @@ export class MsgConnectionOpenTry extends Message<MsgConnectionOpenTry> {
   signer = "";
 
   /**
-   * optional proof data for host state machines that are unable to introspect their own consensus state
+   * Deprecated: this field is unused.
    *
-   * @generated from field: bytes host_consensus_state_proof = 13;
+   * @generated from field: bytes host_consensus_state_proof = 13 [deprecated = true];
+   * @deprecated
    */
   hostConsensusStateProof = new Uint8Array(0);
 
@@ -286,7 +295,10 @@ export class MsgConnectionOpenAck extends Message<MsgConnectionOpenAck> {
   version?: Version;
 
   /**
-   * @generated from field: google.protobuf.Any client_state = 4;
+   * Deprecated: this field is unused.
+   *
+   * @generated from field: google.protobuf.Any client_state = 4 [deprecated = true];
+   * @deprecated
    */
   clientState?: Any;
 
@@ -304,21 +316,26 @@ export class MsgConnectionOpenAck extends Message<MsgConnectionOpenAck> {
   proofTry = new Uint8Array(0);
 
   /**
-   * proof of client state included in message
+   * Deprecated: this field is unused.
    *
-   * @generated from field: bytes proof_client = 7;
+   * @generated from field: bytes proof_client = 7 [deprecated = true];
+   * @deprecated
    */
   proofClient = new Uint8Array(0);
 
   /**
-   * proof of client consensus state
+   * Deprecated: this field is unused.
    *
-   * @generated from field: bytes proof_consensus = 8;
+   * @generated from field: bytes proof_consensus = 8 [deprecated = true];
+   * @deprecated
    */
   proofConsensus = new Uint8Array(0);
 
   /**
-   * @generated from field: ibc.core.client.v1.Height consensus_height = 9;
+   * Deprecated: this field is unused.
+   *
+   * @generated from field: ibc.core.client.v1.Height consensus_height = 9 [deprecated = true];
+   * @deprecated
    */
   consensusHeight?: Height;
 
@@ -328,9 +345,10 @@ export class MsgConnectionOpenAck extends Message<MsgConnectionOpenAck> {
   signer = "";
 
   /**
-   * optional proof data for host state machines that are unable to introspect their own consensus state
+   * Deprecated: this field is unused.
    *
-   * @generated from field: bytes host_consensus_state_proof = 11;
+   * @generated from field: bytes host_consensus_state_proof = 11 [deprecated = true];
+   * @deprecated
    */
   hostConsensusStateProof = new Uint8Array(0);
 

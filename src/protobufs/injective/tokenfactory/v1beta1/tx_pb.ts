@@ -45,6 +45,11 @@ export class MsgCreateDenom extends Message<MsgCreateDenom> {
    */
   symbol = "";
 
+  /**
+   * @generated from field: uint32 decimals = 5;
+   */
+  decimals = 0;
+
   constructor(data?: PartialMessage<MsgCreateDenom>) {
     super();
     proto3.util.initPartial(data, this);
@@ -57,6 +62,7 @@ export class MsgCreateDenom extends Message<MsgCreateDenom> {
     { no: 2, name: "subdenom", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "symbol", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "decimals", kind: "scalar", T: 13 /* ScalarType.UINT32 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgCreateDenom {

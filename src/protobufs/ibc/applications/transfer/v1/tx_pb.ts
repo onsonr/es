@@ -7,7 +7,7 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { Coin } from "../../../../cosmos/base/v1beta1/coin_pb.js";
 import { Height } from "../../../core/client/v1/client_pb.js";
-import { Params } from "./transfer_pb.js";
+import { Forwarding, Params } from "./transfer_pb.js";
 
 /**
  * MsgTransfer defines a msg to transfer fungible tokens (i.e Coins) between
@@ -32,9 +32,10 @@ export class MsgTransfer extends Message<MsgTransfer> {
   sourceChannel = "";
 
   /**
-   * the tokens to be transferred
+   * the token to be transferred. this field has been replaced by the tokens field.
    *
-   * @generated from field: cosmos.base.v1beta1.Coin token = 3;
+   * @generated from field: cosmos.base.v1beta1.Coin token = 3 [deprecated = true];
+   * @deprecated
    */
   token?: Coin;
 
@@ -75,6 +76,20 @@ export class MsgTransfer extends Message<MsgTransfer> {
    */
   memo = "";
 
+  /**
+   * tokens to be transferred
+   *
+   * @generated from field: repeated cosmos.base.v1beta1.Coin tokens = 9;
+   */
+  tokens: Coin[] = [];
+
+  /**
+   * optional forwarding information
+   *
+   * @generated from field: ibc.applications.transfer.v1.Forwarding forwarding = 10;
+   */
+  forwarding?: Forwarding;
+
   constructor(data?: PartialMessage<MsgTransfer>) {
     super();
     proto3.util.initPartial(data, this);
@@ -91,6 +106,8 @@ export class MsgTransfer extends Message<MsgTransfer> {
     { no: 6, name: "timeout_height", kind: "message", T: Height },
     { no: 7, name: "timeout_timestamp", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 8, name: "memo", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "tokens", kind: "message", T: Coin, repeated: true },
+    { no: 10, name: "forwarding", kind: "message", T: Forwarding },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgTransfer {
