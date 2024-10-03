@@ -14,12 +14,4 @@ export {
   type EventCallback,
 } from "./wallets/WalletController";
 export { WalletError } from "./wallets/WalletError";
-export { CompassController } from "./wallets/compass/CompassController";
-export { CosmostationController } from "./wallets/cosmostation/CosmostationController";
-export { KeplrController } from "./wallets/keplr/KeplrController";
-export { LeapController } from "./wallets/leap/LeapController";
-export { MetamaskInjectiveController } from "./wallets/metamask-injective/MetamaskInjectiveController";
 export { MnemonicWallet } from "./wallets/mnemonic/MnemonicWallet";
-export { NinjiController } from "./wallets/ninji/NinjiController";
-export { OWalletController } from "./wallets/owallet/OWalletController";
-export { StationController } from "./wallets/station/StationController";

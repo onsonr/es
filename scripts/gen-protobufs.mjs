@@ -8,15 +8,7 @@
 
 import { spawnSync } from "child_process";
 import degit from "degit";
-import {
-  mkdirSync,
-  readFileSync,
-  readdirSync,
-  renameSync,
-  rmSync,
-  statSync,
-  writeFileSync,
-} from "fs";
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from "fs";
 import { globSync } from "glob";
 import { capitalize } from "lodash-es";
 import { dirname, join } from "path";
@@ -35,7 +27,7 @@ import { fileURLToPath } from "url";
  */
 const REPOS = [
   {
-    repo: "cosmos/cosmos-sdk#v0.47.9",
+    repo: "cosmos/cosmos-sdk#v0.50.5",
     paths: ["proto"],
   },
   {
@@ -55,19 +47,7 @@ const REPOS = [
     paths: ["proto"],
   },
   {
-    repo: "osmosis-labs/osmosis#main",
-    paths: ["proto"],
-  },
-  {
-    repo: "InjectiveLabs/sdk-go#master",
-    paths: ["proto"],
-  },
-  {
     repo: "evmos/ethermint#main",
-    paths: ["proto"],
-  },
-  {
-    repo: "dymensionxyz/osmosis#main-dym",
     paths: ["proto"],
   },
 ];
@@ -117,29 +97,6 @@ console.log("Generating TS files from proto files...");
     }
     console.log(`✔️ [${repo}]`);
   }
-}
-
-console.log("Flattening dymension protobufs...");
-{
-  // Move all dirs in protobufs/dymension/osmosis out into protobufs/dymension
-  const dymensionDir = join(PROTOBUFS_DIR, "dymension");
-  const dymensionOsmosisDir = join(dymensionDir, "osmosis");
-  // Move all subdirs up one level
-  readdirSync(dymensionOsmosisDir).forEach((file) => {
-    const currentFile = join(dymensionOsmosisDir, file);
-    const stats = statSync(currentFile);
-    if (stats.isDirectory()) {
-      renameSync(currentFile, join(dymensionDir, file));
-    }
-  });
-  // Remove all empty dirs
-  readdirSync(dymensionDir).forEach((file) => {
-    const currentFile = join(dymensionDir, file);
-    const stats = statSync(currentFile);
-    if (stats.isDirectory() && stats.size === 0) {
-      rmSync(currentFile, { recursive: true, force: true });
-    }
-  });
 }
 
 console.log("Generating src/index.ts file and renaming exports...");
@@ -196,22 +153,6 @@ console.log("Generating src/index.ts file and renaming exports...");
   }
   generateIndexExports(PROTOBUFS_DIR);
   writeFileSync(join(PROTOBUFS_DIR, "index.ts"), contents);
-}
-
-console.log("Rewriting Injective's legacy CosmWasm dependencies...");
-{
-  const path = join(
-    PROTOBUFS_DIR,
-    "injective",
-    "wasmx",
-    "v1",
-    "proposal_pb.ts"
-  );
-  const contents = readFileSync(path, "utf8").replace(
-    "proposal_pb.js",
-    "proposal_legacy_pb.js"
-  );
-  writeFileSync(path, contents);
 }
 
 console.log("Cleaning up...");

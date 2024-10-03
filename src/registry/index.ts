@@ -4,4 +4,3 @@ export type { ChainRegistryChainInfo } from "./types/ChainRegistryChainInfo";
 
 export { getChainRegistryAssetList } from "./apis/getChainRegistryAssetList";
 export { getChainRegistryChainInfo } from "./apis/getChainRegistryChainInfo";
-export { toKeplrChainInfo } from "./keplr/toKeplrChainInfo";
