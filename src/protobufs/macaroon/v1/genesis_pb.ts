@@ -111,9 +111,14 @@ export class Params extends Message<Params> {
  */
 export class Methods extends Message<Methods> {
   /**
-   * @generated from field: repeated string methods = 1;
+   * @generated from field: string default = 1;
    */
-  methods: string[] = [];
+  default = "";
+
+  /**
+   * @generated from field: repeated string supported = 2;
+   */
+  supported: string[] = [];
 
   constructor(data?: PartialMessage<Methods>) {
     super();
@@ -123,7 +128,8 @@ export class Methods extends Message<Methods> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "macaroon.v1.Methods";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "methods", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 1, name: "default", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "supported", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Methods {
@@ -150,9 +156,14 @@ export class Methods extends Message<Methods> {
  */
 export class Scopes extends Message<Scopes> {
   /**
-   * @generated from field: repeated string scopes = 1;
+   * @generated from field: string base = 1;
    */
-  scopes: string[] = [];
+  base = "";
+
+  /**
+   * @generated from field: repeated string supported = 2;
+   */
+  supported: string[] = [];
 
   constructor(data?: PartialMessage<Scopes>) {
     super();
@@ -162,7 +173,8 @@ export class Scopes extends Message<Scopes> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "macaroon.v1.Scopes";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "scopes", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 1, name: "base", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "supported", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Scopes {
@@ -189,9 +201,14 @@ export class Scopes extends Message<Scopes> {
  */
 export class Caveats extends Message<Caveats> {
   /**
-   * @generated from field: repeated string caveats = 1;
+   * @generated from field: repeated string supported_first_party = 1;
    */
-  caveats: string[] = [];
+  supportedFirstParty: string[] = [];
+
+  /**
+   * @generated from field: repeated string supported_third_party = 2;
+   */
+  supportedThirdParty: string[] = [];
 
   constructor(data?: PartialMessage<Caveats>) {
     super();
@@ -201,7 +218,8 @@ export class Caveats extends Message<Caveats> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "macaroon.v1.Caveats";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "caveats", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 1, name: "supported_first_party", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 2, name: "supported_third_party", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Caveats {

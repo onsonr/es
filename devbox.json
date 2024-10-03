@@ -11,6 +11,9 @@
       "build": [
         "pnpm run gen:protobufs",
         "pnpm run build"
+      ],
+      "publish": [
+        "pnpm publish"
       ]
     }
   }

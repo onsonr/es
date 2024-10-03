@@ -25,6 +25,11 @@ export class DWN extends Message<DWN> {
    */
   cid = "";
 
+  /**
+   * @generated from field: string resolver = 4;
+   */
+  resolver = "";
+
   constructor(data?: PartialMessage<DWN>) {
     super();
     proto3.util.initPartial(data, this);
@@ -36,6 +41,7 @@ export class DWN extends Message<DWN> {
     { no: 1, name: "id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 2, name: "alias", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "cid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "resolver", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DWN {

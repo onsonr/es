@@ -1,10 +1,13 @@
 {
-  "name": "cosmes",
-  "version": "0.0.71",
+  "name": "@onsonr/es",
+  "version": "0.5.3",
   "private": false,
   "packageManager": "pnpm@8.3.0",
   "sideEffects": false,
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "src",
     "dist"

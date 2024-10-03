@@ -128,24 +128,24 @@ export class Schema extends Message<Schema> {
   credential = "";
 
   /**
-   * @generated from field: string jwk = 6;
+   * @generated from field: string did = 6;
+   */
+  did = "";
+
+  /**
+   * @generated from field: string jwk = 7;
    */
   jwk = "";
 
   /**
-   * @generated from field: string grant = 7;
+   * @generated from field: string grant = 8;
    */
   grant = "";
 
   /**
-   * @generated from field: string keyshare = 8;
+   * @generated from field: string keyshare = 9;
    */
   keyshare = "";
-
-  /**
-   * @generated from field: string publicKey = 9;
-   */
-  publicKey = "";
 
   /**
    * @generated from field: string profile = 10;
@@ -165,10 +165,10 @@ export class Schema extends Message<Schema> {
     { no: 3, name: "asset", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "chain", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "credential", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "jwk", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "grant", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: "keyshare", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 9, name: "publicKey", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "did", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: "jwk", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "grant", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "keyshare", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 10, name: "profile", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 

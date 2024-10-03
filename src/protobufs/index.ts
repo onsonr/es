@@ -1435,6 +1435,7 @@ export {
 } from "./macaroon/v1/tx_cosmes.js";
 export {
   Grant as MacaroonV1Grant,
+  Macaroon as MacaroonV1Macaroon,
 } from "./macaroon/v1/state_pb.js";
 export {
   QueryParamsRequest as MacaroonV1QueryParamsRequest,

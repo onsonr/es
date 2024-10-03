@@ -67,3 +67,70 @@ export class Grant extends Message<Grant> {
   }
 }
 
+/**
+ * @generated from message macaroon.v1.Macaroon
+ */
+export class Macaroon extends Message<Macaroon> {
+  /**
+   * @generated from field: uint64 id = 1;
+   */
+  id = protoInt64.zero;
+
+  /**
+   * @generated from field: string controller = 2;
+   */
+  controller = "";
+
+  /**
+   * @generated from field: string subject = 3;
+   */
+  subject = "";
+
+  /**
+   * @generated from field: string origin = 4;
+   */
+  origin = "";
+
+  /**
+   * @generated from field: int64 expiry_height = 5;
+   */
+  expiryHeight = protoInt64.zero;
+
+  /**
+   * @generated from field: string macaroon = 6;
+   */
+  macaroon = "";
+
+  constructor(data?: PartialMessage<Macaroon>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "macaroon.v1.Macaroon";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
+    { no: 2, name: "controller", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "subject", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "origin", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "expiry_height", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "macaroon", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Macaroon {
+    return new Macaroon().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Macaroon {
+    return new Macaroon().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Macaroon {
+    return new Macaroon().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Macaroon | PlainMessage<Macaroon> | undefined, b: Macaroon | PlainMessage<Macaroon> | undefined): boolean {
+    return proto3.util.equals(Macaroon, a, b);
+  }
+}
+
