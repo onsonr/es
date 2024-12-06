@@ -1,6 +1,6 @@
 {
   "name": "@onsonr/es",
-  "version": "0.5.3",
+  "version": "0.0.1",
   "private": false,
   "packageManager": "pnpm@8.3.0",
   "sideEffects": false,
@@ -12,6 +12,7 @@
     "src",
     "dist"
   ],
+  "jsdelivr": "dist/client/index.js",
   "exports": {
     "./client": "./dist/client/index.js",
     "./codec": "./dist/codec/index.js",

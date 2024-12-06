@@ -1,7 +1,8 @@
 <!-- omit in toc -->
-# CosmES
 
-[![npm version](https://badge.fury.io/js/cosmes.svg)](https://www.npmjs.com/package/cosmes)
+# SonrES
+
+[![npm version](https://badge.fury.io/js/cosmes.svg)](https://www.npmjs.com/package/@onsonr/es)
 
 A tree-shakeable, framework agnostic, [pure ESM](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) alternative of [CosmJS](https://github.com/cosmos/cosmjs) and [Cosmos Kit](https://cosmoskit.com) (**generate bundles up to 10x smaller than Cosmos Kit**).
 
@@ -28,7 +29,7 @@ A tree-shakeable, framework agnostic, [pure ESM](https://gist.github.com/sindres
 
 - **Fully tree-shakeable**: import and bundle only the modules you need
 - **Framework agnostic**: integrate with any web framework (React, Vue, Svelte, Solid, etc.)
-- **Lightweight and  minimal**: 153 KB gzipped to connect a React app to Keplr via browser extension or WalletConnect, 10x smaller than Cosmos Kit V2 (see [benchmarks](#benchmarks))
+- **Lightweight and minimal**: 153 KB gzipped to connect a React app to Keplr via browser extension or WalletConnect, 10x smaller than Cosmos Kit V2 (see [benchmarks](#benchmarks))
 - **Uses modern web APIs**: no dependencies on Node.js and minimal dependencies on third-party libraries where possible
 - **Supports modern bundlers**: works with Vite, SWC, Rollup, etc.
 - **Fully typed**: written in TypeScript and ships with type definitions
@@ -68,7 +69,7 @@ This library only exports ES modules. To ensure imports from this library work c
 {
   "compilerOptions": {
     "moduleResolution": "bundler", // recommended if using modern bundlers
-    // or "node16" 
+    // or "node16"
     // or "nodenext"
     // but NOT "node"
   }
@@ -162,7 +163,7 @@ This directory is a [Cosmos Kit](https://cosmoskit.com) alternative to interact 
 
 ## Benchmarks
 
-See the [`benchmarks`](./benchmarks) folder, where the bundle size of CosmES is compared against Cosmos Kit. The following are adhered to:
+See the [`benchmarks`](./benchmarks) folder, where the bundle size of SonrES is compared against Cosmos Kit. The following are adhered to:
 
 - Apps should only contain the minimal functionality of connecting to Osmosis via Keplr using both the browser extension and WalletConnect wallets
 - Apps should be built using React 18 (as Cosmos Kit has a [hard dependency](https://docs.cosmoskit.com/get-started)) and Vite
@@ -173,8 +174,8 @@ See the [`benchmarks`](./benchmarks) folder, where the bundle size of CosmES is 
 > Last updated: 4th May 2024
 
 | Package       | Minified | Gzipped |
-|---------------|----------|---------|
-| CosmES        | 553 KB   | 153 KB  |
+| ------------- | -------- | ------- |
+| SonrES        | 553 KB   | 153 KB  |
 | Cosmos Kit v1 | 6010 KB  | 1399 KB |
 | Cosmos Kit v2 | 6780 KB  | 1556 KB |
 
