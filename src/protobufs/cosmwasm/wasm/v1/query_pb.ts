@@ -1172,6 +1172,81 @@ export class QueryContractsByCreatorResponse extends Message<QueryContractsByCre
 }
 
 /**
+ * QueryWasmLimitsConfigRequest is the request type for the
+ * Query/WasmLimitsConfig RPC method.
+ *
+ * @generated from message cosmwasm.wasm.v1.QueryWasmLimitsConfigRequest
+ */
+export class QueryWasmLimitsConfigRequest extends Message<QueryWasmLimitsConfigRequest> {
+  constructor(data?: PartialMessage<QueryWasmLimitsConfigRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "cosmwasm.wasm.v1.QueryWasmLimitsConfigRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryWasmLimitsConfigRequest {
+    return new QueryWasmLimitsConfigRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryWasmLimitsConfigRequest {
+    return new QueryWasmLimitsConfigRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryWasmLimitsConfigRequest {
+    return new QueryWasmLimitsConfigRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryWasmLimitsConfigRequest | PlainMessage<QueryWasmLimitsConfigRequest> | undefined, b: QueryWasmLimitsConfigRequest | PlainMessage<QueryWasmLimitsConfigRequest> | undefined): boolean {
+    return proto3.util.equals(QueryWasmLimitsConfigRequest, a, b);
+  }
+}
+
+/**
+ * QueryWasmLimitsConfigResponse is the response type for the
+ * Query/WasmLimitsConfig RPC method. It contains the JSON encoded limits for
+ * static validation of Wasm files.
+ *
+ * @generated from message cosmwasm.wasm.v1.QueryWasmLimitsConfigResponse
+ */
+export class QueryWasmLimitsConfigResponse extends Message<QueryWasmLimitsConfigResponse> {
+  /**
+   * @generated from field: string config = 1;
+   */
+  config = "";
+
+  constructor(data?: PartialMessage<QueryWasmLimitsConfigResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "cosmwasm.wasm.v1.QueryWasmLimitsConfigResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "config", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): QueryWasmLimitsConfigResponse {
+    return new QueryWasmLimitsConfigResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): QueryWasmLimitsConfigResponse {
+    return new QueryWasmLimitsConfigResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): QueryWasmLimitsConfigResponse {
+    return new QueryWasmLimitsConfigResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: QueryWasmLimitsConfigResponse | PlainMessage<QueryWasmLimitsConfigResponse> | undefined, b: QueryWasmLimitsConfigResponse | PlainMessage<QueryWasmLimitsConfigResponse> | undefined): boolean {
+    return proto3.util.equals(QueryWasmLimitsConfigResponse, a, b);
+  }
+}
+
+/**
  * QueryBuildAddressRequest is the request type for the Query/BuildAddress RPC
  * method.
  *

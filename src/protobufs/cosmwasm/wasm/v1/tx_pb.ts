@@ -1281,7 +1281,7 @@ export class MsgStoreAndInstantiateContract extends Message<MsgStoreAndInstantia
   admin = "";
 
   /**
-   * Label is optional metadata to be stored with a constract instance.
+   * Label is optional metadata to be stored with a contract instance.
    *
    * @generated from field: string label = 7;
    */

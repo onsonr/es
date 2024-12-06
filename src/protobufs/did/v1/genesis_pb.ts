@@ -48,32 +48,88 @@ export class GenesisState extends Message<GenesisState> {
 }
 
 /**
+ * Document defines a DID document
+ *
+ * @generated from message did.v1.Document
+ */
+export class Document extends Message<Document> {
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = "";
+
+  /**
+   * The DID of the controller
+   *
+   * @generated from field: string controller = 2;
+   */
+  controller = "";
+
+  /**
+   * @generated from field: repeated string authentication = 3;
+   */
+  authentication: string[] = [];
+
+  /**
+   * @generated from field: repeated string assertion_method = 4;
+   */
+  assertionMethod: string[] = [];
+
+  /**
+   * @generated from field: repeated string capability_delegation = 5;
+   */
+  capabilityDelegation: string[] = [];
+
+  /**
+   * @generated from field: repeated string capability_invocation = 6;
+   */
+  capabilityInvocation: string[] = [];
+
+  /**
+   * @generated from field: repeated string service = 7;
+   */
+  service: string[] = [];
+
+  constructor(data?: PartialMessage<Document>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "did.v1.Document";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "controller", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "authentication", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 4, name: "assertion_method", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 5, name: "capability_delegation", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 6, name: "capability_invocation", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 7, name: "service", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Document {
+    return new Document().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Document {
+    return new Document().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Document {
+    return new Document().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: Document | PlainMessage<Document> | undefined, b: Document | PlainMessage<Document> | undefined): boolean {
+    return proto3.util.equals(Document, a, b);
+  }
+}
+
+/**
  * Params defines the set of module parameters.
  *
  * @generated from message did.v1.Params
  */
 export class Params extends Message<Params> {
-  /**
-   * Whitelisted Key Types
-   *
-   * @generated from field: map<string, did.v1.KeyInfo> allowed_public_keys = 2;
-   */
-  allowedPublicKeys: { [key: string]: KeyInfo } = {};
-
-  /**
-   * ConveyancePreference defines the conveyance preference
-   *
-   * @generated from field: string conveyance_preference = 3;
-   */
-  conveyancePreference = "";
-
-  /**
-   * AttestationFormats defines the attestation formats
-   *
-   * @generated from field: repeated string attestation_formats = 4;
-   */
-  attestationFormats: string[] = [];
-
   constructor(data?: PartialMessage<Params>) {
     super();
     proto3.util.initPartial(data, this);
@@ -82,9 +138,6 @@ export class Params extends Message<Params> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = "did.v1.Params";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 2, name: "allowed_public_keys", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "message", T: KeyInfo} },
-    { no: 3, name: "conveyance_preference", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "attestation_formats", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Params {
@@ -101,69 +154,6 @@ export class Params extends Message<Params> {
 
   static equals(a: Params | PlainMessage<Params> | undefined, b: Params | PlainMessage<Params> | undefined): boolean {
     return proto3.util.equals(Params, a, b);
-  }
-}
-
-/**
- * KeyInfo defines information for accepted PubKey types
- *
- * @generated from message did.v1.KeyInfo
- */
-export class KeyInfo extends Message<KeyInfo> {
-  /**
-   * @generated from field: string role = 1;
-   */
-  role = "";
-
-  /**
-   * e.g., "ES256", "EdDSA", "ES256K"
-   *
-   * @generated from field: string algorithm = 2;
-   */
-  algorithm = "";
-
-  /**
-   * e.g., "hex", "base64", "multibase"
-   *
-   * @generated from field: string encoding = 3;
-   */
-  encoding = "";
-
-  /**
-   * e.g., "P256", "P384", "P521", "X25519", "X448",
-   *
-   * @generated from field: string curve = 4;
-   */
-  curve = "";
-
-  constructor(data?: PartialMessage<KeyInfo>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "did.v1.KeyInfo";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "algorithm", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "encoding", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "curve", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): KeyInfo {
-    return new KeyInfo().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): KeyInfo {
-    return new KeyInfo().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): KeyInfo {
-    return new KeyInfo().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: KeyInfo | PlainMessage<KeyInfo> | undefined, b: KeyInfo | PlainMessage<KeyInfo> | undefined): boolean {
-    return proto3.util.equals(KeyInfo, a, b);
   }
 }
 

@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { MsgExecuteTx, MsgExecuteTxResponse, MsgRegisterController, MsgRegisterControllerResponse, MsgUpdateParams, MsgUpdateParamsResponse } from "./tx_pb.js";
+import { MsgExecuteTx, MsgExecuteTxResponse, MsgLinkAssertion, MsgLinkAssertionResponse, MsgLinkAuthentication, MsgLinkAuthenticationResponse, MsgUnlinkAssertion, MsgUnlinkAssertionResponse, MsgUnlinkAuthentication, MsgUnlinkAuthenticationResponse, MsgUpdateParams, MsgUpdateParamsResponse } from "./tx_pb.js";
 
 const TYPE_NAME = "did.v1.Msg";
 
@@ -21,16 +21,51 @@ export const MsgExecuteTxService = {
 } as const;
 
 /**
- * RegisterController initializes a controller with the given authentication
- * set, address, cid, publicKey, and user-defined alias.
+ * LinkAssertion links an assertion to a controller.
  *
- * @generated from rpc did.v1.Msg.RegisterController
+ * @generated from rpc did.v1.Msg.LinkAssertion
  */
-export const MsgRegisterControllerService = {
+export const MsgLinkAssertionService = {
   typeName: TYPE_NAME,
-  method: "RegisterController",
-  Request: MsgRegisterController,
-  Response: MsgRegisterControllerResponse,
+  method: "LinkAssertion",
+  Request: MsgLinkAssertion,
+  Response: MsgLinkAssertionResponse,
+} as const;
+
+/**
+ * LinkAuthentication links an authentication to a controller.
+ *
+ * @generated from rpc did.v1.Msg.LinkAuthentication
+ */
+export const MsgLinkAuthenticationService = {
+  typeName: TYPE_NAME,
+  method: "LinkAuthentication",
+  Request: MsgLinkAuthentication,
+  Response: MsgLinkAuthenticationResponse,
+} as const;
+
+/**
+ * UnlinkAssertion unlinks an assertion from a controller.
+ *
+ * @generated from rpc did.v1.Msg.UnlinkAssertion
+ */
+export const MsgUnlinkAssertionService = {
+  typeName: TYPE_NAME,
+  method: "UnlinkAssertion",
+  Request: MsgUnlinkAssertion,
+  Response: MsgUnlinkAssertionResponse,
+} as const;
+
+/**
+ * UnlinkAuthentication unlinks an authentication from a controller.
+ *
+ * @generated from rpc did.v1.Msg.UnlinkAuthentication
+ */
+export const MsgUnlinkAuthenticationService = {
+  typeName: TYPE_NAME,
+  method: "UnlinkAuthentication",
+  Request: MsgUnlinkAuthentication,
+  Response: MsgUnlinkAuthenticationResponse,
 } as const;
 
 /**

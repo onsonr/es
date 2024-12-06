@@ -6,7 +6,7 @@
     "start": "tsx src/index.ts"
   },
   "dependencies": {
-    "cosmes": "link:../.."
+    "sonr-es": "link:../.."
   },
   "devDependencies": {
     "@types/node": "^20.2.0",

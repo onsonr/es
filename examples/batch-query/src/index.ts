@@ -1,8 +1,8 @@
-import { RpcClient, toBaseAccount } from "cosmes/client";
+import { RpcClient, toBaseAccount } from "sonr-es/client";
 import {
   CosmosAuthV1beta1QueryAccountService as QueryAccountService,
   CosmosBankV1beta1QueryAllBalancesService as QueryAllBalancesService,
-} from "cosmes/protobufs";
+} from "sonr-es/protobufs";
 
 RpcClient.newBatchQuery("https://phoenix-rpc.terra.dev")
   .add(

@@ -39,7 +39,7 @@ const REPOS = [
     paths: ["proto"],
   },
   {
-    repo: "onsonr/sonr#master",
+    repo: "onsonr/sonr#develop",
     paths: ["proto"],
   },
   {
@@ -47,8 +47,16 @@ const REPOS = [
     paths: ["proto"],
   },
   {
+    repo: "osmosis-labs/osmosis#main",
+    paths: ["proto"],
+  },
+  {
     repo: "evmos/ethermint#main",
     paths: ["proto"],
+  },
+  {
+    repo: "nomic-io/nomic#develop",
+    paths: ["src/babylon/proto"],
   },
 ];
 

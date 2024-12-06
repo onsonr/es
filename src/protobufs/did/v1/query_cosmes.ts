@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { QueryParamsResponse, QueryRequest, QueryResolveResponse, QuerySignRequest, QuerySignResponse, QueryVerifyRequest, QueryVerifyResponse } from "./query_pb.js";
+import { QueryParamsResponse, QueryRequest, QueryResolveResponse, QueryVerifyRequest, QueryVerifyResponse } from "./query_pb.js";
 
 const TYPE_NAME = "did.v1.Query";
 
@@ -29,18 +29,6 @@ export const QueryResolveService = {
   method: "Resolve",
   Request: QueryRequest,
   Response: QueryResolveResponse,
-} as const;
-
-/**
- * Sign signs a message with the DID document
- *
- * @generated from rpc did.v1.Query.Sign
- */
-export const QuerySignService = {
-  typeName: TYPE_NAME,
-  method: "Sign",
-  Request: QuerySignRequest,
-  Response: QuerySignResponse,
 } as const;
 
 /**

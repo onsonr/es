@@ -165,7 +165,7 @@ export class InstantiateContractProposal extends Message<InstantiateContractProp
   codeId = protoInt64.zero;
 
   /**
-   * Label is optional metadata to be stored with a constract instance.
+   * Label is optional metadata to be stored with a contract instance.
    *
    * @generated from field: string label = 6;
    */
@@ -245,7 +245,7 @@ export class InstantiateContract2Proposal extends Message<InstantiateContract2Pr
   description = "";
 
   /**
-   * RunAs is the address that is passed to the contract's enviroment as sender
+   * RunAs is the address that is passed to the contract's environment as sender
    *
    * @generated from field: string run_as = 3;
    */
@@ -266,7 +266,7 @@ export class InstantiateContract2Proposal extends Message<InstantiateContract2Pr
   codeId = protoInt64.zero;
 
   /**
-   * Label is optional metadata to be stored with a constract instance.
+   * Label is optional metadata to be stored with a contract instance.
    *
    * @generated from field: string label = 6;
    */
@@ -995,7 +995,7 @@ export class StoreAndInstantiateContractProposal extends Message<StoreAndInstant
   admin = "";
 
   /**
-   * Label is optional metadata to be stored with a constract instance.
+   * Label is optional metadata to be stored with a contract instance.
    *
    * @generated from field: string label = 8;
    */

@@ -8,78 +8,85 @@ import { Message, proto3 } from "@bufbuild/protobuf";
 import { Params } from "./genesis_pb.js";
 
 /**
- * MsgRegisterController is the message type for the InitializeController RPC.
+ * MsgLinkAuthentication is the message type for the LinkAuthentication RPC.
  *
- * @generated from message did.v1.MsgRegisterController
+ * @generated from message did.v1.MsgLinkAuthentication
  */
-export class MsgRegisterController extends Message<MsgRegisterController> {
+export class MsgLinkAuthentication extends Message<MsgLinkAuthentication> {
   /**
-   * authority is the address of the governance account.
+   * Controller is the address of the controller to authenticate.
    *
-   * @generated from field: string authority = 1;
+   * @generated from field: string controller = 1;
    */
-  authority = "";
+  controller = "";
 
   /**
-   * Assertions is the list of assertions to initialize the controller with.
+   * Subject is the subject of the authentication.
    *
-   * @generated from field: repeated bytes assertions = 2;
+   * @generated from field: string subject = 2;
    */
-  assertions: Uint8Array[] = [];
+  subject = "";
 
   /**
-   * Keyshares is the list of keyshares to initialize the controller with.
+   * Assertion is the assertion of the authentication.
    *
-   * @generated from field: repeated bytes keyshares = 3;
+   * @generated from field: string assertion = 3;
    */
-  keyshares: Uint8Array[] = [];
+  assertion = "";
 
   /**
-   * Verifications is the list of verifications to initialize the controller
-   * with.
+   * Authentication is the authentication of the authentication.
    *
-   * @generated from field: repeated bytes verifications = 4;
+   * @generated from field: bytes credential_id = 4;
    */
-  verifications: Uint8Array[] = [];
+  credentialId = new Uint8Array(0);
 
-  constructor(data?: PartialMessage<MsgRegisterController>) {
+  /**
+   * token is the macron token to authenticate the operation.
+   *
+   * @generated from field: string macaroon_token = 5;
+   */
+  macaroonToken = "";
+
+  constructor(data?: PartialMessage<MsgLinkAuthentication>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "did.v1.MsgRegisterController";
+  static readonly typeName = "did.v1.MsgLinkAuthentication";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "authority", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "assertions", kind: "scalar", T: 12 /* ScalarType.BYTES */, repeated: true },
-    { no: 3, name: "keyshares", kind: "scalar", T: 12 /* ScalarType.BYTES */, repeated: true },
-    { no: 4, name: "verifications", kind: "scalar", T: 12 /* ScalarType.BYTES */, repeated: true },
+    { no: 1, name: "controller", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "subject", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "assertion", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "credential_id", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
+    { no: 5, name: "macaroon_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgRegisterController {
-    return new MsgRegisterController().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgLinkAuthentication {
+    return new MsgLinkAuthentication().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgRegisterController {
-    return new MsgRegisterController().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgLinkAuthentication {
+    return new MsgLinkAuthentication().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgRegisterController {
-    return new MsgRegisterController().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgLinkAuthentication {
+    return new MsgLinkAuthentication().fromJsonString(jsonString, options);
   }
 
-  static equals(a: MsgRegisterController | PlainMessage<MsgRegisterController> | undefined, b: MsgRegisterController | PlainMessage<MsgRegisterController> | undefined): boolean {
-    return proto3.util.equals(MsgRegisterController, a, b);
+  static equals(a: MsgLinkAuthentication | PlainMessage<MsgLinkAuthentication> | undefined, b: MsgLinkAuthentication | PlainMessage<MsgLinkAuthentication> | undefined): boolean {
+    return proto3.util.equals(MsgLinkAuthentication, a, b);
   }
 }
 
 /**
- * MsgRegisterControllerResponse is the response type for the
- * InitializeController RPC.
+ * MsgLinkAuthenticationResponse is the response type for the
+ * LinkAuthentication RPC.
  *
- * @generated from message did.v1.MsgRegisterControllerResponse
+ * @generated from message did.v1.MsgLinkAuthenticationResponse
  */
-export class MsgRegisterControllerResponse extends Message<MsgRegisterControllerResponse> {
+export class MsgLinkAuthenticationResponse extends Message<MsgLinkAuthenticationResponse> {
   /**
    * Success returns true if the specified cid is valid and not already
    * encrypted.
@@ -91,44 +98,152 @@ export class MsgRegisterControllerResponse extends Message<MsgRegisterController
   /**
    * Controller is the address of the initialized controller.
    *
-   * @generated from field: string controller = 2;
+   * @generated from field: string did = 2;
    */
-  controller = "";
+  did = "";
 
-  /**
-   * Accounts are a Address Map and Supported coin Denoms for the controller
-   *
-   * @generated from field: map<string, string> accounts = 3;
-   */
-  accounts: { [key: string]: string } = {};
-
-  constructor(data?: PartialMessage<MsgRegisterControllerResponse>) {
+  constructor(data?: PartialMessage<MsgLinkAuthenticationResponse>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "did.v1.MsgRegisterControllerResponse";
+  static readonly typeName = "did.v1.MsgLinkAuthenticationResponse";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 2, name: "controller", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "accounts", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 2, name: "did", kind: "scalar", T: 9 /* ScalarType.STRING */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgRegisterControllerResponse {
-    return new MsgRegisterControllerResponse().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgLinkAuthenticationResponse {
+    return new MsgLinkAuthenticationResponse().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgRegisterControllerResponse {
-    return new MsgRegisterControllerResponse().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgLinkAuthenticationResponse {
+    return new MsgLinkAuthenticationResponse().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgRegisterControllerResponse {
-    return new MsgRegisterControllerResponse().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgLinkAuthenticationResponse {
+    return new MsgLinkAuthenticationResponse().fromJsonString(jsonString, options);
   }
 
-  static equals(a: MsgRegisterControllerResponse | PlainMessage<MsgRegisterControllerResponse> | undefined, b: MsgRegisterControllerResponse | PlainMessage<MsgRegisterControllerResponse> | undefined): boolean {
-    return proto3.util.equals(MsgRegisterControllerResponse, a, b);
+  static equals(a: MsgLinkAuthenticationResponse | PlainMessage<MsgLinkAuthenticationResponse> | undefined, b: MsgLinkAuthenticationResponse | PlainMessage<MsgLinkAuthenticationResponse> | undefined): boolean {
+    return proto3.util.equals(MsgLinkAuthenticationResponse, a, b);
+  }
+}
+
+/**
+ * MsgLinkAssertion is the message type for the LinkAssertion RPC.
+ *
+ * @generated from message did.v1.MsgLinkAssertion
+ */
+export class MsgLinkAssertion extends Message<MsgLinkAssertion> {
+  /**
+   * Controller is the address of the controller to authenticate.
+   *
+   * @generated from field: string controller = 1;
+   */
+  controller = "";
+
+  /**
+   * Subject is the subject of the authentication.
+   *
+   * @generated from field: string subject = 2;
+   */
+  subject = "";
+
+  /**
+   * Assertion is the assertion of the authentication.
+   *
+   * @generated from field: string assertion = 3;
+   */
+  assertion = "";
+
+  /**
+   * token is the macron token to authenticate the operation.
+   *
+   * @generated from field: string macaroon_token = 4;
+   */
+  macaroonToken = "";
+
+  constructor(data?: PartialMessage<MsgLinkAssertion>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "did.v1.MsgLinkAssertion";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "controller", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "subject", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "assertion", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "macaroon_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgLinkAssertion {
+    return new MsgLinkAssertion().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgLinkAssertion {
+    return new MsgLinkAssertion().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgLinkAssertion {
+    return new MsgLinkAssertion().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MsgLinkAssertion | PlainMessage<MsgLinkAssertion> | undefined, b: MsgLinkAssertion | PlainMessage<MsgLinkAssertion> | undefined): boolean {
+    return proto3.util.equals(MsgLinkAssertion, a, b);
+  }
+}
+
+/**
+ * MsgLinkAssertionResponse is the response type for the
+ * LinkAssertion RPC.
+ *
+ * @generated from message did.v1.MsgLinkAssertionResponse
+ */
+export class MsgLinkAssertionResponse extends Message<MsgLinkAssertionResponse> {
+  /**
+   * Success returns true if the specified cid is valid and not already
+   * encrypted.
+   *
+   * @generated from field: bool success = 1;
+   */
+  success = false;
+
+  /**
+   * Controller is the address of the initialized controller.
+   *
+   * @generated from field: string did = 2;
+   */
+  did = "";
+
+  constructor(data?: PartialMessage<MsgLinkAssertionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "did.v1.MsgLinkAssertionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "did", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgLinkAssertionResponse {
+    return new MsgLinkAssertionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgLinkAssertionResponse {
+    return new MsgLinkAssertionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgLinkAssertionResponse {
+    return new MsgLinkAssertionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MsgLinkAssertionResponse | PlainMessage<MsgLinkAssertionResponse> | undefined, b: MsgLinkAssertionResponse | PlainMessage<MsgLinkAssertionResponse> | undefined): boolean {
+    return proto3.util.equals(MsgLinkAssertionResponse, a, b);
   }
 }
 
@@ -231,6 +346,222 @@ export class MsgExecuteTxResponse extends Message<MsgExecuteTxResponse> {
 
   static equals(a: MsgExecuteTxResponse | PlainMessage<MsgExecuteTxResponse> | undefined, b: MsgExecuteTxResponse | PlainMessage<MsgExecuteTxResponse> | undefined): boolean {
     return proto3.util.equals(MsgExecuteTxResponse, a, b);
+  }
+}
+
+/**
+ * MsgUnlinkAssertion is the message type for the UnlinkAssertion RPC.
+ *
+ * @generated from message did.v1.MsgUnlinkAssertion
+ */
+export class MsgUnlinkAssertion extends Message<MsgUnlinkAssertion> {
+  /**
+   * Controller is the address of the controller to authenticate.
+   *
+   * @generated from field: string controller = 1;
+   */
+  controller = "";
+
+  /**
+   * Assertion is the assertion of the authentication.
+   *
+   * @generated from field: string assertion_did = 2;
+   */
+  assertionDid = "";
+
+  /**
+   * token is the macron token to authenticate the operation.
+   *
+   * @generated from field: string macaroon_token = 3;
+   */
+  macaroonToken = "";
+
+  constructor(data?: PartialMessage<MsgUnlinkAssertion>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "did.v1.MsgUnlinkAssertion";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "controller", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "assertion_did", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "macaroon_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgUnlinkAssertion {
+    return new MsgUnlinkAssertion().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgUnlinkAssertion {
+    return new MsgUnlinkAssertion().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgUnlinkAssertion {
+    return new MsgUnlinkAssertion().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MsgUnlinkAssertion | PlainMessage<MsgUnlinkAssertion> | undefined, b: MsgUnlinkAssertion | PlainMessage<MsgUnlinkAssertion> | undefined): boolean {
+    return proto3.util.equals(MsgUnlinkAssertion, a, b);
+  }
+}
+
+/**
+ * MsgUnlinkAssertionResponse is the response type for the
+ * UnlinkAssertion RPC.
+ *
+ * @generated from message did.v1.MsgUnlinkAssertionResponse
+ */
+export class MsgUnlinkAssertionResponse extends Message<MsgUnlinkAssertionResponse> {
+  /**
+   * Success returns true if the specified cid is valid and not already
+   * encrypted.
+   *
+   * @generated from field: bool success = 1;
+   */
+  success = false;
+
+  /**
+   * Controller is the address of the initialized controller.
+   *
+   * @generated from field: string did = 2;
+   */
+  did = "";
+
+  constructor(data?: PartialMessage<MsgUnlinkAssertionResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "did.v1.MsgUnlinkAssertionResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "did", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgUnlinkAssertionResponse {
+    return new MsgUnlinkAssertionResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgUnlinkAssertionResponse {
+    return new MsgUnlinkAssertionResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgUnlinkAssertionResponse {
+    return new MsgUnlinkAssertionResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MsgUnlinkAssertionResponse | PlainMessage<MsgUnlinkAssertionResponse> | undefined, b: MsgUnlinkAssertionResponse | PlainMessage<MsgUnlinkAssertionResponse> | undefined): boolean {
+    return proto3.util.equals(MsgUnlinkAssertionResponse, a, b);
+  }
+}
+
+/**
+ * MsgUnlinkAuthentication is the message type for the UnlinkAuthentication RPC.
+ *
+ * @generated from message did.v1.MsgUnlinkAuthentication
+ */
+export class MsgUnlinkAuthentication extends Message<MsgUnlinkAuthentication> {
+  /**
+   * Controller is the address of the controller to authenticate.
+   *
+   * @generated from field: string controller = 1;
+   */
+  controller = "";
+
+  /**
+   * Subject is the subject of the authentication.
+   *
+   * @generated from field: string authentication_did = 2;
+   */
+  authenticationDid = "";
+
+  /**
+   * token is the macron token to authenticate the operation.
+   *
+   * @generated from field: string macaroon_token = 3;
+   */
+  macaroonToken = "";
+
+  constructor(data?: PartialMessage<MsgUnlinkAuthentication>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "did.v1.MsgUnlinkAuthentication";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "controller", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "authentication_did", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "macaroon_token", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgUnlinkAuthentication {
+    return new MsgUnlinkAuthentication().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgUnlinkAuthentication {
+    return new MsgUnlinkAuthentication().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgUnlinkAuthentication {
+    return new MsgUnlinkAuthentication().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MsgUnlinkAuthentication | PlainMessage<MsgUnlinkAuthentication> | undefined, b: MsgUnlinkAuthentication | PlainMessage<MsgUnlinkAuthentication> | undefined): boolean {
+    return proto3.util.equals(MsgUnlinkAuthentication, a, b);
+  }
+}
+
+/**
+ * MsgUnlinkAuthenticationResponse is the response type for the
+ * UnlinkAuthentication RPC.
+ *
+ * @generated from message did.v1.MsgUnlinkAuthenticationResponse
+ */
+export class MsgUnlinkAuthenticationResponse extends Message<MsgUnlinkAuthenticationResponse> {
+  /**
+   * Success returns true if the specified cid is valid and not already
+   * encrypted.
+   *
+   * @generated from field: bool success = 1;
+   */
+  success = false;
+
+  /**
+   * Controller is the address of the initialized controller.
+   *
+   * @generated from field: string did = 2;
+   */
+  did = "";
+
+  constructor(data?: PartialMessage<MsgUnlinkAuthenticationResponse>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "did.v1.MsgUnlinkAuthenticationResponse";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "success", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
+    { no: 2, name: "did", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): MsgUnlinkAuthenticationResponse {
+    return new MsgUnlinkAuthenticationResponse().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): MsgUnlinkAuthenticationResponse {
+    return new MsgUnlinkAuthenticationResponse().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): MsgUnlinkAuthenticationResponse {
+    return new MsgUnlinkAuthenticationResponse().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: MsgUnlinkAuthenticationResponse | PlainMessage<MsgUnlinkAuthenticationResponse> | undefined, b: MsgUnlinkAuthenticationResponse | PlainMessage<MsgUnlinkAuthenticationResponse> | undefined): boolean {
+    return proto3.util.equals(MsgUnlinkAuthenticationResponse, a, b);
   }
 }
 

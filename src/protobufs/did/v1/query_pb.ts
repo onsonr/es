@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3 } from "@bufbuild/protobuf";
-import { Params } from "./genesis_pb.js";
+import { Document, Params } from "./genesis_pb.js";
 
 /**
  * Queryequest is the request type for the Query/Params RPC method.
@@ -357,83 +357,6 @@ export class QueryVerifyResponse extends Message<QueryVerifyResponse> {
 
   static equals(a: QueryVerifyResponse | PlainMessage<QueryVerifyResponse> | undefined, b: QueryVerifyResponse | PlainMessage<QueryVerifyResponse> | undefined): boolean {
     return proto3.util.equals(QueryVerifyResponse, a, b);
-  }
-}
-
-/**
- * Document defines a DID document
- *
- * @generated from message did.v1.Document
- */
-export class Document extends Message<Document> {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id = "";
-
-  /**
-   * The DID of the controller
-   *
-   * @generated from field: string controller = 2;
-   */
-  controller = "";
-
-  /**
-   * @generated from field: repeated string authentication = 3;
-   */
-  authentication: string[] = [];
-
-  /**
-   * @generated from field: repeated string assertion_method = 4;
-   */
-  assertionMethod: string[] = [];
-
-  /**
-   * @generated from field: repeated string capability_delegation = 5;
-   */
-  capabilityDelegation: string[] = [];
-
-  /**
-   * @generated from field: repeated string capability_invocation = 6;
-   */
-  capabilityInvocation: string[] = [];
-
-  /**
-   * @generated from field: repeated string service = 7;
-   */
-  service: string[] = [];
-
-  constructor(data?: PartialMessage<Document>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "did.v1.Document";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "controller", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "authentication", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 4, name: "assertion_method", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 5, name: "capability_delegation", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 6, name: "capability_invocation", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 7, name: "service", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Document {
-    return new Document().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Document {
-    return new Document().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Document {
-    return new Document().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: Document | PlainMessage<Document> | undefined, b: Document | PlainMessage<Document> | undefined): boolean {
-    return proto3.util.equals(Document, a, b);
   }
 }
 

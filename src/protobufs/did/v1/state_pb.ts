@@ -7,11 +7,11 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 
 /**
- * @generated from message did.v1.Authentication
+ * @generated from message did.v1.Account
  */
-export class Authentication extends Message<Authentication> {
+export class Account extends Message<Account> {
   /**
-   * The unique identifier of the authentication
+   * The unique identifier of the assertion
    *
    * @generated from field: string did = 1;
    */
@@ -32,25 +32,25 @@ export class Authentication extends Message<Authentication> {
   subject = "";
 
   /**
-   * PubKey is the verification method
+   * string is the verification method
    *
-   * @generated from field: did.v1.PubKey public_key = 4;
+   * @generated from field: string public_key_hex = 4;
    */
-  publicKey?: PubKey;
+  publicKeyHex = "";
 
   /**
-   * CredentialID is the byte representation of the credential ID
+   * AssertionType is the assertion type
    *
-   * @generated from field: bytes credential_id = 5;
+   * @generated from field: string assertion_type = 5;
    */
-  credentialId = new Uint8Array(0);
+  assertionType = "";
 
   /**
    * Metadata of the authentication
    *
-   * @generated from field: map<string, string> metadata = 6;
+   * @generated from field: map<string, bytes> accumulator = 6;
    */
-  metadata: { [key: string]: string } = {};
+  accumulator: { [key: string]: Uint8Array } = {};
 
   /**
    * CreationBlock is the block number of the creation of the authentication
@@ -59,46 +59,46 @@ export class Authentication extends Message<Authentication> {
    */
   creationBlock = protoInt64.zero;
 
-  constructor(data?: PartialMessage<Authentication>) {
+  constructor(data?: PartialMessage<Account>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "did.v1.Authentication";
+  static readonly typeName = "did.v1.Account";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "did", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 2, name: "controller", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "subject", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "public_key", kind: "message", T: PubKey },
-    { no: 5, name: "credential_id", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
-    { no: 6, name: "metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
+    { no: 4, name: "public_key_hex", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: "assertion_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: "accumulator", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 12 /* ScalarType.BYTES */} },
     { no: 7, name: "creation_block", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Authentication {
-    return new Authentication().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Account {
+    return new Account().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Authentication {
-    return new Authentication().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Account {
+    return new Account().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Authentication {
-    return new Authentication().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Account {
+    return new Account().fromJsonString(jsonString, options);
   }
 
-  static equals(a: Authentication | PlainMessage<Authentication> | undefined, b: Authentication | PlainMessage<Authentication> | undefined): boolean {
-    return proto3.util.equals(Authentication, a, b);
+  static equals(a: Account | PlainMessage<Account> | undefined, b: Account | PlainMessage<Account> | undefined): boolean {
+    return proto3.util.equals(Account, a, b);
   }
 }
 
 /**
- * Controller represents a Sonr DWN Vault
+ * PublicKey represents a public key
  *
- * @generated from message did.v1.Controller
+ * @generated from message did.v1.PublicKey
  */
-export class Controller extends Message<Controller> {
+export class PublicKey extends Message<PublicKey> {
   /**
    * The unique identifier of the controller
    *
@@ -135,11 +135,11 @@ export class Controller extends Message<Controller> {
   btcAddress = "";
 
   /**
-   * PubKey is the verification method
+   * string is the verification method
    *
-   * @generated from field: did.v1.PubKey public_key = 6;
+   * @generated from field: string public_key_hex = 6;
    */
-  publicKey?: PubKey;
+  publicKeyHex = "";
 
   /**
    * Pointer to the Keyshares
@@ -162,39 +162,39 @@ export class Controller extends Message<Controller> {
    */
   creationBlock = protoInt64.zero;
 
-  constructor(data?: PartialMessage<Controller>) {
+  constructor(data?: PartialMessage<PublicKey>) {
     super();
     proto3.util.initPartial(data, this);
   }
 
   static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "did.v1.Controller";
+  static readonly typeName = "did.v1.PublicKey";
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
     { no: 1, name: "number", kind: "scalar", T: 4 /* ScalarType.UINT64 */ },
     { no: 2, name: "did", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 3, name: "sonr_address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "eth_address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "btc_address", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "public_key", kind: "message", T: PubKey },
+    { no: 6, name: "public_key_hex", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "ks_val", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "claimed_block", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 9, name: "creation_block", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Controller {
-    return new Controller().fromBinary(bytes, options);
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PublicKey {
+    return new PublicKey().fromBinary(bytes, options);
   }
 
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Controller {
-    return new Controller().fromJson(jsonValue, options);
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PublicKey {
+    return new PublicKey().fromJson(jsonValue, options);
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Controller {
-    return new Controller().fromJsonString(jsonString, options);
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PublicKey {
+    return new PublicKey().fromJsonString(jsonString, options);
   }
 
-  static equals(a: Controller | PlainMessage<Controller> | undefined, b: Controller | PlainMessage<Controller> | undefined): boolean {
-    return proto3.util.equals(Controller, a, b);
+  static equals(a: PublicKey | PlainMessage<PublicKey> | undefined, b: PublicKey | PlainMessage<PublicKey> | undefined): boolean {
+    return proto3.util.equals(PublicKey, a, b);
   }
 }
 
@@ -242,9 +242,9 @@ export class Verification extends Message<Verification> {
   /**
    * The public key of the verification
    *
-   * @generated from field: did.v1.PubKey public_key = 6;
+   * @generated from field: string public_key_hex = 6;
    */
-  publicKey?: PubKey;
+  publicKeyHex = "";
 
   /**
    * The verification method type
@@ -280,7 +280,7 @@ export class Verification extends Message<Verification> {
     { no: 3, name: "did_method", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "issuer", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "subject", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "public_key", kind: "message", T: PubKey },
+    { no: 6, name: "public_key_hex", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 7, name: "verification_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 8, name: "metadata", kind: "map", K: 9 /* ScalarType.STRING */, V: {kind: "scalar", T: 9 /* ScalarType.STRING */} },
     { no: 9, name: "creation_block", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
@@ -300,248 +300,6 @@ export class Verification extends Message<Verification> {
 
   static equals(a: Verification | PlainMessage<Verification> | undefined, b: Verification | PlainMessage<Verification> | undefined): boolean {
     return proto3.util.equals(Verification, a, b);
-  }
-}
-
-/**
- * @generated from message did.v1.Keyshares
- */
-export class Keyshares extends Message<Keyshares> {
-  /**
-   * @generated from field: string validator_cid = 1;
-   */
-  validatorCid = "";
-
-  /**
-   * @generated from field: string user_cid = 2;
-   */
-  userCid = "";
-
-  /**
-   * @generated from field: int64 last_updated_block = 3;
-   */
-  lastUpdatedBlock = protoInt64.zero;
-
-  constructor(data?: PartialMessage<Keyshares>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "did.v1.Keyshares";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "validator_cid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "user_cid", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "last_updated_block", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Keyshares {
-    return new Keyshares().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Keyshares {
-    return new Keyshares().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Keyshares {
-    return new Keyshares().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: Keyshares | PlainMessage<Keyshares> | undefined, b: Keyshares | PlainMessage<Keyshares> | undefined): boolean {
-    return proto3.util.equals(Keyshares, a, b);
-  }
-}
-
-/**
- * PubKey defines a public key for a did
- *
- * @generated from message did.v1.PubKey
- */
-export class PubKey extends Message<PubKey> {
-  /**
-   * @generated from field: string role = 1;
-   */
-  role = "";
-
-  /**
-   * @generated from field: string key_type = 2;
-   */
-  keyType = "";
-
-  /**
-   * @generated from field: did.v1.RawKey raw_key = 3;
-   */
-  rawKey?: RawKey;
-
-  /**
-   * @generated from field: did.v1.JSONWebKey jwk = 4;
-   */
-  jwk?: JSONWebKey;
-
-  constructor(data?: PartialMessage<PubKey>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "did.v1.PubKey";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "role", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "key_type", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "raw_key", kind: "message", T: RawKey },
-    { no: 4, name: "jwk", kind: "message", T: JSONWebKey },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): PubKey {
-    return new PubKey().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): PubKey {
-    return new PubKey().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): PubKey {
-    return new PubKey().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: PubKey | PlainMessage<PubKey> | undefined, b: PubKey | PlainMessage<PubKey> | undefined): boolean {
-    return proto3.util.equals(PubKey, a, b);
-  }
-}
-
-/**
- * JWK represents a JSON Web Key
- *
- * @generated from message did.v1.JSONWebKey
- */
-export class JSONWebKey extends Message<JSONWebKey> {
-  /**
-   * Key Type
-   *
-   * @generated from field: string kty = 1;
-   */
-  kty = "";
-
-  /**
-   * Curve (for EC and OKP keys)
-   *
-   * @generated from field: string crv = 2;
-   */
-  crv = "";
-
-  /**
-   * X coordinate (for EC and OKP keys)
-   *
-   * @generated from field: string x = 3;
-   */
-  x = "";
-
-  /**
-   * Y coordinate (for EC keys)
-   *
-   * @generated from field: string y = 4;
-   */
-  y = "";
-
-  /**
-   * Modulus (for RSA keys)
-   *
-   * @generated from field: string n = 5;
-   */
-  n = "";
-
-  /**
-   * Exponent (for RSA keys)
-   *
-   * @generated from field: string e = 6;
-   */
-  e = "";
-
-  constructor(data?: PartialMessage<JSONWebKey>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "did.v1.JSONWebKey";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "kty", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "crv", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "x", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "y", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "n", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "e", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): JSONWebKey {
-    return new JSONWebKey().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): JSONWebKey {
-    return new JSONWebKey().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): JSONWebKey {
-    return new JSONWebKey().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: JSONWebKey | PlainMessage<JSONWebKey> | undefined, b: JSONWebKey | PlainMessage<JSONWebKey> | undefined): boolean {
-    return proto3.util.equals(JSONWebKey, a, b);
-  }
-}
-
-/**
- * @generated from message did.v1.RawKey
- */
-export class RawKey extends Message<RawKey> {
-  /**
-   * @generated from field: string algorithm = 1;
-   */
-  algorithm = "";
-
-  /**
-   * @generated from field: string encoding = 2;
-   */
-  encoding = "";
-
-  /**
-   * @generated from field: string curve = 3;
-   */
-  curve = "";
-
-  /**
-   * @generated from field: bytes key = 4;
-   */
-  key = new Uint8Array(0);
-
-  constructor(data?: PartialMessage<RawKey>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "did.v1.RawKey";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "algorithm", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "encoding", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "curve", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "key", kind: "scalar", T: 12 /* ScalarType.BYTES */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): RawKey {
-    return new RawKey().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): RawKey {
-    return new RawKey().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): RawKey {
-    return new RawKey().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: RawKey | PlainMessage<RawKey> | undefined, b: RawKey | PlainMessage<RawKey> | undefined): boolean {
-    return proto3.util.equals(RawKey, a, b);
   }
 }
 

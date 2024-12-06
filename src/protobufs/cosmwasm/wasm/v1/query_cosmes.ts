@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { QueryAllContractStateRequest, QueryAllContractStateResponse, QueryBuildAddressRequest, QueryBuildAddressResponse, QueryCodeInfoRequest, QueryCodeInfoResponse, QueryCodeRequest, QueryCodeResponse, QueryCodesRequest, QueryCodesResponse, QueryContractHistoryRequest, QueryContractHistoryResponse, QueryContractInfoRequest, QueryContractInfoResponse, QueryContractsByCodeRequest, QueryContractsByCodeResponse, QueryContractsByCreatorRequest, QueryContractsByCreatorResponse, QueryParamsRequest, QueryParamsResponse, QueryPinnedCodesRequest, QueryPinnedCodesResponse, QueryRawContractStateRequest, QueryRawContractStateResponse, QuerySmartContractStateRequest, QuerySmartContractStateResponse } from "./query_pb.js";
+import { QueryAllContractStateRequest, QueryAllContractStateResponse, QueryBuildAddressRequest, QueryBuildAddressResponse, QueryCodeInfoRequest, QueryCodeInfoResponse, QueryCodeRequest, QueryCodeResponse, QueryCodesRequest, QueryCodesResponse, QueryContractHistoryRequest, QueryContractHistoryResponse, QueryContractInfoRequest, QueryContractInfoResponse, QueryContractsByCodeRequest, QueryContractsByCodeResponse, QueryContractsByCreatorRequest, QueryContractsByCreatorResponse, QueryParamsRequest, QueryParamsResponse, QueryPinnedCodesRequest, QueryPinnedCodesResponse, QueryRawContractStateRequest, QueryRawContractStateResponse, QuerySmartContractStateRequest, QuerySmartContractStateResponse, QueryWasmLimitsConfigRequest, QueryWasmLimitsConfigResponse } from "./query_pb.js";
 
 const TYPE_NAME = "cosmwasm.wasm.v1.Query";
 
@@ -149,6 +149,19 @@ export const QueryContractsByCreatorService = {
   method: "ContractsByCreator",
   Request: QueryContractsByCreatorRequest,
   Response: QueryContractsByCreatorResponse,
+} as const;
+
+/**
+ * WasmLimitsConfig gets the configured limits for static validation of Wasm
+ * files, encoded in JSON.
+ *
+ * @generated from rpc cosmwasm.wasm.v1.Query.WasmLimitsConfig
+ */
+export const QueryWasmLimitsConfigService = {
+  typeName: TYPE_NAME,
+  method: "WasmLimitsConfig",
+  Request: QueryWasmLimitsConfigRequest,
+  Response: QueryWasmLimitsConfigResponse,
 } as const;
 
 /**
