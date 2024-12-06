@@ -1,6 +1,6 @@
 <!-- omit in toc -->
 
-# SonrES
+# `@onsonr/es`
 
 [![npm version](https://badge.fury.io/js/@onsonr/es.svg)](https://www.npmjs.com/package/@onsonr/es)
 
