@@ -1,6 +1,6 @@
 {
   "name": "@onsonr/es",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "packageManager": "pnpm@8.3.0",
   "sideEffects": false,
