@@ -5,7 +5,7 @@
     "module": "ES2020",
     "baseUrl": ".",
     "paths": {
-      "cosmes/*": ["./src/*"]
+      "@onsonr/es/*": ["./src/*"]
     },
     "outDir": "./dist",
     // `node16` is too strict and causes type errors for imported pkgs.

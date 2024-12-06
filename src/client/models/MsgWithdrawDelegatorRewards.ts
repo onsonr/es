@@ -1,5 +1,5 @@
 import { PlainMessage } from "@bufbuild/protobuf";
-import { CosmosDistributionV1beta1MsgWithdrawDelegatorReward as ProtoMsgWithdrawDelegatorRewards } from "cosmes/protobufs";
+import { CosmosDistributionV1beta1MsgWithdrawDelegatorReward as ProtoMsgWithdrawDelegatorRewards } from "@onsonr/es/protobufs";
 
 import { DeepPrettify } from "../../typeutils/prettify";
 import { Adapter } from "./Adapter";
@@ -21,11 +21,13 @@ export class MsgWithdrawDelegatorRewards implements Adapter {
 
   public toAmino() {
     return {
-      type: this.isLegacy ? "distribution/MsgWithdrawDelegationReward" : "cosmos-sdk/MsgWithdrawDelegationReward",
+      type: this.isLegacy
+        ? "distribution/MsgWithdrawDelegationReward"
+        : "cosmos-sdk/MsgWithdrawDelegationReward",
       value: {
         validator_address: this.data.validatorAddress,
         delegator_address: this.data.delegatorAddress,
-        },
+      },
     };
   }
 }

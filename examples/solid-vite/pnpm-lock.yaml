@@ -8,7 +8,7 @@ dependencies:
   buffer:
     specifier: ^6.0.3
     version: 6.0.3
-  cosmes:
+  @onsonr/es:
     specifier: link:../..
     version: link:../..
   solid-js:

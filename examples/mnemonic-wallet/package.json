@@ -1,12 +1,12 @@
 {
-  "name": "@cosmes/mnemonic-wallet",
+  "name": "@@onsonr/es/mnemonic-wallet",
   "private": true,
   "main": "src/index.ts",
   "scripts": {
     "start": "tsx src/index.ts"
   },
   "dependencies": {
-    "cosmes": "link:../.."
+    "@onsonr/es": "link:../.."
   },
   "devDependencies": {
     "@types/node": "^20.2.0",

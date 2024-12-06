@@ -73,7 +73,7 @@
 
 ### Improvements
 
-- Txs are now broadcasted directly via the user-specified RPC instead of via the wallet (closes <https://github.com/coinhall/cosmes/issues/17>)
+  - Txs are now broadcasted directly via the user-specified RPC instead of via the wallet (closes <https://github.com/coinhall/@onsonr/es/issues/17>)
 - Update Station extension to use Keplr's API interface
 
 ## `v0.0.60`
@@ -150,7 +150,7 @@
 
 ### Features
 
-- Added the `verifyArbitrary` helper function (exported by `cosmes/wallet`) to verify signatures signed using `ConnectedWallet.signArbitrary`
+- Added the `verifyArbitrary` helper function (exported by `@onsonr/es/wallet`) to verify signatures signed using `ConnectedWallet.signArbitrary`
 
 ### Fixes
 
@@ -237,16 +237,16 @@
 
 ### Miscellaneous
 
-- Removed the various `fromXxxToYyy` encoding/decoding functions within `cosmes/codec` in favour of `@scure/base` **[breaking change]**
-  - The `@scure/base` pkg is re-exported in `cosmes/codec`
-  - Consumers should import the correct encoder or decoder directly from `cosmes/codec`: eg. change `fromHexToUint8Array(...)` to `base16.decode(...)`
-- Re-exported `@keplr-wallet/types` from `cosmes/registry`
+- Removed the various `fromXxxToYyy` encoding/decoding functions within `@onsonr/es/codec` in favour of `@scure/base` **[breaking change]**
+  - The `@scure/base` pkg is re-exported in `@onsonr/es/codec`
+  - Consumers should import the correct encoder or decoder directly from `@onsonr/es/codec`: eg. change `fromHexToUint8Array(...)` to `base16.decode(...)`
+- Re-exported `@keplr-wallet/types` from `@onsonr/es/registry`
 
 ## `v0.0.35`
 
 ### Features
 
-- Added the `cosmes/registry` package with the following additions:
+- Added the `@onsonr/es/registry` package with the following additions:
   - APIs to dynamically query for data in Chain Registry
   - Util function to transform Chain Registry data to Keplr's chain info
 

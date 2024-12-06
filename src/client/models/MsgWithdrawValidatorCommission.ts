@@ -1,5 +1,5 @@
 import { PlainMessage } from "@bufbuild/protobuf";
-import { CosmosDistributionV1beta1MsgWithdrawValidatorCommission as ProtoMsgWithdrawValidatorCommission } from "cosmes/protobufs";
+import { CosmosDistributionV1beta1MsgWithdrawValidatorCommission as ProtoMsgWithdrawValidatorCommission } from "@onsonr/es/protobufs";
 
 import { DeepPrettify } from "../../typeutils/prettify";
 import { Adapter } from "./Adapter";

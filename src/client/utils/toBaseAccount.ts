@@ -6,7 +6,7 @@ import {
   CosmosVestingV1beta1DelayedVestingAccount as DelayedVesting,
   EthermintTypesV1EthAccount as EthermintAccount,
   CosmosVestingV1beta1PeriodicVestingAccount as PeriodicVestingAccount,
-} from "cosmes/protobufs";
+} from "@onsonr/es/protobufs";
 
 const ERR_UNKNOWN_ACCOUNT_TYPE = "Unknown account type";
 const ERR_UNABLE_TO_RESOLVE_BASE_ACCOUNT = "Unable to resolve base account";

@@ -9,12 +9,12 @@ import {
   pollTx,
   simulateTx,
   toBaseAccount,
-} from "cosmes/client";
+} from "@onsonr/es/client";
 import {
   CosmosBaseV1beta1Coin as Coin,
   CosmosTxV1beta1Fee as Fee,
   CosmosTxV1beta1GetTxResponse as GetTxResponse,
-} from "cosmes/protobufs";
+} from "@onsonr/es/protobufs";
 
 import type { WalletName } from "../constants/WalletName";
 import type { WalletType } from "../constants/WalletType";

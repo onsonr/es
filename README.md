@@ -2,7 +2,7 @@
 
 # SonrES
 
-[![npm version](https://badge.fury.io/js/cosmes.svg)](https://www.npmjs.com/package/@onsonr/es)
+[![npm version](https://badge.fury.io/js/@onsonr/es.svg)](https://www.npmjs.com/package/@onsonr/es)
 
 A tree-shakeable, framework agnostic, [pure ESM](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c) alternative of [CosmJS](https://github.com/cosmos/cosmjs) and [Cosmos Kit](https://cosmoskit.com) (**generate bundles up to 10x smaller than Cosmos Kit**).
 
@@ -13,11 +13,11 @@ A tree-shakeable, framework agnostic, [pure ESM](https://gist.github.com/sindres
   - [Using Station wallet](#using-station-wallet)
 - [Examples](#examples)
 - [Modules](#modules)
-  - [`cosmes/client`](#cosmesclient)
-  - [`cosmes/codec`](#cosmescodec)
-  - [`cosmes/protobufs`](#cosmesprotobufs)
-  - [`cosmes/registry`](#cosmesregistry)
-  - [`cosmes/wallet`](#cosmeswallet)
+  - [`@onsonr/es/client`](#@onsonr/esclient)
+  - [`@onsonr/es/codec`](#@onsonr/escodec)
+  - [`@onsonr/es/protobufs`](#@onsonr/esprotobufs)
+  - [`@onsonr/es/registry`](#@onsonr/esregistry)
+  - [`@onsonr/es/wallet`](#@onsonr/eswallet)
 - [Benchmarks](#benchmarks)
   - [Results](#results)
 - [See More](#see-more)
@@ -39,27 +39,27 @@ A tree-shakeable, framework agnostic, [pure ESM](https://gist.github.com/sindres
 For Cosmos SDK v0.47 and below:
 
 ```sh
-npm install cosmes
+npm install @onsonr/es
 
-pnpm add cosmes
+pnpm add @onsonr/es
 
-yarn add cosmes
+yarn add @onsonr/es
 ```
 
 For Cosmos SDK v0.50, install using the `sdk50` tag:
 
 ```sh
-npm install cosmes@sdk50
+npm install @onsonr/es@sdk50
 
-pnpm add cosmes@sdk50
+pnpm add @onsonr/es@sdk50
 
-yarn add cosmes@sdk50
+yarn add @onsonr/es@sdk50
 ```
 
 > [!IMPORTANT]  
 > The bump from v0.47 to v0.50 introduces significant breaking changes and is not recommended to be used unless necessary. To reduce the impact on consumers, the `main` branch and the published package on npm with the `latest` tag will continue to target v0.47 until the majority of live chains have migrated to v0.50.
 >
-> The [`parallel/sdk50`](https://github.com/coinhall/cosmes/tree/parallel/sdk50) branch targetting v0.50 will be developed and maintained in parallel with the `main` branch, where the same patch version number should have feature parity (eg. `cosmes@0.0.69` should have the same features as `cosmes@0.0.69-sdk50.0`).
+> The [`parallel/sdk50`](https://github.com/coinhall/@onsonr/es/tree/parallel/sdk50) branch targetting v0.50 will be developed and maintained in parallel with the `main` branch, where the same patch version number should have feature parity (eg. `@onsonr/es@0.0.69` should have the same features as `@onsonr/es@0.0.69-sdk50.0`).
 
 ### Using with TypeScript
 
@@ -121,25 +121,25 @@ Docs do not exist yet - see the [`examples`](./examples) folder for various work
 
 ## Modules
 
-This package is split into multiple subdirectories, with each subdirectory having their own set of functionalities. The root directory does not contain any exports, and all exports are exported from the subdirectories. Thus, imports must be done by referencing the subdirectories (ie. `import { ... } from  "cosmes/client"`).
+This package is split into multiple subdirectories, with each subdirectory having their own set of functionalities. The root directory does not contain any exports, and all exports are exported from the subdirectories. Thus, imports must be done by referencing the subdirectories (ie. `import { ... } from  "@onsonr/es/client"`).
 
-### `cosmes/client`
+### `@onsonr/es/client`
 
 This directory contains models and helper functions to interact with Cosmos SDK via the [CometBFT RPC](https://docs.cosmos.network/v0.50/core/grpc_rest#cometbft-rpc).
 
-### `cosmes/codec`
+### `@onsonr/es/codec`
 
 This directory contains various encoding and decoding functions that relies solely on [Web APIs](https://developer.mozilla.org/en-US/docs/Web/API) and has no dependencies on Node.js. For modern browsers and Node v16+, this should work out of the box.
 
-### `cosmes/protobufs`
+### `@onsonr/es/protobufs`
 
 This directory contains the auto-generated code for various Cosmos SDK based protobufs. See `scripts/gen-protobufs.mjs` for the script that generates the code.
 
-### `cosmes/registry`
+### `@onsonr/es/registry`
 
 This directory contains various APIs, data, and types needed for wallet interactions (ie. Keplr). Some types are auto-generated, see `scripts/gen-registry.mjs` for the script that generates the types.
 
-### `cosmes/wallet`
+### `@onsonr/es/wallet`
 
 This directory is a [Cosmos Kit](https://cosmoskit.com) alternative to interact with wallets across all Cosmos SDK based blockchains. See [`examples/solid-vite`](./examples/solid-vite) for a working example.
 

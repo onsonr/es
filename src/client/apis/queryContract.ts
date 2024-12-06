@@ -1,6 +1,6 @@
 import { JsonValue } from "@bufbuild/protobuf";
-import { utf8 } from "cosmes/codec";
-import { CosmwasmWasmV1QuerySmartContractStateService as QuerySmartContractStateService } from "cosmes/protobufs";
+import { utf8 } from "@onsonr/es/codec";
+import { CosmwasmWasmV1QuerySmartContractStateService as QuerySmartContractStateService } from "@onsonr/es/protobufs";
 
 import { RpcClient } from "../clients/RpcClient";
 

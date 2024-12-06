@@ -1,4 +1,4 @@
-import { CosmosAuthV1beta1QueryAccountService as QueryAccountService } from "cosmes/protobufs";
+import { CosmosAuthV1beta1QueryAccountService as QueryAccountService } from "@onsonr/es/protobufs";
 
 import { RpcClient } from "../clients/RpcClient";
 

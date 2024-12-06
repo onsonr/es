@@ -137,7 +137,7 @@ export {
   ABCIExtendVoteService as TendermintAbciABCIExtendVoteService,
   ABCIVerifyVoteExtensionService as TendermintAbciABCIVerifyVoteExtensionService,
   ABCIFinalizeBlockService as TendermintAbciABCIFinalizeBlockService,
-} from "./tendermint/abci/types_cosmes.js";
+} from "./tendermint/abci/types_@onsonr/es.js";
 export {
   MsgUpdateParams as SvcV1MsgUpdateParams,
   MsgUpdateParamsResponse as SvcV1MsgUpdateParamsResponse,
@@ -147,7 +147,7 @@ export {
 export {
   MsgUpdateParamsService as SvcV1MsgUpdateParamsService,
   MsgRegisterServiceService as SvcV1MsgRegisterServiceService,
-} from "./svc/v1/tx_cosmes.js";
+} from "./svc/v1/tx_@onsonr/es.js";
 export {
   Domain as SvcV1Domain,
   Metadata as SvcV1Metadata,
@@ -158,7 +158,7 @@ export {
 } from "./svc/v1/query_pb.js";
 export {
   QueryParamsService as SvcV1QueryParamsService,
-} from "./svc/v1/query_cosmes.js";
+} from "./svc/v1/query_@onsonr/es.js";
 export {
   GenesisState as SvcV1GenesisState,
   Params as SvcV1Params,
@@ -193,7 +193,7 @@ export {
   MsgRedelegateValidatorSetService as OsmosisValsetprefV1beta1MsgRedelegateValidatorSetService,
   MsgWithdrawDelegationRewardsService as OsmosisValsetprefV1beta1MsgWithdrawDelegationRewardsService,
   MsgDelegateBondedTokensService as OsmosisValsetprefV1beta1MsgDelegateBondedTokensService,
-} from "./osmosis/valsetpref/v1beta1/tx_cosmes.js";
+} from "./osmosis/valsetpref/v1beta1/tx_@onsonr/es.js";
 export {
   ValidatorPreference as OsmosisValsetprefV1beta1ValidatorPreference,
   ValidatorSetPreferences as OsmosisValsetprefV1beta1ValidatorSetPreferences,
@@ -204,14 +204,14 @@ export {
 } from "./osmosis/valsetpref/v1beta1/query_pb.js";
 export {
   QueryUserValidatorPreferencesService as OsmosisValsetprefV1beta1QueryUserValidatorPreferencesService,
-} from "./osmosis/valsetpref/v1beta1/query_cosmes.js";
+} from "./osmosis/valsetpref/v1beta1/query_@onsonr/es.js";
 export {
   MsgSetFeeTokens as OsmosisTxfeesV1beta1MsgSetFeeTokens,
   MsgSetFeeTokensResponse as OsmosisTxfeesV1beta1MsgSetFeeTokensResponse,
 } from "./osmosis/txfees/v1beta1/tx_pb.js";
 export {
   MsgSetFeeTokensService as OsmosisTxfeesV1beta1MsgSetFeeTokensService,
-} from "./osmosis/txfees/v1beta1/tx_cosmes.js";
+} from "./osmosis/txfees/v1beta1/tx_@onsonr/es.js";
 export {
   QueryFeeTokensRequest as OsmosisTxfeesV1beta1QueryFeeTokensRequest,
   QueryFeeTokensResponse as OsmosisTxfeesV1beta1QueryFeeTokensResponse,
@@ -230,7 +230,7 @@ export {
   QueryDenomPoolIdService as OsmosisTxfeesV1beta1QueryDenomPoolIdService,
   QueryBaseDenomService as OsmosisTxfeesV1beta1QueryBaseDenomService,
   QueryGetEipBaseFeeService as OsmosisTxfeesV1beta1QueryGetEipBaseFeeService,
-} from "./osmosis/txfees/v1beta1/query_cosmes.js";
+} from "./osmosis/txfees/v1beta1/query_@onsonr/es.js";
 export {
   Params as OsmosisTxfeesV1beta1Params,
 } from "./osmosis/txfees/v1beta1/params_pb.js";
@@ -266,7 +266,7 @@ export {
   QueryArithmeticTwapToNowService as OsmosisTwapV1beta1QueryArithmeticTwapToNowService,
   QueryGeometricTwapService as OsmosisTwapV1beta1QueryGeometricTwapService,
   QueryGeometricTwapToNowService as OsmosisTwapV1beta1QueryGeometricTwapToNowService,
-} from "./osmosis/twap/v1beta1/query_cosmes.js";
+} from "./osmosis/twap/v1beta1/query_@onsonr/es.js";
 export {
   Params as OsmosisTwapV1beta1Params,
   GenesisState as OsmosisTwapV1beta1GenesisState,
@@ -295,7 +295,7 @@ export {
   MsgSetDenomMetadataService as OsmosisTokenfactoryV1beta1MsgSetDenomMetadataService,
   MsgSetBeforeSendHookService as OsmosisTokenfactoryV1beta1MsgSetBeforeSendHookService,
   MsgForceTransferService as OsmosisTokenfactoryV1beta1MsgForceTransferService,
-} from "./osmosis/tokenfactory/v1beta1/tx_cosmes.js";
+} from "./osmosis/tokenfactory/v1beta1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as OsmosisTokenfactoryV1beta1QueryParamsRequest,
   QueryParamsResponse as OsmosisTokenfactoryV1beta1QueryParamsResponse,
@@ -314,7 +314,7 @@ export {
   QueryDenomsFromCreatorService as OsmosisTokenfactoryV1beta1QueryDenomsFromCreatorService,
   QueryBeforeSendHookAddressService as OsmosisTokenfactoryV1beta1QueryBeforeSendHookAddressService,
   QueryAllBeforeSendHooksAddressesService as OsmosisTokenfactoryV1beta1QueryAllBeforeSendHooksAddressesService,
-} from "./osmosis/tokenfactory/v1beta1/query_cosmes.js";
+} from "./osmosis/tokenfactory/v1beta1/query_@onsonr/es.js";
 export {
   Params as OsmosisTokenfactoryV1beta1Params,
 } from "./osmosis/tokenfactory/v1beta1/params_pb.js";
@@ -358,7 +358,7 @@ export {
   MsgUnlockAndMigrateSharesToFullRangeConcentratedPositionService as OsmosisSuperfluidMsgUnlockAndMigrateSharesToFullRangeConcentratedPositionService,
   MsgAddToConcentratedLiquiditySuperfluidPositionService as OsmosisSuperfluidMsgAddToConcentratedLiquiditySuperfluidPositionService,
   MsgUnbondConvertAndStakeService as OsmosisSuperfluidMsgUnbondConvertAndStakeService,
-} from "./osmosis/superfluid/tx_cosmes.js";
+} from "./osmosis/superfluid/tx_@onsonr/es.js";
 export {
   SuperfluidAssetType as OsmosisSuperfluidSuperfluidAssetType,
   SuperfluidAsset as OsmosisSuperfluidSuperfluidAsset,
@@ -428,7 +428,7 @@ export {
   QueryUserConcentratedSuperfluidPositionsDelegatedService as OsmosisSuperfluidQueryUserConcentratedSuperfluidPositionsDelegatedService,
   QueryUserConcentratedSuperfluidPositionsUndelegatingService as OsmosisSuperfluidQueryUserConcentratedSuperfluidPositionsUndelegatingService,
   QueryRestSupplyService as OsmosisSuperfluidQueryRestSupplyService,
-} from "./osmosis/superfluid/query_cosmes.js";
+} from "./osmosis/superfluid/query_@onsonr/es.js";
 export {
   Params as OsmosisSuperfluidParams,
 } from "./osmosis/superfluid/params_pb.js";
@@ -458,7 +458,7 @@ export {
   MsgAddAuthenticatorService as OsmosisSmartaccountV1beta1MsgAddAuthenticatorService,
   MsgRemoveAuthenticatorService as OsmosisSmartaccountV1beta1MsgRemoveAuthenticatorService,
   MsgSetActiveStateService as OsmosisSmartaccountV1beta1MsgSetActiveStateService,
-} from "./osmosis/smartaccount/v1beta1/tx_cosmes.js";
+} from "./osmosis/smartaccount/v1beta1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as OsmosisSmartaccountV1beta1QueryParamsRequest,
   QueryParamsResponse as OsmosisSmartaccountV1beta1QueryParamsResponse,
@@ -471,7 +471,7 @@ export {
   QueryParamsService as OsmosisSmartaccountV1beta1QueryParamsService,
   QueryGetAuthenticatorService as OsmosisSmartaccountV1beta1QueryGetAuthenticatorService,
   QueryGetAuthenticatorsService as OsmosisSmartaccountV1beta1QueryGetAuthenticatorsService,
-} from "./osmosis/smartaccount/v1beta1/query_cosmes.js";
+} from "./osmosis/smartaccount/v1beta1/query_@onsonr/es.js";
 export {
   Params as OsmosisSmartaccountV1beta1Params,
 } from "./osmosis/smartaccount/v1beta1/params_pb.js";
@@ -504,7 +504,7 @@ export {
   MsgSetMaxPoolPointsPerBlockService as OsmosisProtorevV1beta1MsgSetMaxPoolPointsPerBlockService,
   MsgSetInfoByPoolTypeService as OsmosisProtorevV1beta1MsgSetInfoByPoolTypeService,
   MsgSetBaseDenomsService as OsmosisProtorevV1beta1MsgSetBaseDenomsService,
-} from "./osmosis/protorev/v1beta1/tx_cosmes.js";
+} from "./osmosis/protorev/v1beta1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as OsmosisProtorevV1beta1QueryParamsRequest,
   QueryParamsResponse as OsmosisProtorevV1beta1QueryParamsResponse,
@@ -556,7 +556,7 @@ export {
   QueryGetProtoRevEnabledService as OsmosisProtorevV1beta1QueryGetProtoRevEnabledService,
   QueryGetProtoRevPoolService as OsmosisProtorevV1beta1QueryGetProtoRevPoolService,
   QueryGetAllProtocolRevenueService as OsmosisProtorevV1beta1QueryGetAllProtocolRevenueService,
-} from "./osmosis/protorev/v1beta1/query_cosmes.js";
+} from "./osmosis/protorev/v1beta1/query_@onsonr/es.js";
 export {
   TokenPairArbRoutes as OsmosisProtorevV1beta1TokenPairArbRoutes,
   Route as OsmosisProtorevV1beta1Route,
@@ -590,7 +590,7 @@ export {
 } from "./osmosis/poolmanager/v2/query_pb.js";
 export {
   QuerySpotPriceV2Service as OsmosisPoolmanagerV2QuerySpotPriceV2Service,
-} from "./osmosis/poolmanager/v2/query_cosmes.js";
+} from "./osmosis/poolmanager/v2/query_@onsonr/es.js";
 export {
   MsgSwapExactAmountIn as OsmosisPoolmanagerV1beta1MsgSwapExactAmountIn,
   MsgSwapExactAmountInResponse as OsmosisPoolmanagerV1beta1MsgSwapExactAmountInResponse,
@@ -616,7 +616,7 @@ export {
   MsgSetDenomPairTakerFeeService as OsmosisPoolmanagerV1beta1MsgSetDenomPairTakerFeeService,
   MsgSetTakerFeeShareAgreementForDenomService as OsmosisPoolmanagerV1beta1MsgSetTakerFeeShareAgreementForDenomService,
   MsgSetRegisteredAlloyedPoolService as OsmosisPoolmanagerV1beta1MsgSetRegisteredAlloyedPoolService,
-} from "./osmosis/poolmanager/v1beta1/tx_cosmes.js";
+} from "./osmosis/poolmanager/v1beta1/tx_@onsonr/es.js";
 export {
   TrackedVolume as OsmosisPoolmanagerV1beta1TrackedVolume,
 } from "./osmosis/poolmanager/v1beta1/tracked_volume_pb.js";
@@ -702,7 +702,7 @@ export {
   QueryRegisteredAlloyedPoolFromDenomService as OsmosisPoolmanagerV1beta1QueryRegisteredAlloyedPoolFromDenomService,
   QueryRegisteredAlloyedPoolFromPoolIdService as OsmosisPoolmanagerV1beta1QueryRegisteredAlloyedPoolFromPoolIdService,
   QueryAllRegisteredAlloyedPoolsService as OsmosisPoolmanagerV1beta1QueryAllRegisteredAlloyedPoolsService,
-} from "./osmosis/poolmanager/v1beta1/query_cosmes.js";
+} from "./osmosis/poolmanager/v1beta1/query_@onsonr/es.js";
 export {
   PoolType as OsmosisPoolmanagerV1beta1PoolType,
   ModuleRoute as OsmosisPoolmanagerV1beta1ModuleRoute,
@@ -745,7 +745,7 @@ export {
   QueryLockableDurationsService as OsmosisPoolincentivesV1beta1QueryLockableDurationsService,
   QueryIncentivizedPoolsService as OsmosisPoolincentivesV1beta1QueryIncentivizedPoolsService,
   QueryExternalIncentiveGaugesService as OsmosisPoolincentivesV1beta1QueryExternalIncentiveGaugesService,
-} from "./osmosis/poolincentives/v1beta1/query_cosmes.js";
+} from "./osmosis/poolincentives/v1beta1/query_@onsonr/es.js";
 export {
   Params as OsmosisPoolincentivesV1beta1Params,
   LockableDurationsInfo as OsmosisPoolincentivesV1beta1LockableDurationsInfo,
@@ -771,7 +771,7 @@ export {
 export {
   QueryParamsService as OsmosisMintV1beta1QueryParamsService,
   QueryEpochProvisionsService as OsmosisMintV1beta1QueryEpochProvisionsService,
-} from "./osmosis/mint/v1beta1/query_cosmes.js";
+} from "./osmosis/mint/v1beta1/query_@onsonr/es.js";
 export {
   Minter as OsmosisMintV1beta1Minter,
   WeightedAddress as OsmosisMintV1beta1WeightedAddress,
@@ -804,7 +804,7 @@ export {
   MsgExtendLockupService as OsmosisLockupMsgExtendLockupService,
   MsgForceUnlockService as OsmosisLockupMsgForceUnlockService,
   MsgSetRewardReceiverAddressService as OsmosisLockupMsgSetRewardReceiverAddressService,
-} from "./osmosis/lockup/tx_cosmes.js";
+} from "./osmosis/lockup/tx_@onsonr/es.js";
 export {
   ModuleBalanceRequest as OsmosisLockupModuleBalanceRequest,
   ModuleBalanceResponse as OsmosisLockupModuleBalanceResponse,
@@ -868,7 +868,7 @@ export {
   QueryAccountLockedLongerDurationNotUnlockingOnlyService as OsmosisLockupQueryAccountLockedLongerDurationNotUnlockingOnlyService,
   QueryAccountLockedLongerDurationDenomService as OsmosisLockupQueryAccountLockedLongerDurationDenomService,
   QueryParamsService as OsmosisLockupQueryParamsService,
-} from "./osmosis/lockup/query_cosmes.js";
+} from "./osmosis/lockup/query_@onsonr/es.js";
 export {
   Params as OsmosisLockupParams,
 } from "./osmosis/lockup/params_pb.js";
@@ -893,7 +893,7 @@ export {
   MsgCreateGaugeService as OsmosisIncentivesMsgCreateGaugeService,
   MsgAddToGaugeService as OsmosisIncentivesMsgAddToGaugeService,
   MsgCreateGroupService as OsmosisIncentivesMsgCreateGroupService,
-} from "./osmosis/incentives/tx_cosmes.js";
+} from "./osmosis/incentives/tx_@onsonr/es.js";
 export {
   ModuleToDistributeCoinsRequest as OsmosisIncentivesModuleToDistributeCoinsRequest,
   ModuleToDistributeCoinsResponse as OsmosisIncentivesModuleToDistributeCoinsResponse,
@@ -952,7 +952,7 @@ export {
   QueryExternalGaugesService as OsmosisIncentivesQueryExternalGaugesService,
   QueryGaugesByPoolIDService as OsmosisIncentivesQueryGaugesByPoolIDService,
   QueryParamsService as OsmosisIncentivesQueryParamsService,
-} from "./osmosis/incentives/query_cosmes.js";
+} from "./osmosis/incentives/query_@onsonr/es.js";
 export {
   Params as OsmosisIncentivesParams,
 } from "./osmosis/incentives/params_pb.js";
@@ -980,7 +980,7 @@ export {
 } from "./osmosis/ibcratelimit/v1beta1/query_pb.js";
 export {
   QueryParamsService as OsmosisIbcratelimitV1beta1QueryParamsService,
-} from "./osmosis/ibcratelimit/v1beta1/query_cosmes.js";
+} from "./osmosis/ibcratelimit/v1beta1/query_@onsonr/es.js";
 export {
   Params as OsmosisIbcratelimitV1beta1Params,
 } from "./osmosis/ibcratelimit/v1beta1/params_pb.js";
@@ -993,7 +993,7 @@ export {
 } from "./osmosis/ibchooks/tx_pb.js";
 export {
   MsgEmitIBCAckService as OsmosisIbchooksMsgEmitIBCAckService,
-} from "./osmosis/ibchooks/tx_cosmes.js";
+} from "./osmosis/ibchooks/tx_@onsonr/es.js";
 export {
   Params as OsmosisIbchooksParams,
 } from "./osmosis/ibchooks/params_pb.js";
@@ -1006,7 +1006,7 @@ export {
 } from "./osmosis/gamm/v2/query_pb.js";
 export {
   QuerySpotPriceService as OsmosisGammV2QuerySpotPriceService,
-} from "./osmosis/gamm/v2/query_cosmes.js";
+} from "./osmosis/gamm/v2/query_@onsonr/es.js";
 export {
   MsgJoinPool as OsmosisGammV1beta1MsgJoinPool,
   MsgJoinPoolResponse as OsmosisGammV1beta1MsgJoinPoolResponse,
@@ -1034,7 +1034,7 @@ export {
   MsgJoinSwapShareAmountOutService as OsmosisGammV1beta1MsgJoinSwapShareAmountOutService,
   MsgExitSwapExternAmountOutService as OsmosisGammV1beta1MsgExitSwapExternAmountOutService,
   MsgExitSwapShareAmountInService as OsmosisGammV1beta1MsgExitSwapShareAmountInService,
-} from "./osmosis/gamm/v1beta1/tx_cosmes.js";
+} from "./osmosis/gamm/v1beta1/tx_@onsonr/es.js";
 export {
   MigrationRecords as OsmosisGammV1beta1MigrationRecords,
   BalancerToConcentratedPoolLink as OsmosisGammV1beta1BalancerToConcentratedPoolLink,
@@ -1096,7 +1096,7 @@ export {
   QueryConcentratedPoolIdLinkFromCFMMService as OsmosisGammV1beta1QueryConcentratedPoolIdLinkFromCFMMService,
   QueryCFMMConcentratedPoolLinksService as OsmosisGammV1beta1QueryCFMMConcentratedPoolLinksService,
   QueryParamsService as OsmosisGammV1beta1QueryParamsService,
-} from "./osmosis/gamm/v1beta1/query_cosmes.js";
+} from "./osmosis/gamm/v1beta1/query_@onsonr/es.js";
 export {
   Params as OsmosisGammV1beta1Params,
 } from "./osmosis/gamm/v1beta1/params_pb.js";
@@ -1125,7 +1125,7 @@ export {
 export {
   MsgCreateStableswapPoolService as OsmosisGammPoolmodelsStableswapV1beta1MsgCreateStableswapPoolService,
   MsgStableSwapAdjustScalingFactorsService as OsmosisGammPoolmodelsStableswapV1beta1MsgStableSwapAdjustScalingFactorsService,
-} from "./osmosis/gamm/poolmodels/stableswap/v1beta1/tx_cosmes.js";
+} from "./osmosis/gamm/poolmodels/stableswap/v1beta1/tx_@onsonr/es.js";
 export {
   PoolParams as OsmosisGammPoolmodelsStableswapV1beta1PoolParams,
   Pool as OsmosisGammPoolmodelsStableswapV1beta1Pool,
@@ -1136,7 +1136,7 @@ export {
 } from "./osmosis/gamm/poolmodels/balancer/v1beta1/tx_pb.js";
 export {
   MsgCreateBalancerPoolService as OsmosisGammPoolmodelsBalancerV1beta1MsgCreateBalancerPoolService,
-} from "./osmosis/gamm/poolmodels/balancer/v1beta1/tx_cosmes.js";
+} from "./osmosis/gamm/poolmodels/balancer/v1beta1/tx_@onsonr/es.js";
 export {
   QueryEpochsInfoRequest as OsmosisEpochsV1beta1QueryEpochsInfoRequest,
   QueryEpochsInfoResponse as OsmosisEpochsV1beta1QueryEpochsInfoResponse,
@@ -1146,7 +1146,7 @@ export {
 export {
   QueryEpochInfosService as OsmosisEpochsV1beta1QueryEpochInfosService,
   QueryCurrentEpochService as OsmosisEpochsV1beta1QueryCurrentEpochService,
-} from "./osmosis/epochs/v1beta1/query_cosmes.js";
+} from "./osmosis/epochs/v1beta1/query_@onsonr/es.js";
 export {
   EpochInfo as OsmosisEpochsV1beta1EpochInfo,
   GenesisState as OsmosisEpochsV1beta1GenesisState,
@@ -1157,7 +1157,7 @@ export {
 } from "./osmosis/downtimedetector/v1beta1/query_pb.js";
 export {
   QueryRecoveredSinceDowntimeOfLengthService as OsmosisDowntimedetectorV1beta1QueryRecoveredSinceDowntimeOfLengthService,
-} from "./osmosis/downtimedetector/v1beta1/query_cosmes.js";
+} from "./osmosis/downtimedetector/v1beta1/query_@onsonr/es.js";
 export {
   GenesisDowntimeEntry as OsmosisDowntimedetectorV1beta1GenesisDowntimeEntry,
   GenesisState as OsmosisDowntimedetectorV1beta1GenesisState,
@@ -1166,7 +1166,7 @@ export {
   Downtime as OsmosisDowntimedetectorV1beta1Downtime,
 } from "./osmosis/downtimedetector/v1beta1/downtime_duration_pb.js";
 export {
-} from "./osmosis/cosmwasmpool/v1beta1/tx_cosmes.js";
+} from "./osmosis/cosmwasmpool/v1beta1/tx_@onsonr/es.js";
 export {
   ParamsRequest as OsmosisCosmwasmpoolV1beta1ParamsRequest,
   ParamsResponse as OsmosisCosmwasmpoolV1beta1ParamsResponse,
@@ -1179,7 +1179,7 @@ export {
   QueryPoolsService as OsmosisCosmwasmpoolV1beta1QueryPoolsService,
   QueryParamsService as OsmosisCosmwasmpoolV1beta1QueryParamsService,
   QueryContractInfoByPoolIdService as OsmosisCosmwasmpoolV1beta1QueryContractInfoByPoolIdService,
-} from "./osmosis/cosmwasmpool/v1beta1/query_cosmes.js";
+} from "./osmosis/cosmwasmpool/v1beta1/query_@onsonr/es.js";
 export {
   Params as OsmosisCosmwasmpoolV1beta1Params,
 } from "./osmosis/cosmwasmpool/v1beta1/params_pb.js";
@@ -1196,7 +1196,7 @@ export {
 } from "./osmosis/cosmwasmpool/v1beta1/model/tx_pb.js";
 export {
   MsgCreatorCreateCosmWasmPoolService as OsmosisCosmwasmpoolV1beta1ModelMsgCreatorCreateCosmWasmPoolService,
-} from "./osmosis/cosmwasmpool/v1beta1/model/tx_cosmes.js";
+} from "./osmosis/cosmwasmpool/v1beta1/model/tx_@onsonr/es.js";
 export {
   EmptyRequest as OsmosisCosmwasmpoolV1beta1ModelEmptyRequest,
   JoinPoolExecuteMsgRequest as OsmosisCosmwasmpoolV1beta1ModelJoinPoolExecuteMsgRequest,
@@ -1270,7 +1270,7 @@ export {
   MsgCollectSpreadRewardsService as OsmosisConcentratedliquidityV1beta1MsgCollectSpreadRewardsService,
   MsgCollectIncentivesService as OsmosisConcentratedliquidityV1beta1MsgCollectIncentivesService,
   MsgTransferPositionsService as OsmosisConcentratedliquidityV1beta1MsgTransferPositionsService,
-} from "./osmosis/concentratedliquidity/v1beta1/tx_cosmes.js";
+} from "./osmosis/concentratedliquidity/v1beta1/tx_@onsonr/es.js";
 export {
   TickInfo as OsmosisConcentratedliquidityV1beta1TickInfo,
   UptimeTrackers as OsmosisConcentratedliquidityV1beta1UptimeTrackers,
@@ -1328,7 +1328,7 @@ export {
   QueryUserUnbondingPositionsService as OsmosisConcentratedliquidityV1beta1QueryUserUnbondingPositionsService,
   QueryGetTotalLiquidityService as OsmosisConcentratedliquidityV1beta1QueryGetTotalLiquidityService,
   QueryNumNextInitializedTicksService as OsmosisConcentratedliquidityV1beta1QueryNumNextInitializedTicksService,
-} from "./osmosis/concentratedliquidity/v1beta1/query_cosmes.js";
+} from "./osmosis/concentratedliquidity/v1beta1/query_@onsonr/es.js";
 export {
   Position as OsmosisConcentratedliquidityV1beta1Position,
   FullPositionBreakdown as OsmosisConcentratedliquidityV1beta1FullPositionBreakdown,
@@ -1360,7 +1360,7 @@ export {
 } from "./osmosis/concentratedliquidity/poolmodel/concentrated/v1beta1/tx_pb.js";
 export {
   MsgCreateConcentratedPoolService as OsmosisConcentratedliquidityPoolmodelConcentratedV1beta1MsgCreateConcentratedPoolService,
-} from "./osmosis/concentratedliquidity/poolmodel/concentrated/v1beta1/tx_cosmes.js";
+} from "./osmosis/concentratedliquidity/poolmodel/concentrated/v1beta1/tx_@onsonr/es.js";
 export {
   AccumulatorContent as OsmosisAccumV1beta1AccumulatorContent,
   Options as OsmosisAccumV1beta1Options,
@@ -1384,7 +1384,7 @@ export {
   MsgStoreCodeService as IbcLightclientsWasmV1MsgStoreCodeService,
   MsgRemoveChecksumService as IbcLightclientsWasmV1MsgRemoveChecksumService,
   MsgMigrateContractService as IbcLightclientsWasmV1MsgMigrateContractService,
-} from "./ibc/lightclients/wasm/v1/tx_cosmes.js";
+} from "./ibc/lightclients/wasm/v1/tx_@onsonr/es.js";
 export {
   QueryChecksumsRequest as IbcLightclientsWasmV1QueryChecksumsRequest,
   QueryChecksumsResponse as IbcLightclientsWasmV1QueryChecksumsResponse,
@@ -1394,7 +1394,7 @@ export {
 export {
   QueryChecksumsService as IbcLightclientsWasmV1QueryChecksumsService,
   QueryCodeService as IbcLightclientsWasmV1QueryCodeService,
-} from "./ibc/lightclients/wasm/v1/query_cosmes.js";
+} from "./ibc/lightclients/wasm/v1/query_@onsonr/es.js";
 export {
   GenesisState as IbcLightclientsWasmV1GenesisState,
   Contract as IbcLightclientsWasmV1Contract,
@@ -1456,7 +1456,7 @@ export {
   MsgConnectionOpenAckService as IbcCoreConnectionV1MsgConnectionOpenAckService,
   MsgConnectionOpenConfirmService as IbcCoreConnectionV1MsgConnectionOpenConfirmService,
   MsgUpdateConnectionParamsService as IbcCoreConnectionV1MsgUpdateConnectionParamsService,
-} from "./ibc/core/connection/v1/tx_cosmes.js";
+} from "./ibc/core/connection/v1/tx_@onsonr/es.js";
 export {
   QueryConnectionRequest as IbcCoreConnectionV1QueryConnectionRequest,
   QueryConnectionResponse as IbcCoreConnectionV1QueryConnectionResponse,
@@ -1478,7 +1478,7 @@ export {
   QueryConnectionClientStateService as IbcCoreConnectionV1QueryConnectionClientStateService,
   QueryConnectionConsensusStateService as IbcCoreConnectionV1QueryConnectionConsensusStateService,
   QueryConnectionParamsService as IbcCoreConnectionV1QueryConnectionParamsService,
-} from "./ibc/core/connection/v1/query_cosmes.js";
+} from "./ibc/core/connection/v1/query_@onsonr/es.js";
 export {
   GenesisState as IbcCoreConnectionV1GenesisState,
 } from "./ibc/core/connection/v1/genesis_pb.js";
@@ -1524,7 +1524,7 @@ export {
   MsgRecoverClientService as IbcCoreClientV1MsgRecoverClientService,
   MsgIBCSoftwareUpgradeService as IbcCoreClientV1MsgIBCSoftwareUpgradeService,
   MsgUpdateClientParamsService as IbcCoreClientV1MsgUpdateClientParamsService,
-} from "./ibc/core/client/v1/tx_cosmes.js";
+} from "./ibc/core/client/v1/tx_@onsonr/es.js";
 export {
   QueryClientStateRequest as IbcCoreClientV1QueryClientStateRequest,
   QueryClientStateResponse as IbcCoreClientV1QueryClientStateResponse,
@@ -1558,7 +1558,7 @@ export {
   QueryUpgradedClientStateService as IbcCoreClientV1QueryUpgradedClientStateService,
   QueryUpgradedConsensusStateService as IbcCoreClientV1QueryUpgradedConsensusStateService,
   QueryVerifyMembershipService as IbcCoreClientV1QueryVerifyMembershipService,
-} from "./ibc/core/client/v1/query_cosmes.js";
+} from "./ibc/core/client/v1/query_@onsonr/es.js";
 export {
   GenesisState as IbcCoreClientV1GenesisState,
   GenesisMetadata as IbcCoreClientV1GenesisMetadata,
@@ -1637,7 +1637,7 @@ export {
   MsgChannelUpgradeCancelService as IbcCoreChannelV1MsgChannelUpgradeCancelService,
   MsgUpdateChannelParamsService as IbcCoreChannelV1MsgUpdateChannelParamsService,
   MsgPruneAcknowledgementsService as IbcCoreChannelV1MsgPruneAcknowledgementsService,
-} from "./ibc/core/channel/v1/tx_cosmes.js";
+} from "./ibc/core/channel/v1/tx_@onsonr/es.js";
 export {
   QueryChannelRequest as IbcCoreChannelV1QueryChannelRequest,
   QueryChannelResponse as IbcCoreChannelV1QueryChannelResponse,
@@ -1692,7 +1692,7 @@ export {
   QueryUpgradeErrorService as IbcCoreChannelV1QueryUpgradeErrorService,
   QueryUpgradeService as IbcCoreChannelV1QueryUpgradeService,
   QueryChannelParamsService as IbcCoreChannelV1QueryChannelParamsService,
-} from "./ibc/core/channel/v1/query_cosmes.js";
+} from "./ibc/core/channel/v1/query_@onsonr/es.js";
 export {
   GenesisState as IbcCoreChannelV1GenesisState,
   PacketSequence as IbcCoreChannelV1PacketSequence,
@@ -1723,7 +1723,7 @@ export {
 export {
   QueryV2DenomsService as IbcApplicationsTransferV2QueryV2DenomsService,
   QueryV2DenomService as IbcApplicationsTransferV2QueryV2DenomService,
-} from "./ibc/applications/transfer/v2/queryv2_cosmes.js";
+} from "./ibc/applications/transfer/v2/queryv2_@onsonr/es.js";
 export {
   FungibleTokenPacketData as IbcApplicationsTransferV2FungibleTokenPacketData,
   FungibleTokenPacketDataV2 as IbcApplicationsTransferV2FungibleTokenPacketDataV2,
@@ -1742,7 +1742,7 @@ export {
 export {
   MsgTransferService as IbcApplicationsTransferV1MsgTransferService,
   MsgUpdateParamsService as IbcApplicationsTransferV1MsgUpdateParamsService,
-} from "./ibc/applications/transfer/v1/tx_cosmes.js";
+} from "./ibc/applications/transfer/v1/tx_@onsonr/es.js";
 export {
   Params as IbcApplicationsTransferV1Params,
   Forwarding as IbcApplicationsTransferV1Forwarding,
@@ -1763,7 +1763,7 @@ export {
   QueryDenomHashService as IbcApplicationsTransferV1QueryDenomHashService,
   QueryEscrowAddressService as IbcApplicationsTransferV1QueryEscrowAddressService,
   QueryTotalEscrowForDenomService as IbcApplicationsTransferV1QueryTotalEscrowForDenomService,
-} from "./ibc/applications/transfer/v1/query_cosmes.js";
+} from "./ibc/applications/transfer/v1/query_@onsonr/es.js";
 export {
   DenomTrace as IbcApplicationsTransferV1DenomTrace,
 } from "./ibc/applications/transfer/v1/denomtrace_pb.js";
@@ -1792,14 +1792,14 @@ export {
 export {
   MsgUpdateParamsService as IbcApplicationsInterchainAccountsHostV1MsgUpdateParamsService,
   MsgModuleQuerySafeService as IbcApplicationsInterchainAccountsHostV1MsgModuleQuerySafeService,
-} from "./ibc/applications/interchain_accounts/host/v1/tx_cosmes.js";
+} from "./ibc/applications/interchain_accounts/host/v1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as IbcApplicationsInterchainAccountsHostV1QueryParamsRequest,
   QueryParamsResponse as IbcApplicationsInterchainAccountsHostV1QueryParamsResponse,
 } from "./ibc/applications/interchain_accounts/host/v1/query_pb.js";
 export {
   QueryParamsService as IbcApplicationsInterchainAccountsHostV1QueryParamsService,
-} from "./ibc/applications/interchain_accounts/host/v1/query_cosmes.js";
+} from "./ibc/applications/interchain_accounts/host/v1/query_@onsonr/es.js";
 export {
   Params as IbcApplicationsInterchainAccountsHostV1Params,
   QueryRequest as IbcApplicationsInterchainAccountsHostV1QueryRequest,
@@ -1823,7 +1823,7 @@ export {
   MsgRegisterInterchainAccountService as IbcApplicationsInterchainAccountsControllerV1MsgRegisterInterchainAccountService,
   MsgSendTxService as IbcApplicationsInterchainAccountsControllerV1MsgSendTxService,
   MsgUpdateParamsService as IbcApplicationsInterchainAccountsControllerV1MsgUpdateParamsService,
-} from "./ibc/applications/interchain_accounts/controller/v1/tx_cosmes.js";
+} from "./ibc/applications/interchain_accounts/controller/v1/tx_@onsonr/es.js";
 export {
   QueryInterchainAccountRequest as IbcApplicationsInterchainAccountsControllerV1QueryInterchainAccountRequest,
   QueryInterchainAccountResponse as IbcApplicationsInterchainAccountsControllerV1QueryInterchainAccountResponse,
@@ -1833,7 +1833,7 @@ export {
 export {
   QueryInterchainAccountService as IbcApplicationsInterchainAccountsControllerV1QueryInterchainAccountService,
   QueryParamsService as IbcApplicationsInterchainAccountsControllerV1QueryParamsService,
-} from "./ibc/applications/interchain_accounts/controller/v1/query_cosmes.js";
+} from "./ibc/applications/interchain_accounts/controller/v1/query_@onsonr/es.js";
 export {
   Params as IbcApplicationsInterchainAccountsControllerV1Params,
 } from "./ibc/applications/interchain_accounts/controller/v1/controller_pb.js";
@@ -1852,7 +1852,7 @@ export {
   MsgRegisterCounterpartyPayeeService as IbcApplicationsFeeV1MsgRegisterCounterpartyPayeeService,
   MsgPayPacketFeeService as IbcApplicationsFeeV1MsgPayPacketFeeService,
   MsgPayPacketFeeAsyncService as IbcApplicationsFeeV1MsgPayPacketFeeAsyncService,
-} from "./ibc/applications/fee/v1/tx_cosmes.js";
+} from "./ibc/applications/fee/v1/tx_@onsonr/es.js";
 export {
   QueryIncentivizedPacketsRequest as IbcApplicationsFeeV1QueryIncentivizedPacketsRequest,
   QueryIncentivizedPacketsResponse as IbcApplicationsFeeV1QueryIncentivizedPacketsResponse,
@@ -1886,7 +1886,7 @@ export {
   QueryCounterpartyPayeeService as IbcApplicationsFeeV1QueryCounterpartyPayeeService,
   QueryFeeEnabledChannelsService as IbcApplicationsFeeV1QueryFeeEnabledChannelsService,
   QueryFeeEnabledChannelService as IbcApplicationsFeeV1QueryFeeEnabledChannelService,
-} from "./ibc/applications/fee/v1/query_cosmes.js";
+} from "./ibc/applications/fee/v1/query_@onsonr/es.js";
 export {
   Metadata as IbcApplicationsFeeV1Metadata,
 } from "./ibc/applications/fee/v1/metadata_pb.js";
@@ -1924,7 +1924,7 @@ export {
 } from "./ethermint/feemarket/v1/tx_pb.js";
 export {
   MsgUpdateParamsService as EthermintFeemarketV1MsgUpdateParamsService,
-} from "./ethermint/feemarket/v1/tx_cosmes.js";
+} from "./ethermint/feemarket/v1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as EthermintFeemarketV1QueryParamsRequest,
   QueryParamsResponse as EthermintFeemarketV1QueryParamsResponse,
@@ -1937,7 +1937,7 @@ export {
   QueryParamsService as EthermintFeemarketV1QueryParamsService,
   QueryBaseFeeService as EthermintFeemarketV1QueryBaseFeeService,
   QueryBlockGasService as EthermintFeemarketV1QueryBlockGasService,
-} from "./ethermint/feemarket/v1/query_cosmes.js";
+} from "./ethermint/feemarket/v1/query_@onsonr/es.js";
 export {
   GenesisState as EthermintFeemarketV1GenesisState,
 } from "./ethermint/feemarket/v1/genesis_pb.js";
@@ -1961,7 +1961,7 @@ export {
 export {
   MsgEthereumTxService as EthermintEvmV1MsgEthereumTxService,
   MsgUpdateParamsService as EthermintEvmV1MsgUpdateParamsService,
-} from "./ethermint/evm/v1/tx_cosmes.js";
+} from "./ethermint/evm/v1/tx_@onsonr/es.js";
 export {
   QueryAccountRequest as EthermintEvmV1QueryAccountRequest,
   QueryAccountResponse as EthermintEvmV1QueryAccountResponse,
@@ -2001,7 +2001,7 @@ export {
   QueryTraceTxService as EthermintEvmV1QueryTraceTxService,
   QueryTraceBlockService as EthermintEvmV1QueryTraceBlockService,
   QueryBaseFeeService as EthermintEvmV1QueryBaseFeeService,
-} from "./ethermint/evm/v1/query_cosmes.js";
+} from "./ethermint/evm/v1/query_@onsonr/es.js";
 export {
   GenesisState as EthermintEvmV1GenesisState,
   GenesisAccount as EthermintEvmV1GenesisAccount,
@@ -2035,7 +2035,7 @@ export {
 export {
   MsgUpdateParamsService as DwnV1MsgUpdateParamsService,
   MsgInitializeService as DwnV1MsgInitializeService,
-} from "./dwn/v1/tx_cosmes.js";
+} from "./dwn/v1/tx_@onsonr/es.js";
 export {
   Credential as DwnV1Credential,
   Profile as DwnV1Profile,
@@ -2055,7 +2055,7 @@ export {
   QuerySchemaService as DwnV1QuerySchemaService,
   QueryAllocateService as DwnV1QueryAllocateService,
   QuerySyncService as DwnV1QuerySyncService,
-} from "./dwn/v1/query_cosmes.js";
+} from "./dwn/v1/query_@onsonr/es.js";
 export {
   GenesisState as DwnV1GenesisState,
   Params as DwnV1Params,
@@ -2088,7 +2088,7 @@ export {
   MsgUnlinkAssertionService as DidV1MsgUnlinkAssertionService,
   MsgUnlinkAuthenticationService as DidV1MsgUnlinkAuthenticationService,
   MsgUpdateParamsService as DidV1MsgUpdateParamsService,
-} from "./did/v1/tx_cosmes.js";
+} from "./did/v1/tx_@onsonr/es.js";
 export {
   Account as DidV1Account,
   PublicKey as DidV1PublicKey,
@@ -2107,7 +2107,7 @@ export {
   QueryParamsService as DidV1QueryParamsService,
   QueryResolveService as DidV1QueryResolveService,
   QueryVerifyService as DidV1QueryVerifyService,
-} from "./did/v1/query_cosmes.js";
+} from "./did/v1/query_@onsonr/es.js";
 export {
   GenesisState as DidV1GenesisState,
   Document as DidV1Document,
@@ -2182,7 +2182,7 @@ export {
   MsgAddCodeUploadParamsAddressesService as CosmwasmWasmV1MsgAddCodeUploadParamsAddressesService,
   MsgStoreAndMigrateContractService as CosmwasmWasmV1MsgStoreAndMigrateContractService,
   MsgUpdateContractLabelService as CosmwasmWasmV1MsgUpdateContractLabelService,
-} from "./cosmwasm/wasm/v1/tx_cosmes.js";
+} from "./cosmwasm/wasm/v1/tx_@onsonr/es.js";
 export {
   QueryContractInfoRequest as CosmwasmWasmV1QueryContractInfoRequest,
   QueryContractInfoResponse as CosmwasmWasmV1QueryContractInfoResponse,
@@ -2229,7 +2229,7 @@ export {
   QueryContractsByCreatorService as CosmwasmWasmV1QueryContractsByCreatorService,
   QueryWasmLimitsConfigService as CosmwasmWasmV1QueryWasmLimitsConfigService,
   QueryBuildAddressService as CosmwasmWasmV1QueryBuildAddressService,
-} from "./cosmwasm/wasm/v1/query_cosmes.js";
+} from "./cosmwasm/wasm/v1/query_@onsonr/es.js";
 export {
   StoreCodeProposal as CosmwasmWasmV1StoreCodeProposal,
   InstantiateContractProposal as CosmwasmWasmV1InstantiateContractProposal,
@@ -2290,7 +2290,7 @@ export {
   MsgCreateVestingAccountService as CosmosVestingV1beta1MsgCreateVestingAccountService,
   MsgCreatePermanentLockedAccountService as CosmosVestingV1beta1MsgCreatePermanentLockedAccountService,
   MsgCreatePeriodicVestingAccountService as CosmosVestingV1beta1MsgCreatePeriodicVestingAccountService,
-} from "./cosmos/vesting/v1beta1/tx_cosmes.js";
+} from "./cosmos/vesting/v1beta1/tx_@onsonr/es.js";
 export {
   Module as CosmosVestingModuleV1Module,
 } from "./cosmos/vesting/module/v1/module_pb.js";
@@ -2309,7 +2309,7 @@ export {
 export {
   MsgSoftwareUpgradeService as CosmosUpgradeV1beta1MsgSoftwareUpgradeService,
   MsgCancelUpgradeService as CosmosUpgradeV1beta1MsgCancelUpgradeService,
-} from "./cosmos/upgrade/v1beta1/tx_cosmes.js";
+} from "./cosmos/upgrade/v1beta1/tx_@onsonr/es.js";
 export {
   QueryCurrentPlanRequest as CosmosUpgradeV1beta1QueryCurrentPlanRequest,
   QueryCurrentPlanResponse as CosmosUpgradeV1beta1QueryCurrentPlanResponse,
@@ -2328,7 +2328,7 @@ export {
   QueryUpgradedConsensusStateService as CosmosUpgradeV1beta1QueryUpgradedConsensusStateService,
   QueryModuleVersionsService as CosmosUpgradeV1beta1QueryModuleVersionsService,
   QueryAuthorityService as CosmosUpgradeV1beta1QueryAuthorityService,
-} from "./cosmos/upgrade/v1beta1/query_cosmes.js";
+} from "./cosmos/upgrade/v1beta1/query_@onsonr/es.js";
 export {
   Module as CosmosUpgradeModuleV1Module,
 } from "./cosmos/upgrade/module/v1/module_pb.js";
@@ -2379,7 +2379,7 @@ export {
   ServiceTxEncodeService as CosmosTxV1beta1ServiceTxEncodeService,
   ServiceTxEncodeAminoService as CosmosTxV1beta1ServiceTxEncodeAminoService,
   ServiceTxDecodeAminoService as CosmosTxV1beta1ServiceTxDecodeAminoService,
-} from "./cosmos/tx/v1beta1/service_cosmes.js";
+} from "./cosmos/tx/v1beta1/service_@onsonr/es.js";
 export {
   SignMode as CosmosTxSigningV1beta1SignMode,
   SignatureDescriptors as CosmosTxSigningV1beta1SignatureDescriptors,
@@ -2409,7 +2409,7 @@ export {
 export {
   ABCIListenerServiceListenFinalizeBlockService as CosmosStoreStreamingAbciABCIListenerServiceListenFinalizeBlockService,
   ABCIListenerServiceListenCommitService as CosmosStoreStreamingAbciABCIListenerServiceListenCommitService,
-} from "./cosmos/store/streaming/abci/grpc_cosmes.js";
+} from "./cosmos/store/streaming/abci/grpc_@onsonr/es.js";
 export {
   Snapshot as CosmosStoreSnapshotsV1Snapshot,
   Metadata as CosmosStoreSnapshotsV1Metadata,
@@ -2447,7 +2447,7 @@ export {
   MsgUndelegateService as CosmosStakingV1beta1MsgUndelegateService,
   MsgCancelUnbondingDelegationService as CosmosStakingV1beta1MsgCancelUnbondingDelegationService,
   MsgUpdateParamsService as CosmosStakingV1beta1MsgUpdateParamsService,
-} from "./cosmos/staking/v1beta1/tx_cosmes.js";
+} from "./cosmos/staking/v1beta1/tx_@onsonr/es.js";
 export {
   BondStatus as CosmosStakingV1beta1BondStatus,
   Infraction as CosmosStakingV1beta1Infraction,
@@ -2518,7 +2518,7 @@ export {
   QueryHistoricalInfoService as CosmosStakingV1beta1QueryHistoricalInfoService,
   QueryPoolService as CosmosStakingV1beta1QueryPoolService,
   QueryParamsService as CosmosStakingV1beta1QueryParamsService,
-} from "./cosmos/staking/v1beta1/query_cosmes.js";
+} from "./cosmos/staking/v1beta1/query_@onsonr/es.js";
 export {
   GenesisState as CosmosStakingV1beta1GenesisState,
   LastValidatorPower as CosmosStakingV1beta1LastValidatorPower,
@@ -2540,7 +2540,7 @@ export {
 export {
   MsgUnjailService as CosmosSlashingV1beta1MsgUnjailService,
   MsgUpdateParamsService as CosmosSlashingV1beta1MsgUpdateParamsService,
-} from "./cosmos/slashing/v1beta1/tx_cosmes.js";
+} from "./cosmos/slashing/v1beta1/tx_@onsonr/es.js";
 export {
   ValidatorSigningInfo as CosmosSlashingV1beta1ValidatorSigningInfo,
   Params as CosmosSlashingV1beta1Params,
@@ -2557,7 +2557,7 @@ export {
   QueryParamsService as CosmosSlashingV1beta1QueryParamsService,
   QuerySigningInfoService as CosmosSlashingV1beta1QuerySigningInfoService,
   QuerySigningInfosService as CosmosSlashingV1beta1QuerySigningInfosService,
-} from "./cosmos/slashing/v1beta1/query_cosmes.js";
+} from "./cosmos/slashing/v1beta1/query_@onsonr/es.js";
 export {
   GenesisState as CosmosSlashingV1beta1GenesisState,
   SigningInfo as CosmosSlashingV1beta1SigningInfo,
@@ -2573,7 +2573,7 @@ export {
 } from "./cosmos/reflection/v1/reflection_pb.js";
 export {
   ReflectionServiceFileDescriptorsService as CosmosReflectionV1ReflectionServiceFileDescriptorsService,
-} from "./cosmos/reflection/v1/reflection_cosmes.js";
+} from "./cosmos/reflection/v1/reflection_@onsonr/es.js";
 export {
   QueryParamsRequest as CosmosParamsV1beta1QueryParamsRequest,
   QueryParamsResponse as CosmosParamsV1beta1QueryParamsResponse,
@@ -2584,7 +2584,7 @@ export {
 export {
   QueryParamsService as CosmosParamsV1beta1QueryParamsService,
   QuerySubspacesService as CosmosParamsV1beta1QuerySubspacesService,
-} from "./cosmos/params/v1beta1/query_cosmes.js";
+} from "./cosmos/params/v1beta1/query_@onsonr/es.js";
 export {
   ParameterChangeProposal as CosmosParamsV1beta1ParameterChangeProposal,
   ParamChange as CosmosParamsV1beta1ParamChange,
@@ -2615,7 +2615,7 @@ export {
 export {
   QueryGetService as CosmosOrmQueryV1alpha1QueryGetService,
   QueryListService as CosmosOrmQueryV1alpha1QueryListService,
-} from "./cosmos/orm/query/v1alpha1/query_cosmes.js";
+} from "./cosmos/orm/query/v1alpha1/query_@onsonr/es.js";
 export {
   Module as CosmosOrmModuleV1alpha1Module,
 } from "./cosmos/orm/module/v1alpha1/module_pb.js";
@@ -2625,7 +2625,7 @@ export {
 } from "./cosmos/nft/v1beta1/tx_pb.js";
 export {
   MsgSendService as CosmosNftV1beta1MsgSendService,
-} from "./cosmos/nft/v1beta1/tx_cosmes.js";
+} from "./cosmos/nft/v1beta1/tx_@onsonr/es.js";
 export {
   QueryBalanceRequest as CosmosNftV1beta1QueryBalanceRequest,
   QueryBalanceResponse as CosmosNftV1beta1QueryBalanceResponse,
@@ -2650,7 +2650,7 @@ export {
   QueryNFTService as CosmosNftV1beta1QueryNFTService,
   QueryClassService as CosmosNftV1beta1QueryClassService,
   QueryClassesService as CosmosNftV1beta1QueryClassesService,
-} from "./cosmos/nft/v1beta1/query_cosmes.js";
+} from "./cosmos/nft/v1beta1/query_@onsonr/es.js";
 export {
   Class as CosmosNftV1beta1Class,
   NFT as CosmosNftV1beta1NFT,
@@ -2673,7 +2673,7 @@ export {
 } from "./cosmos/mint/v1beta1/tx_pb.js";
 export {
   MsgUpdateParamsService as CosmosMintV1beta1MsgUpdateParamsService,
-} from "./cosmos/mint/v1beta1/tx_cosmes.js";
+} from "./cosmos/mint/v1beta1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as CosmosMintV1beta1QueryParamsRequest,
   QueryParamsResponse as CosmosMintV1beta1QueryParamsResponse,
@@ -2686,7 +2686,7 @@ export {
   QueryParamsService as CosmosMintV1beta1QueryParamsService,
   QueryInflationService as CosmosMintV1beta1QueryInflationService,
   QueryAnnualProvisionsService as CosmosMintV1beta1QueryAnnualProvisionsService,
-} from "./cosmos/mint/v1beta1/query_cosmes.js";
+} from "./cosmos/mint/v1beta1/query_@onsonr/es.js";
 export {
   Minter as CosmosMintV1beta1Minter,
   Params as CosmosMintV1beta1Params,
@@ -2776,7 +2776,7 @@ export {
   MsgVoteService as CosmosGroupV1MsgVoteService,
   MsgExecService as CosmosGroupV1MsgExecService,
   MsgLeaveGroupService as CosmosGroupV1MsgLeaveGroupService,
-} from "./cosmos/group/v1/tx_cosmes.js";
+} from "./cosmos/group/v1/tx_@onsonr/es.js";
 export {
   QueryGroupInfoRequest as CosmosGroupV1QueryGroupInfoRequest,
   QueryGroupInfoResponse as CosmosGroupV1QueryGroupInfoResponse,
@@ -2822,7 +2822,7 @@ export {
   QueryGroupsByMemberService as CosmosGroupV1QueryGroupsByMemberService,
   QueryTallyResultService as CosmosGroupV1QueryTallyResultService,
   QueryGroupsService as CosmosGroupV1QueryGroupsService,
-} from "./cosmos/group/v1/query_cosmes.js";
+} from "./cosmos/group/v1/query_@onsonr/es.js";
 export {
   GenesisState as CosmosGroupV1GenesisState,
 } from "./cosmos/group/v1/genesis_pb.js";
@@ -2856,7 +2856,7 @@ export {
   MsgVoteService as CosmosGovV1beta1MsgVoteService,
   MsgVoteWeightedService as CosmosGovV1beta1MsgVoteWeightedService,
   MsgDepositService as CosmosGovV1beta1MsgDepositService,
-} from "./cosmos/gov/v1beta1/tx_cosmes.js";
+} from "./cosmos/gov/v1beta1/tx_@onsonr/es.js";
 export {
   QueryProposalRequest as CosmosGovV1beta1QueryProposalRequest,
   QueryProposalResponse as CosmosGovV1beta1QueryProposalResponse,
@@ -2884,7 +2884,7 @@ export {
   QueryDepositService as CosmosGovV1beta1QueryDepositService,
   QueryDepositsService as CosmosGovV1beta1QueryDepositsService,
   QueryTallyResultService as CosmosGovV1beta1QueryTallyResultService,
-} from "./cosmos/gov/v1beta1/query_cosmes.js";
+} from "./cosmos/gov/v1beta1/query_@onsonr/es.js";
 export {
   VoteOption as CosmosGovV1beta1VoteOption,
   ProposalStatus as CosmosGovV1beta1ProposalStatus,
@@ -2925,7 +2925,7 @@ export {
   MsgDepositService as CosmosGovV1MsgDepositService,
   MsgUpdateParamsService as CosmosGovV1MsgUpdateParamsService,
   MsgCancelProposalService as CosmosGovV1MsgCancelProposalService,
-} from "./cosmos/gov/v1/tx_cosmes.js";
+} from "./cosmos/gov/v1/tx_@onsonr/es.js";
 export {
   QueryConstitutionRequest as CosmosGovV1QueryConstitutionRequest,
   QueryConstitutionResponse as CosmosGovV1QueryConstitutionResponse,
@@ -2956,7 +2956,7 @@ export {
   QueryDepositService as CosmosGovV1QueryDepositService,
   QueryDepositsService as CosmosGovV1QueryDepositsService,
   QueryTallyResultService as CosmosGovV1QueryTallyResultService,
-} from "./cosmos/gov/v1/query_cosmes.js";
+} from "./cosmos/gov/v1/query_@onsonr/es.js";
 export {
   VoteOption as CosmosGovV1VoteOption,
   ProposalStatus as CosmosGovV1ProposalStatus,
@@ -2994,7 +2994,7 @@ export {
   MsgGrantAllowanceService as CosmosFeegrantV1beta1MsgGrantAllowanceService,
   MsgRevokeAllowanceService as CosmosFeegrantV1beta1MsgRevokeAllowanceService,
   MsgPruneAllowancesService as CosmosFeegrantV1beta1MsgPruneAllowancesService,
-} from "./cosmos/feegrant/v1beta1/tx_cosmes.js";
+} from "./cosmos/feegrant/v1beta1/tx_@onsonr/es.js";
 export {
   QueryAllowanceRequest as CosmosFeegrantV1beta1QueryAllowanceRequest,
   QueryAllowanceResponse as CosmosFeegrantV1beta1QueryAllowanceResponse,
@@ -3007,7 +3007,7 @@ export {
   QueryAllowanceService as CosmosFeegrantV1beta1QueryAllowanceService,
   QueryAllowancesService as CosmosFeegrantV1beta1QueryAllowancesService,
   QueryAllowancesByGranterService as CosmosFeegrantV1beta1QueryAllowancesByGranterService,
-} from "./cosmos/feegrant/v1beta1/query_cosmes.js";
+} from "./cosmos/feegrant/v1beta1/query_@onsonr/es.js";
 export {
   GenesisState as CosmosFeegrantV1beta1GenesisState,
 } from "./cosmos/feegrant/v1beta1/genesis_pb.js";
@@ -3026,7 +3026,7 @@ export {
 } from "./cosmos/evidence/v1beta1/tx_pb.js";
 export {
   MsgSubmitEvidenceService as CosmosEvidenceV1beta1MsgSubmitEvidenceService,
-} from "./cosmos/evidence/v1beta1/tx_cosmes.js";
+} from "./cosmos/evidence/v1beta1/tx_@onsonr/es.js";
 export {
   QueryEvidenceRequest as CosmosEvidenceV1beta1QueryEvidenceRequest,
   QueryEvidenceResponse as CosmosEvidenceV1beta1QueryEvidenceResponse,
@@ -3036,7 +3036,7 @@ export {
 export {
   QueryEvidenceService as CosmosEvidenceV1beta1QueryEvidenceService,
   QueryAllEvidenceService as CosmosEvidenceV1beta1QueryAllEvidenceService,
-} from "./cosmos/evidence/v1beta1/query_cosmes.js";
+} from "./cosmos/evidence/v1beta1/query_@onsonr/es.js";
 export {
   GenesisState as CosmosEvidenceV1beta1GenesisState,
 } from "./cosmos/evidence/v1beta1/genesis_pb.js";
@@ -3070,7 +3070,7 @@ export {
   MsgUpdateParamsService as CosmosDistributionV1beta1MsgUpdateParamsService,
   MsgCommunityPoolSpendService as CosmosDistributionV1beta1MsgCommunityPoolSpendService,
   MsgDepositValidatorRewardsPoolService as CosmosDistributionV1beta1MsgDepositValidatorRewardsPoolService,
-} from "./cosmos/distribution/v1beta1/tx_cosmes.js";
+} from "./cosmos/distribution/v1beta1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as CosmosDistributionV1beta1QueryParamsRequest,
   QueryParamsResponse as CosmosDistributionV1beta1QueryParamsResponse,
@@ -3104,7 +3104,7 @@ export {
   QueryDelegatorValidatorsService as CosmosDistributionV1beta1QueryDelegatorValidatorsService,
   QueryDelegatorWithdrawAddressService as CosmosDistributionV1beta1QueryDelegatorWithdrawAddressService,
   QueryCommunityPoolService as CosmosDistributionV1beta1QueryCommunityPoolService,
-} from "./cosmos/distribution/v1beta1/query_cosmes.js";
+} from "./cosmos/distribution/v1beta1/query_@onsonr/es.js";
 export {
   DelegatorWithdrawInfo as CosmosDistributionV1beta1DelegatorWithdrawInfo,
   ValidatorOutstandingRewardsRecord as CosmosDistributionV1beta1ValidatorOutstandingRewardsRecord,
@@ -3170,7 +3170,7 @@ export {
 export {
   MsgVerifyInvariantService as CosmosCrisisV1beta1MsgVerifyInvariantService,
   MsgUpdateParamsService as CosmosCrisisV1beta1MsgUpdateParamsService,
-} from "./cosmos/crisis/v1beta1/tx_cosmes.js";
+} from "./cosmos/crisis/v1beta1/tx_@onsonr/es.js";
 export {
   GenesisState as CosmosCrisisV1beta1GenesisState,
 } from "./cosmos/crisis/v1beta1/genesis_pb.js";
@@ -3183,14 +3183,14 @@ export {
 } from "./cosmos/consensus/v1/tx_pb.js";
 export {
   MsgUpdateParamsService as CosmosConsensusV1MsgUpdateParamsService,
-} from "./cosmos/consensus/v1/tx_cosmes.js";
+} from "./cosmos/consensus/v1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as CosmosConsensusV1QueryParamsRequest,
   QueryParamsResponse as CosmosConsensusV1QueryParamsResponse,
 } from "./cosmos/consensus/v1/query_pb.js";
 export {
   QueryParamsService as CosmosConsensusV1QueryParamsService,
-} from "./cosmos/consensus/v1/query_cosmes.js";
+} from "./cosmos/consensus/v1/query_@onsonr/es.js";
 export {
   Module as CosmosConsensusModuleV1Module,
 } from "./cosmos/consensus/module/v1/module_pb.js";
@@ -3212,7 +3212,7 @@ export {
   MsgAuthorizeCircuitBreakerService as CosmosCircuitV1MsgAuthorizeCircuitBreakerService,
   MsgTripCircuitBreakerService as CosmosCircuitV1MsgTripCircuitBreakerService,
   MsgResetCircuitBreakerService as CosmosCircuitV1MsgResetCircuitBreakerService,
-} from "./cosmos/circuit/v1/tx_cosmes.js";
+} from "./cosmos/circuit/v1/tx_@onsonr/es.js";
 export {
   QueryAccountRequest as CosmosCircuitV1QueryAccountRequest,
   AccountResponse as CosmosCircuitV1AccountResponse,
@@ -3225,7 +3225,7 @@ export {
   QueryAccountService as CosmosCircuitV1QueryAccountService,
   QueryAccountsService as CosmosCircuitV1QueryAccountsService,
   QueryDisabledListService as CosmosCircuitV1QueryDisabledListService,
-} from "./cosmos/circuit/v1/query_cosmes.js";
+} from "./cosmos/circuit/v1/query_@onsonr/es.js";
 export {
   Module as CosmosCircuitModuleV1Module,
 } from "./cosmos/circuit/module/v1/module_pb.js";
@@ -3268,7 +3268,7 @@ export {
   ServiceGetLatestValidatorSetService as CosmosBaseTendermintV1beta1ServiceGetLatestValidatorSetService,
   ServiceGetValidatorSetByHeightService as CosmosBaseTendermintV1beta1ServiceGetValidatorSetByHeightService,
   ServiceABCIQueryService as CosmosBaseTendermintV1beta1ServiceABCIQueryService,
-} from "./cosmos/base/tendermint/v1beta1/query_cosmes.js";
+} from "./cosmos/base/tendermint/v1beta1/query_@onsonr/es.js";
 export {
   AppDescriptor as CosmosBaseReflectionV2alpha1AppDescriptor,
   TxDescriptor as CosmosBaseReflectionV2alpha1TxDescriptor,
@@ -3304,7 +3304,7 @@ export {
   ReflectionServiceGetConfigurationDescriptorService as CosmosBaseReflectionV2alpha1ReflectionServiceGetConfigurationDescriptorService,
   ReflectionServiceGetQueryServicesDescriptorService as CosmosBaseReflectionV2alpha1ReflectionServiceGetQueryServicesDescriptorService,
   ReflectionServiceGetTxDescriptorService as CosmosBaseReflectionV2alpha1ReflectionServiceGetTxDescriptorService,
-} from "./cosmos/base/reflection/v2alpha1/reflection_cosmes.js";
+} from "./cosmos/base/reflection/v2alpha1/reflection_@onsonr/es.js";
 export {
   ListAllInterfacesRequest as CosmosBaseReflectionV1beta1ListAllInterfacesRequest,
   ListAllInterfacesResponse as CosmosBaseReflectionV1beta1ListAllInterfacesResponse,
@@ -3314,7 +3314,7 @@ export {
 export {
   ReflectionServiceListAllInterfacesService as CosmosBaseReflectionV1beta1ReflectionServiceListAllInterfacesService,
   ReflectionServiceListImplementationsService as CosmosBaseReflectionV1beta1ReflectionServiceListImplementationsService,
-} from "./cosmos/base/reflection/v1beta1/reflection_cosmes.js";
+} from "./cosmos/base/reflection/v1beta1/reflection_@onsonr/es.js";
 export {
   PageRequest as CosmosBaseQueryV1beta1PageRequest,
   PageResponse as CosmosBaseQueryV1beta1PageResponse,
@@ -3328,7 +3328,7 @@ export {
 export {
   ServiceConfigService as CosmosBaseNodeV1beta1ServiceConfigService,
   ServiceStatusService as CosmosBaseNodeV1beta1ServiceStatusService,
-} from "./cosmos/base/node/v1beta1/query_cosmes.js";
+} from "./cosmos/base/node/v1beta1/query_@onsonr/es.js";
 export {
   TxResponse as CosmosBaseAbciV1beta1TxResponse,
   ABCIMessageLog as CosmosBaseAbciV1beta1ABCIMessageLog,
@@ -3357,7 +3357,7 @@ export {
   MsgMultiSendService as CosmosBankV1beta1MsgMultiSendService,
   MsgUpdateParamsService as CosmosBankV1beta1MsgUpdateParamsService,
   MsgSetSendEnabledService as CosmosBankV1beta1MsgSetSendEnabledService,
-} from "./cosmos/bank/v1beta1/tx_cosmes.js";
+} from "./cosmos/bank/v1beta1/tx_@onsonr/es.js";
 export {
   QueryBalanceRequest as CosmosBankV1beta1QueryBalanceRequest,
   QueryBalanceResponse as CosmosBankV1beta1QueryBalanceResponse,
@@ -3401,7 +3401,7 @@ export {
   QueryDenomOwnersService as CosmosBankV1beta1QueryDenomOwnersService,
   QueryDenomOwnersByQueryService as CosmosBankV1beta1QueryDenomOwnersByQueryService,
   QuerySendEnabledService as CosmosBankV1beta1QuerySendEnabledService,
-} from "./cosmos/bank/v1beta1/query_cosmes.js";
+} from "./cosmos/bank/v1beta1/query_@onsonr/es.js";
 export {
   GenesisState as CosmosBankV1beta1GenesisState,
   Balance as CosmosBankV1beta1Balance,
@@ -3427,7 +3427,7 @@ export {
 } from "./cosmos/autocli/v1/query_pb.js";
 export {
   QueryAppOptionsService as CosmosAutocliV1QueryAppOptionsService,
-} from "./cosmos/autocli/v1/query_cosmes.js";
+} from "./cosmos/autocli/v1/query_@onsonr/es.js";
 export {
   ModuleOptions as CosmosAutocliV1ModuleOptions,
   ServiceCommandDescriptor as CosmosAutocliV1ServiceCommandDescriptor,
@@ -3447,7 +3447,7 @@ export {
   MsgGrantService as CosmosAuthzV1beta1MsgGrantService,
   MsgExecService as CosmosAuthzV1beta1MsgExecService,
   MsgRevokeService as CosmosAuthzV1beta1MsgRevokeService,
-} from "./cosmos/authz/v1beta1/tx_cosmes.js";
+} from "./cosmos/authz/v1beta1/tx_@onsonr/es.js";
 export {
   QueryGrantsRequest as CosmosAuthzV1beta1QueryGrantsRequest,
   QueryGrantsResponse as CosmosAuthzV1beta1QueryGrantsResponse,
@@ -3460,7 +3460,7 @@ export {
   QueryGrantsService as CosmosAuthzV1beta1QueryGrantsService,
   QueryGranterGrantsService as CosmosAuthzV1beta1QueryGranterGrantsService,
   QueryGranteeGrantsService as CosmosAuthzV1beta1QueryGranteeGrantsService,
-} from "./cosmos/authz/v1beta1/query_cosmes.js";
+} from "./cosmos/authz/v1beta1/query_@onsonr/es.js";
 export {
   GenesisState as CosmosAuthzV1beta1GenesisState,
 } from "./cosmos/authz/v1beta1/genesis_pb.js";
@@ -3483,7 +3483,7 @@ export {
 } from "./cosmos/auth/v1beta1/tx_pb.js";
 export {
   MsgUpdateParamsService as CosmosAuthV1beta1MsgUpdateParamsService,
-} from "./cosmos/auth/v1beta1/tx_cosmes.js";
+} from "./cosmos/auth/v1beta1/tx_@onsonr/es.js";
 export {
   QueryAccountsRequest as CosmosAuthV1beta1QueryAccountsRequest,
   QueryAccountsResponse as CosmosAuthV1beta1QueryAccountsResponse,
@@ -3517,7 +3517,7 @@ export {
   QueryAddressBytesToStringService as CosmosAuthV1beta1QueryAddressBytesToStringService,
   QueryAddressStringToBytesService as CosmosAuthV1beta1QueryAddressStringToBytesService,
   QueryAccountInfoService as CosmosAuthV1beta1QueryAccountInfoService,
-} from "./cosmos/auth/v1beta1/query_cosmes.js";
+} from "./cosmos/auth/v1beta1/query_@onsonr/es.js";
 export {
   GenesisState as CosmosAuthV1beta1GenesisState,
 } from "./cosmos/auth/v1beta1/genesis_pb.js";
@@ -3537,7 +3537,7 @@ export {
 } from "./cosmos/app/v1alpha1/query_pb.js";
 export {
   QueryConfigService as CosmosAppV1alpha1QueryConfigService,
-} from "./cosmos/app/v1alpha1/query_cosmes.js";
+} from "./cosmos/app/v1alpha1/query_@onsonr/es.js";
 export {
   ModuleDescriptor as CosmosAppV1alpha1ModuleDescriptor,
   PackageReference as CosmosAppV1alpha1PackageReference,
@@ -3567,7 +3567,7 @@ export {
 } from "./babylon/zoneconcierge/v1/tx_pb.js";
 export {
   MsgUpdateParamsService as BabylonZoneconciergeV1MsgUpdateParamsService,
-} from "./babylon/zoneconcierge/v1/tx_cosmes.js";
+} from "./babylon/zoneconcierge/v1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as BabylonZoneconciergeV1QueryParamsRequest,
   QueryParamsResponse as BabylonZoneconciergeV1QueryParamsResponse,
@@ -3598,7 +3598,7 @@ export {
   QueryListEpochHeadersService as BabylonZoneconciergeV1QueryListEpochHeadersService,
   QueryFinalizedChainsInfoService as BabylonZoneconciergeV1QueryFinalizedChainsInfoService,
   QueryFinalizedChainInfoUntilHeightService as BabylonZoneconciergeV1QueryFinalizedChainInfoUntilHeightService,
-} from "./babylon/zoneconcierge/v1/query_cosmes.js";
+} from "./babylon/zoneconcierge/v1/query_@onsonr/es.js";
 export {
   Params as BabylonZoneconciergeV1Params,
 } from "./babylon/zoneconcierge/v1/params_pb.js";
@@ -3618,7 +3618,7 @@ export {
 export {
   QueryEndedEpochBtcHeightService as BabylonMonitorV1QueryEndedEpochBtcHeightService,
   QueryReportedCheckpointBtcHeightService as BabylonMonitorV1QueryReportedCheckpointBtcHeightService,
-} from "./babylon/monitor/v1/query_cosmes.js";
+} from "./babylon/monitor/v1/query_@onsonr/es.js";
 export {
   GenesisState as BabylonMonitorV1GenesisState,
 } from "./babylon/monitor/v1/genesis_pb.js";
@@ -3631,7 +3631,7 @@ export {
 export {
   MsgWithdrawRewardService as BabylonIncentiveMsgWithdrawRewardService,
   MsgUpdateParamsService as BabylonIncentiveMsgUpdateParamsService,
-} from "./babylon/incentive/tx_cosmes.js";
+} from "./babylon/incentive/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as BabylonIncentiveQueryParamsRequest,
   QueryParamsResponse as BabylonIncentiveQueryParamsResponse,
@@ -3647,7 +3647,7 @@ export {
   QueryRewardGaugesService as BabylonIncentiveQueryRewardGaugesService,
   QueryBTCStakingGaugeService as BabylonIncentiveQueryBTCStakingGaugeService,
   QueryBTCTimestampingGaugeService as BabylonIncentiveQueryBTCTimestampingGaugeService,
-} from "./babylon/incentive/query_cosmes.js";
+} from "./babylon/incentive/query_@onsonr/es.js";
 export {
   Params as BabylonIncentiveParams,
 } from "./babylon/incentive/params_pb.js";
@@ -3670,7 +3670,7 @@ export {
   MsgAddFinalitySigService as BabylonFinalityV1MsgAddFinalitySigService,
   MsgCommitPubRandListService as BabylonFinalityV1MsgCommitPubRandListService,
   MsgUpdateParamsService as BabylonFinalityV1MsgUpdateParamsService,
-} from "./babylon/finality/v1/tx_cosmes.js";
+} from "./babylon/finality/v1/tx_@onsonr/es.js";
 export {
   QueriedBlockStatus as BabylonFinalityV1QueriedBlockStatus,
   QueryParamsRequest as BabylonFinalityV1QueryParamsRequest,
@@ -3696,7 +3696,7 @@ export {
   QueryVotesAtHeightService as BabylonFinalityV1QueryVotesAtHeightService,
   QueryEvidenceService as BabylonFinalityV1QueryEvidenceService,
   QueryListEvidencesService as BabylonFinalityV1QueryListEvidencesService,
-} from "./babylon/finality/v1/query_cosmes.js";
+} from "./babylon/finality/v1/query_@onsonr/es.js";
 export {
   Params as BabylonFinalityV1Params,
 } from "./babylon/finality/v1/params_pb.js";
@@ -3730,7 +3730,7 @@ export {
   MsgWrappedBeginRedelegateService as BabylonEpochingV1MsgWrappedBeginRedelegateService,
   MsgWrappedCancelUnbondingDelegationService as BabylonEpochingV1MsgWrappedCancelUnbondingDelegationService,
   MsgUpdateParamsService as BabylonEpochingV1MsgUpdateParamsService,
-} from "./babylon/epoching/v1/tx_cosmes.js";
+} from "./babylon/epoching/v1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as BabylonEpochingV1QueryParamsRequest,
   QueryParamsResponse as BabylonEpochingV1QueryParamsResponse,
@@ -3765,7 +3765,7 @@ export {
   QueryValidatorLifecycleService as BabylonEpochingV1QueryValidatorLifecycleService,
   QueryDelegationLifecycleService as BabylonEpochingV1QueryDelegationLifecycleService,
   QueryEpochValSetService as BabylonEpochingV1QueryEpochValSetService,
-} from "./babylon/epoching/v1/query_cosmes.js";
+} from "./babylon/epoching/v1/query_@onsonr/es.js";
 export {
   Params as BabylonEpochingV1Params,
 } from "./babylon/epoching/v1/params_pb.js";
@@ -3798,7 +3798,7 @@ export {
 } from "./babylon/checkpointing/v1/tx_pb.js";
 export {
   MsgWrappedCreateValidatorService as BabylonCheckpointingV1MsgWrappedCreateValidatorService,
-} from "./babylon/checkpointing/v1/tx_cosmes.js";
+} from "./babylon/checkpointing/v1/tx_@onsonr/es.js";
 export {
   QueryRawCheckpointListRequest as BabylonCheckpointingV1QueryRawCheckpointListRequest,
   QueryRawCheckpointListResponse as BabylonCheckpointingV1QueryRawCheckpointListResponse,
@@ -3826,7 +3826,7 @@ export {
   QueryEpochStatusService as BabylonCheckpointingV1QueryEpochStatusService,
   QueryRecentEpochStatusCountService as BabylonCheckpointingV1QueryRecentEpochStatusCountService,
   QueryLastCheckpointWithStatusService as BabylonCheckpointingV1QueryLastCheckpointWithStatusService,
-} from "./babylon/checkpointing/v1/query_cosmes.js";
+} from "./babylon/checkpointing/v1/query_@onsonr/es.js";
 export {
   GenesisState as BabylonCheckpointingV1GenesisState,
   GenesisKey as BabylonCheckpointingV1GenesisKey,
@@ -3879,7 +3879,7 @@ export {
   MsgBTCUndelegateService as BabylonBtcstakingV1MsgBTCUndelegateService,
   MsgSelectiveSlashingEvidenceService as BabylonBtcstakingV1MsgSelectiveSlashingEvidenceService,
   MsgUpdateParamsService as BabylonBtcstakingV1MsgUpdateParamsService,
-} from "./babylon/btcstaking/v1/tx_cosmes.js";
+} from "./babylon/btcstaking/v1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as BabylonBtcstakingV1QueryParamsRequest,
   QueryParamsResponse as BabylonBtcstakingV1QueryParamsResponse,
@@ -3917,7 +3917,7 @@ export {
   QueryActivatedHeightService as BabylonBtcstakingV1QueryActivatedHeightService,
   QueryFinalityProviderDelegationsService as BabylonBtcstakingV1QueryFinalityProviderDelegationsService,
   QueryBTCDelegationService as BabylonBtcstakingV1QueryBTCDelegationService,
-} from "./babylon/btcstaking/v1/query_cosmes.js";
+} from "./babylon/btcstaking/v1/query_@onsonr/es.js";
 export {
   BTCSigType as BabylonBtcstakingV1BTCSigType,
   ProofOfPossession as BabylonBtcstakingV1ProofOfPossession,
@@ -3967,7 +3967,7 @@ export {
 export {
   MsgInsertHeadersService as BabylonBtclightclientV1MsgInsertHeadersService,
   MsgUpdateParamsService as BabylonBtclightclientV1MsgUpdateParamsService,
-} from "./babylon/btclightclient/v1/tx_cosmes.js";
+} from "./babylon/btclightclient/v1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as BabylonBtclightclientV1QueryParamsRequest,
   QueryParamsResponse as BabylonBtclightclientV1QueryParamsResponse,
@@ -3996,7 +3996,7 @@ export {
   QueryTipService as BabylonBtclightclientV1QueryTipService,
   QueryBaseHeaderService as BabylonBtclightclientV1QueryBaseHeaderService,
   QueryHeaderDepthService as BabylonBtclightclientV1QueryHeaderDepthService,
-} from "./babylon/btclightclient/v1/query_cosmes.js";
+} from "./babylon/btclightclient/v1/query_@onsonr/es.js";
 export {
   Params as BabylonBtclightclientV1Params,
 } from "./babylon/btclightclient/v1/params_pb.js";
@@ -4020,7 +4020,7 @@ export {
 export {
   MsgInsertBTCSpvProofService as BabylonBtccheckpointV1MsgInsertBTCSpvProofService,
   MsgUpdateParamsService as BabylonBtccheckpointV1MsgUpdateParamsService,
-} from "./babylon/btccheckpoint/v1/tx_cosmes.js";
+} from "./babylon/btccheckpoint/v1/tx_@onsonr/es.js";
 export {
   QueryParamsRequest as BabylonBtccheckpointV1QueryParamsRequest,
   QueryParamsResponse as BabylonBtccheckpointV1QueryParamsResponse,
@@ -4040,7 +4040,7 @@ export {
   QueryBtcCheckpointInfoService as BabylonBtccheckpointV1QueryBtcCheckpointInfoService,
   QueryBtcCheckpointsInfoService as BabylonBtccheckpointV1QueryBtcCheckpointsInfoService,
   QueryEpochSubmissionsService as BabylonBtccheckpointV1QueryEpochSubmissionsService,
-} from "./babylon/btccheckpoint/v1/query_cosmes.js";
+} from "./babylon/btccheckpoint/v1/query_@onsonr/es.js";
 export {
   Params as BabylonBtccheckpointV1Params,
 } from "./babylon/btccheckpoint/v1/params_pb.js";

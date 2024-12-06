@@ -4,7 +4,7 @@ import {
   verifyADR36,
   verifyECDSA,
   verifyEIP191,
-} from "cosmes/codec";
+} from "@onsonr/es/codec";
 
 import { WalletName } from "../constants/WalletName";
 

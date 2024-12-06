@@ -1,6 +1,6 @@
 import { PlainMessage } from "@bufbuild/protobuf";
-import { base64 } from "cosmes/codec";
-import { CosmwasmWasmV1MsgStoreCode as ProtoMsgStoreCode } from "cosmes/protobufs";
+import { base64 } from "@onsonr/es/codec";
+import { CosmwasmWasmV1MsgStoreCode as ProtoMsgStoreCode } from "@onsonr/es/protobufs";
 
 import { DeepPrettify } from "../../typeutils/prettify";
 import { Adapter } from "./Adapter";

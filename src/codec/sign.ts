@@ -3,8 +3,8 @@ import { sha256 } from "@noble/hashes/sha256";
 import { keccak_256 } from "@noble/hashes/sha3";
 import * as secp256k1 from "@noble/secp256k1";
 import { utf8 } from "@scure/base";
-import { CosmosTxV1beta1SignDoc as SignDoc } from "cosmes/protobufs";
-import { StdSignDoc } from "cosmes/registry";
+import { CosmosTxV1beta1SignDoc as SignDoc } from "@onsonr/es/protobufs";
+import { StdSignDoc } from "@onsonr/es/registry";
 
 import { serialiseSignDoc } from "./serialise";
 

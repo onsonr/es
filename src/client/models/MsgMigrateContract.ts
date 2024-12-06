@@ -1,6 +1,6 @@
 import { PlainMessage } from "@bufbuild/protobuf";
-import { utf8 } from "cosmes/codec";
-import { CosmwasmWasmV1MsgMigrateContract as ProtoMsgMigrateContract } from "cosmes/protobufs";
+import { utf8 } from "@onsonr/es/codec";
+import { CosmwasmWasmV1MsgMigrateContract as ProtoMsgMigrateContract } from "@onsonr/es/protobufs";
 
 import { DeepPrettify, Prettify } from "../../typeutils/prettify";
 import { Adapter } from "./Adapter";

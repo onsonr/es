@@ -1,4 +1,4 @@
-import { MnemonicWallet, verifyArbitrary } from "cosmes/wallet";
+import { MnemonicWallet, verifyArbitrary } from "@onsonr/es/wallet";
 
 async function main() {
   // Create a mnemonic wallet to sign an arbitrary message
@@ -16,7 +16,7 @@ async function main() {
   });
 
   // Sign the arbitrary data
-  const message = "Hello from CosmES!";
+  const message = "Hello from @onsonr/es!";
   const { signature, pubKey } = await wallet.signArbitrary(message);
 
   // Verify the signature of the arbitrary data

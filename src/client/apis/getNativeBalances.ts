@@ -1,4 +1,4 @@
-import { CosmosBankV1beta1QueryAllBalancesService as QueryAllBalancesService } from "cosmes/protobufs";
+import { CosmosBankV1beta1QueryAllBalancesService as QueryAllBalancesService } from "@onsonr/es/protobufs";
 
 import { RpcClient } from "../clients/RpcClient";
 

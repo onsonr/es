@@ -1,4 +1,4 @@
-import { MnemonicWallet } from "cosmes/wallet";
+import { MnemonicWallet } from "@onsonr/es/wallet";
 
 async function main() {
   // Example usage for Osmosis chain
@@ -19,7 +19,7 @@ async function main() {
   console.log("Address:", wallet.address); // prints the bech32 address
 
   // Sign an arbitrary message
-  const { signature } = await wallet.signArbitrary("Hello from CosmES!");
+  const { signature } = await wallet.signArbitrary("Hello from @onsonr/es!");
   console.log("Signature:", signature);
 
   // Broadcast a transaction

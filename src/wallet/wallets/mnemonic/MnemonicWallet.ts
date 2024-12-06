@@ -1,4 +1,4 @@
-import { RpcClient, Secp256k1PubKey, Tx } from "cosmes/client";
+import { RpcClient, Secp256k1PubKey, Tx } from "@onsonr/es/client";
 import {
   base64,
   resolveBech32Address,
@@ -6,9 +6,9 @@ import {
   signAmino,
   signDirect,
   utf8,
-} from "cosmes/codec";
-import { CosmosTxV1beta1Fee as Fee } from "cosmes/protobufs";
-import { StdSignDoc } from "cosmes/registry";
+} from "@onsonr/es/codec";
+import { CosmosTxV1beta1Fee as Fee } from "@onsonr/es/protobufs";
+import { StdSignDoc } from "@onsonr/es/registry";
 
 import { Prettify } from "../../../typeutils/prettify";
 import { WalletName } from "../../constants/WalletName";
@@ -66,7 +66,7 @@ export type ConnectMnemonicWalletOptions = Prettify<
  * console.log("Address:", wallet.address); // prints the bech32 address
  *
  * // Sign an arbitrary message
- * const { signature } = await wallet.signArbitrary("Hello from CosmES!");
+ * const { signature } = await wallet.signArbitrary("Hello from @onsonr/es!");
  * console.log("Signature:", signature);
  *
  * // Sign and broadcast a tx
@@ -100,7 +100,7 @@ export class MnemonicWallet extends ConnectedWallet {
     super(
       // We typecast here instead of adding "mnemonic" to `WalletName` and
       // `WalletType` as this wallet is considered a special wallet that is
-      // unlikely to be used by most consumers of CosmES.
+      // unlikely to be used by most consumers of @onsonr/es.
       "mnemonic" as WalletName,
       "mnemonic" as WalletType,
       undefined,

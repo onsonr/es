@@ -1,5 +1,5 @@
 {
-  "name": "cosmes-react",
+  "name": "@onsonr/es-react",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "cosmes": "link:../..",
+    "@onsonr/es": "link:../..",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

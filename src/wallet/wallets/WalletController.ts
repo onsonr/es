@@ -1,5 +1,5 @@
 import type { PlainMessage } from "@bufbuild/protobuf";
-import type { CosmosBaseV1beta1Coin as Coin } from "cosmes/protobufs";
+import type { CosmosBaseV1beta1Coin as Coin } from "@onsonr/es/protobufs";
 
 import type { WalletName } from "../constants/WalletName";
 import { WalletType } from "../constants/WalletType";

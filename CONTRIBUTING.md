@@ -21,10 +21,10 @@
 
 This is a [pure ESM package](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c), written in TypeScript and managed by [pnpm](https://pnpm.io).
 
-- [`/benchmarks`](./benchmarks) - contains bundle size comparisons between `cosmes` and other packages like Cosmos Kit
-- [`/examples`](./examples) - contains example applications that consume from the `cosmes` package
+- [`/benchmarks`](./benchmarks) - contains bundle size comparisons between `@onsonr/es` and other packages like Cosmos Kit
+- [`/examples`](./examples) - contains example applications that consume from the `@onsonr/es` package
 - [`/scripts`](./scripts) - contains internal scripts for use in this monorepo
-- [`/src`](./src) - contains the source code for the `cosmes` package
+- [`/src`](./src) - contains the source code for the `@onsonr/es` package
 
 ## Getting Started
 
@@ -54,9 +54,9 @@ pnpm add --save-peer [dependency_name]
 
 ### Developing
 
-All examples in the `/examples` directory are independent packages that contain a symlink to the root `cosmes` package. This allows us to develop the `cosmes` package and test it in the examples at the same time.
+All examples in the `/examples` directory are independent packages that contain a symlink to the root `@onsonr/es` package. This allows us to develop the `@onsonr/es` package and test it in the examples at the same time.
 
-Firstly, to watch the `cosmes` package and rebuild on changes, run the following in the root of the project:
+Firstly, to watch the `@onsonr/es` package and rebuild on changes, run the following in the root of the project:
 
 ```sh
 # Run `pnpm build` first if this is your first time running this command

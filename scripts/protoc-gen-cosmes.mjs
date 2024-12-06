@@ -4,7 +4,7 @@
 /**
  * This is a custom plugin for `buf` that generates TS files from the services
  * defined in the proto files, and is referred to by the root `buf.gen.yaml`.
- * Files generated using this plugin contains the `_cosmes` suffix.
+ * Files generated using this plugin contains the `_@onsonr/es` suffix.
  *
  * Do not convert this to a TS file as it runs 4x slower!
  */
@@ -18,7 +18,7 @@ import {
 
 export function generateTs(schema) {
   for (const protoFile of schema.files) {
-    const file = schema.generateFile(protoFile.name + "_cosmes.ts");
+    const file = schema.generateFile(protoFile.name + "_@onsonr/es.ts");
     file.preamble(protoFile);
     for (const service of protoFile.services) {
       generateService(schema, file, service);
@@ -43,7 +43,7 @@ function generateService(schema, f, service) {
 
 runNodeJs(
   createEcmaScriptPlugin({
-    name: "protoc-gen-cosmes",
+    name: "protoc-gen-@onsonr/es",
     version: "v0.0.1",
     generateTs,
   })

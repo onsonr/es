@@ -1,4 +1,4 @@
-import { Window as KeplrWindow } from "cosmes/registry";
+import { Window as KeplrWindow } from "@onsonr/es/registry";
 
 import { Window as CompassWindow } from "./compass/types";
 import { Window as CosmostationWindow } from "./cosmostation/types";

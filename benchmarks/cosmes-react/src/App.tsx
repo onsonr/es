@@ -1,4 +1,4 @@
-import { ConnectedWallet, KeplrController, WalletType } from "cosmes/wallet";
+import { ConnectedWallet, KeplrController, WalletType } from "@onsonr/es/wallet";
 import { useState } from "react";
 
 const WC_PROJECT_ID = "2b7d5a2da89dd74fed821d184acabf95";

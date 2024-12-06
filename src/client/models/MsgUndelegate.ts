@@ -1,5 +1,5 @@
 import { PlainMessage } from "@bufbuild/protobuf";
-import { CosmosStakingV1beta1MsgUndelegate as ProtoMsgUndelegate } from "cosmes/protobufs";
+import { CosmosStakingV1beta1MsgUndelegate as ProtoMsgUndelegate } from "@onsonr/es/protobufs";
 
 import { DeepPrettify } from "../../typeutils/prettify";
 import { Adapter } from "./Adapter";

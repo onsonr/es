@@ -1,7 +1,7 @@
 import { Component, createSignal, For, onMount } from "solid-js";
 import { createStore } from "solid-js/store";
 
-import { MsgSend } from "cosmes/client";
+import { MsgSend } from "@onsonr/es/client";
 import {
   CompassController,
   ConnectedWallet,
@@ -16,12 +16,12 @@ import {
   WalletController,
   WalletName,
   WalletType,
-} from "cosmes/wallet";
+} from "@onsonr/es/wallet";
 
 const WC_PROJECT_ID = "2b7d5a2da89dd74fed821d184acabf95";
 const SIGN_ARBITRARY_MSG =
   "Hi from CosmeES! This is a test message just to prove that the wallet is working.";
-const TX_MEMO = "signed via cosmes";
+const TX_MEMO = "signed via @onsonr/es";
 
 const CHAINS: Record<string, string> = {
   "osmosis-1": "Osmosis",

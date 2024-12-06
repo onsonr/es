@@ -1,7 +1,7 @@
 import {
   CosmosTxV1beta1GetTxResponse as GetTxResponse,
   CosmosTxV1beta1ServiceGetTxService as GetTxService,
-} from "cosmes/protobufs";
+} from "@onsonr/es/protobufs";
 
 import { RpcClient } from "../clients/RpcClient";
 

@@ -1,5 +1,5 @@
 import SignClient from "@walletconnect/sign-client";
-import { SignDoc, StdSignDoc } from "cosmes/registry";
+import { SignDoc, StdSignDoc } from "@onsonr/es/registry";
 import { debounce } from "lodash-es";
 
 import { isAndroid, isMobile } from "../utils/os";
@@ -73,7 +73,7 @@ export class WalletConnectV2 {
   constructor(projectId: string, mobileAppDetails: MobileAppDetails) {
     this.projectId = projectId;
     this.mobileAppDetails = mobileAppDetails;
-    this.sessionStorageKey = `cosmes.wallet.${mobileAppDetails.name.toLowerCase()}.wcSession`;
+    this.sessionStorageKey = `@onsonr/es.wallet.${mobileAppDetails.name.toLowerCase()}.wcSession`;
     this.onDisconnectCbs = new Set();
     this.onAccountChangeCbs = new Set();
     this.signClient = null;

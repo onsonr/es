@@ -1,5 +1,5 @@
 import { PlainMessage } from "@bufbuild/protobuf";
-import { CosmosStakingV1beta1MsgDelegate as ProtoMsgDelegate } from "cosmes/protobufs";
+import { CosmosStakingV1beta1MsgDelegate as ProtoMsgDelegate } from "@onsonr/es/protobufs";
 
 import { DeepPrettify } from "../../typeutils/prettify";
 import { Adapter } from "./Adapter";

@@ -1,5 +1,5 @@
 import { utf8 } from "@scure/base";
-import { StdSignDoc } from "cosmes/registry";
+import { StdSignDoc } from "@onsonr/es/registry";
 
 /**
  * Escapes <,>,& in string.

@@ -1,5 +1,5 @@
 {
-  "name": "@cosmes/solid-vite",
+  "name": "@@onsonr/es/solid-vite",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "buffer": "^6.0.3",
-    "cosmes": "link:../..",
+    "@onsonr/es": "link:../..",
     "solid-js": "^1.7.3"
   },
   "devDependencies": {

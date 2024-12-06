@@ -1,6 +1,6 @@
 import { JsonValue, Message, PartialMessage } from "@bufbuild/protobuf";
-import { base16, base64 } from "cosmes/codec";
-import { CosmosTxV1beta1TxRaw as TxRaw } from "cosmes/protobufs";
+import { base16, base64 } from "@onsonr/es/codec";
+import { CosmosTxV1beta1TxRaw as TxRaw } from "@onsonr/es/protobufs";
 
 import { FetchClient } from "./FetchClient";
 

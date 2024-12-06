@@ -4,7 +4,7 @@ plugins:
   - plugin: es
     opt: target=ts
     out: .
-  - plugin: cosmes
-    path: ./scripts/protoc-gen-cosmes.mjs
+  - plugin: @onsonr/es
+    path: ./scripts/protoc-gen-@onsonr/es.mjs
     opt: target=ts
     out: .

@@ -8,8 +8,8 @@ import {
   CosmosTxV1beta1SignerInfo as ProtoSignerInfo,
   CosmosTxV1beta1TxBody as ProtoTxBody,
   CosmosTxV1beta1TxRaw as ProtoTxRaw,
-} from "cosmes/protobufs";
-import { SignDoc, StdSignDoc } from "cosmes/registry";
+} from "@onsonr/es/protobufs";
+import { SignDoc, StdSignDoc } from "@onsonr/es/registry";
 
 import { toAny } from "../utils/toAny";
 import { Adapter } from "./Adapter";

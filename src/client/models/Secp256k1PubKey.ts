@@ -1,9 +1,9 @@
 import { PlainMessage } from "@bufbuild/protobuf";
-import { base64 } from "cosmes/codec";
+import { base64 } from "@onsonr/es/codec";
 import {
   EthermintCryptoV1Ethsecp256k1PubKey as ProtoEthermintSecp256k1PubKey,
   CosmosCryptoSecp256k1PubKey as ProtoSecp256k1PubKey,
-} from "cosmes/protobufs";
+} from "@onsonr/es/protobufs";
 
 import { DeepPrettify } from "../../typeutils/prettify";
 import { Adapter } from "./Adapter";

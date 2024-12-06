@@ -2,7 +2,7 @@ import {
   CosmosBaseV1beta1Coin as Coin,
   CosmosTxV1beta1Fee as Fee,
   CosmosBaseAbciV1beta1GasInfo as GasInfo,
-} from "cosmes/protobufs";
+} from "@onsonr/es/protobufs";
 
 /**
  * Estimates the fee for a transaction. For txs which uses more gas, the

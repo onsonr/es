@@ -1,12 +1,12 @@
 {
-  "name": "@cosmes/verify-signatures",
+  "name": "@@onsonr/es/verify-signatures",
   "private": true,
   "main": "src/index.ts",
   "scripts": {
     "start": "tsx src/index.ts"
   },
   "dependencies": {
-    "cosmes": "link:../.."
+    "@onsonr/es": "link:../.."
   },
   "devDependencies": {
     "@types/node": "^20.2.0",

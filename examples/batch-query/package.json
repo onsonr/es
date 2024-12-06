@@ -1,5 +1,5 @@
 {
-  "name": "@cosmes/batch-query",
+  "name": "@@onsonr/es/batch-query",
   "private": true,
   "main": "src/index.ts",
   "scripts": {

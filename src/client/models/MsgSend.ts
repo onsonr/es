@@ -1,5 +1,5 @@
 import { PlainMessage } from "@bufbuild/protobuf";
-import { CosmosBankV1beta1MsgSend as ProtoMsgSend } from "cosmes/protobufs";
+import { CosmosBankV1beta1MsgSend as ProtoMsgSend } from "@onsonr/es/protobufs";
 
 import { DeepPrettify } from "../../typeutils/prettify";
 import { Adapter } from "./Adapter";

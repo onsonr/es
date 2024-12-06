@@ -1,4 +1,4 @@
-import { CosmosTxV1beta1ServiceSimulateService as SimulateService } from "cosmes/protobufs";
+import { CosmosTxV1beta1ServiceSimulateService as SimulateService } from "@onsonr/es/protobufs";
 
 import { Prettify } from "../../typeutils/prettify";
 import { RpcClient } from "../clients/RpcClient";
