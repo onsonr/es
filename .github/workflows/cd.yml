@@ -45,7 +45,6 @@ jobs:
 
       - name: Setup Git Config
         run: |
-          bun install
           git config user.name "Prad N."
           git config user.email "prad@sonr.io"
 
