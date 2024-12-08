@@ -12,6 +12,7 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
+    if: contains(github.event.head_commit.modified, 'src/')
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
