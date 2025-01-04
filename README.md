@@ -1,4 +1,4 @@
-<!-- omit in toc -->
+!-- omit in toc -->
 
 # `@onsonr/es`
 
